@@ -1,3 +1,28 @@
 [gd_scene format=3 uid="uid://cm5exck25lkl1"]
 
+[ext_resource type="Script" uid="uid://b5fc5oojm74yd" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://dd3rw48ne5l2" path="res://player.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://dthenf60kt0jm" path="res://mob.tscn" id="2_feb5d"]
+
+[sub_resource type="Curve2D" id="Curve2D_feb5d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 960, -540, 0, 0, 0, 0, 960, 540, 0, 0, 0, 0, -960, 540, 0, 0, 0, 0, -960, -540, 0, 0, 0, 0, 960, -540)
+}
+point_count = 5
+
 [node name="game" type="Node2D" unique_id=1419428098]
+script = ExtResource("1_80nbo")
+
+[node name="Mob" parent="." unique_id=2054343311 instance=ExtResource("2_feb5d")]
+
+[node name="Player" parent="." unique_id=560301391 instance=ExtResource("2_e2o6t")]
+position = Vector2(954, 527)
+
+[node name="Path2D" type="Path2D" parent="Player" unique_id=1891581326]
+scale = Vector2(1.1, 1.1)
+curve = SubResource("Curve2D_feb5d")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=1351054468]
+unique_name_in_owner = true
+position = Vector2(960, -540)
+rotation = 1.5707964
