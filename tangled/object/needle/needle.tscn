@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://dr353w5veq77g"]
 
-[node name="Needle" type="Node2D" unique_id=1156356277]
+[node name="Needle" type="Area2D" unique_id=1046094937]
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=662560443]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=992650455]
+polygon = PackedVector2Array(-1, 0, 0, 15, 1, 0)

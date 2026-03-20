@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://babprtm7xcpkg"]
+
+[ext_resource type="PackedScene" uid="uid://q4ffjnt1tp8f" path="res://character/base_character.tscn" id="1_aiqpc"]
+[ext_resource type="Script" uid="uid://cepbbrwepi2bg" path="res://character/enemy/enemy.gd" id="2_b5nws"]
+
+[node name="Enemy" unique_id=1830372143 instance=ExtResource("1_aiqpc")]
+script = ExtResource("2_b5nws")
+
+[node name="HurtBox" parent="." index="2" unique_id=1484379092]
+collision_layer = 4
+collision_mask = 2
