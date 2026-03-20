@@ -1,3 +1,46 @@
 [gd_scene format=3 uid="uid://7sdxi43l1bxw"]
 
-[node name="Crocro" type="Node2D" unique_id=269349362]
+[ext_resource type="Script" uid="uid://dofqs18mn1ta3" path="res://characters/crocky/crocky.gd" id="1_ar55t"]
+
+[sub_resource type="Animation" id="Animation_7l1ys"]
+resource_name = "death"
+
+[sub_resource type="Animation" id="Animation_cy2a6"]
+resource_name = "hurt"
+
+[sub_resource type="Animation" id="Animation_4v144"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_s0vya"]
+resource_name = "walk"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wu186"]
+_data = {
+&"death": SubResource("Animation_7l1ys"),
+&"hurt": SubResource("Animation_cy2a6"),
+&"idle": SubResource("Animation_4v144"),
+&"walk": SubResource("Animation_s0vya")
+}
+
+[node name="Crocky" type="Node2D" unique_id=269349362]
+script = ExtResource("1_ar55t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1548772175]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_wu186")
+
+[node name="Rig" type="Node2D" parent="." unique_id=1035170023]
+
+[node name="Eye" type="Sprite2D" parent="Rig" unique_id=885840809]
+
+[node name="Head" type="Sprite2D" parent="Rig" unique_id=1783168386]
+
+[node name="Torso" type="Sprite2D" parent="Rig" unique_id=152096171]
+
+[node name="Arm_Left" type="Sprite2D" parent="Rig" unique_id=1671642990]
+
+[node name="Arm_Right" type="Sprite2D" parent="Rig" unique_id=1681878635]
+
+[node name="Leg_Left" type="Sprite2D" parent="Rig" unique_id=1647025617]
+
+[node name="Leg_Right" type="Sprite2D" parent="Rig" unique_id=1428264253]

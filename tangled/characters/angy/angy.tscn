@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://vf23up0ywxky"]
 
+[ext_resource type="Script" uid="uid://kjkjm5rmd706" path="res://characters/angy/angy.gd" id="1_sh7i8"]
+
 [node name="Angy" type="Node2D" unique_id=1584495043]
+script = ExtResource("1_sh7i8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=29994951]
+unique_name_in_owner = true

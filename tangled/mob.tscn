@@ -3,8 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://vf23up0ywxky" path="res://characters/angy/angy.tscn" id="1_dy6sc"]
 [ext_resource type="Script" uid="uid://dwb8t1hxih55n" path="res://mob.gd" id="1_nokgg"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nokgg"]
+radius = 126.0
+
 [node name="Mob" type="CharacterBody2D" unique_id=2054343311]
 script = ExtResource("1_nokgg")
 
 [node name="Angy" parent="." unique_id=1918388177 instance=ExtResource("1_dy6sc")]
 unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=879723439]
+shape = SubResource("CircleShape2D_nokgg")

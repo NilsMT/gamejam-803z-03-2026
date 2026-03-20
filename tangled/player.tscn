@@ -6,7 +6,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
-radius = 140.00357
+radius = 256.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onrkg"]
 bg_color = Color(0.6666667, 0, 0, 1)
@@ -36,8 +36,11 @@ unique_name_in_owner = true
 shape = SubResource("CircleShape2D_onrkg")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1820528012]
-offset_right = 4.0
-offset_bottom = 27.0
+unique_name_in_owner = true
+offset_left = -128.0
+offset_top = -300.0
+offset_right = 128.0
+offset_bottom = -270.0
 theme_override_styles/background = SubResource("StyleBoxFlat_onrkg")
 theme_override_styles/fill = SubResource("StyleBoxFlat_i3pqv")
 step = 1.0
