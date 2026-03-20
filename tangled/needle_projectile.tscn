@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bmuscd8o73qwo"]
+
+[ext_resource type="PackedScene" uid="uid://b2rasdyjvrett" path="res://objects/needle/needle.tscn" id="1_nweyl"]
+
+[node name="NeedleProjectile" type="Node2D" unique_id=1849327850]
+
+[node name="Needle" parent="." unique_id=1575203546 instance=ExtResource("1_nweyl")]
