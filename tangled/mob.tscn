@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dthenf60kt0jm"]
+
+[ext_resource type="PackedScene" uid="uid://vf23up0ywxky" path="res://characters/angy/angy.tscn" id="1_dy6sc"]
+
+[node name="Mob" type="CharacterBody2D" unique_id=2054343311]
+
+[node name="Angy" parent="." unique_id=1918388177 instance=ExtResource("1_dy6sc")]
