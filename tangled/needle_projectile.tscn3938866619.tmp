@@ -11,6 +11,10 @@ height = 316.85602
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_nqs7c")
+speed = null
+damage_per_second = null
+max_distance = null
+thread_color = null
 
 [node name="Needle" parent="." unique_id=1575203546 instance=ExtResource("1_nweyl")]
 rotation = -1.5692158
