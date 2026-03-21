@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://b2rasdyjvrett"]
 
+[ext_resource type="Texture2D" uid="uid://keasgvx6lvfo" path="res://objects/needle/needle.svg" id="1_oqtkx"]
+
 [node name="Needle" type="Node2D" unique_id=1575203546]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=385963427]
+position = Vector2(4, 146)
+rotation = -0.65100783
+texture = ExtResource("1_oqtkx")
