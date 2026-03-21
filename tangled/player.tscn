@@ -2,7 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://7sdxi43l1bxw" path="res://characters/crocky/crocky.tscn" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://y6rtvvgvxl32" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://0w35l886igiu" path="res://textures/ui/progress_bar.png" id="3_hqtel"]
 [ext_resource type="Texture2D" uid="uid://1v2s2c4mqoju" path="res://effects/Stars.png" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://chy01qhuas1sh" path="res://textures/ui/progress_bar_front.png" id="4_sweqy"]
 
 [sub_resource type="Animation" id="Animation_hqtel"]
 length = 0.001
@@ -314,20 +316,6 @@ height = 290.0
 radius = 99.0
 height = 320.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onrkg"]
-bg_color = Color(0.6666667, 0, 0, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3pqv"]
-bg_color = Color(0, 0.6666667, 0, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
 [node name="Player" type="CharacterBody2D" unique_id=560301391]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_onrkg")
@@ -353,16 +341,21 @@ collision_mask = 10
 shape = SubResource("CapsuleShape2D_i3pqv")
 debug_color = Color(1, 0, 0, 0.33333334)
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1820528012]
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1828388409]
 unique_name_in_owner = true
-offset_left = -128.0
-offset_top = -188.0
-offset_right = 128.0
-offset_bottom = -158.0
-theme_override_styles/background = SubResource("StyleBoxFlat_onrkg")
-theme_override_styles/fill = SubResource("StyleBoxFlat_i3pqv")
-step = 1.0
-show_percentage = false
+clip_contents = true
+offset_left = -125.0
+offset_top = -200.0
+offset_right = 875.0
+offset_bottom = -100.0
+scale = Vector2(0.25, 0.25)
+value = 50.0
+texture_under = ExtResource("3_hqtel")
+texture_over = ExtResource("4_sweqy")
+texture_progress = ExtResource("3_hqtel")
+tint_under = Color(0.6, 0, 0, 1)
+tint_over = Color(0.8635176, 0.7669811, 1.1551381e-06, 1)
+tint_progress = Color(0, 0.6, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1359007654]
