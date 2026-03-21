@@ -1,9 +1,30 @@
 [gd_scene format=3 uid="uid://vf23up0ywxky"]
 
 [ext_resource type="Script" uid="uid://kjkjm5rmd706" path="res://characters/angy/angy.gd" id="1_sh7i8"]
+[ext_resource type="Texture2D" uid="uid://cwhf3iokponcu" path="res://characters/angy/placeholder_angy.png" id="2_glqm8"]
+
+[sub_resource type="Animation" id="Animation_grla5"]
+resource_name = "death"
+
+[sub_resource type="Animation" id="Animation_glqm8"]
+resource_name = "hurt"
+
+[sub_resource type="Animation" id="Animation_krglj"]
+resource_name = "walk"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_grla5"]
+_data = {
+&"death": SubResource("Animation_grla5"),
+&"hurt": SubResource("Animation_glqm8"),
+&"walk": SubResource("Animation_krglj")
+}
 
 [node name="Angy" type="Node2D" unique_id=1584495043]
 script = ExtResource("1_sh7i8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=29994951]
 unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_grla5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=643885955]
+texture = ExtResource("2_glqm8")
