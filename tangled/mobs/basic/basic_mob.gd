@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 3
+var health = 25
 const DAMAGE = 5
 const SPEED = 300.0
 
@@ -9,19 +9,15 @@ const SPEED = 300.0
 func _ready():
 	%Angy.play_walk()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var direction = global_position.direction_to(player.global_position)
 	velocity = direction * SPEED
-	velocity *= delta
 	move_and_slide()
-	
 
-func take_damage():
-	health -= 1
+func take_damage(damage):
+	health -= damage
 	%Angy.play_hurt()
 	
-	if health == 0:
-		%Angy.play_dead()
-		#TODO: wait until animation is done
+	if health <= 0:
+		%Angy.play_death()
 		queue_free()
-		

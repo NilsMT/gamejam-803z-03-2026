@@ -8,9 +8,6 @@ func play_walk():
 	
 func play_idle():
 	%AnimationPlayer.play("idle")
-	
-func play_hurt():
-	%AnimationPlayer.play("hurt")
 
 func _ready():
 	%AnimationPlayer.play("idle")

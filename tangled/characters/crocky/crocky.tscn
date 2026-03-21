@@ -382,9 +382,6 @@ tracks/29/keys = {
 [sub_resource type="Animation" id="Animation_7l1ys"]
 resource_name = "death"
 
-[sub_resource type="Animation" id="Animation_cy2a6"]
-resource_name = "hurt"
-
 [sub_resource type="Animation" id="Animation_4v144"]
 resource_name = "idle"
 length = 2.0
@@ -703,7 +700,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-0.22165681500327966, -0.619591884457987]
+"values": [-0.2216568150032797, -0.619591884457987]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -823,7 +820,7 @@ tracks/16/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-0.48694686130641757, 0.0]
+"values": [-0.4869468613064176, 0.0]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
@@ -847,14 +844,13 @@ tracks/18/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, -0.48694686130641757]
+"values": [0.0, -0.4869468613064176]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wu186"]
 _data = {
 &"RESET": SubResource("Animation_cqa5e"),
 &"death": SubResource("Animation_7l1ys"),
-&"hurt": SubResource("Animation_cy2a6"),
 &"idle": SubResource("Animation_4v144"),
 &"walk": SubResource("Animation_s0vya")
 }
