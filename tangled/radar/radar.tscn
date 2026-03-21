@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dlaqa2kkclusi"]
+
+[ext_resource type="Texture2D" uid="uid://c6ghj2arwnrpi" path="res://radar/Arrow.png" id="1_0ebdg"]
+
+[node name="Radar" type="Marker2D" unique_id=284120149]
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=13521638]
+position = Vector2(176.99998, -8)
+scale = Vector2(0.033937983, 0.041494638)
+texture = ExtResource("1_0ebdg")

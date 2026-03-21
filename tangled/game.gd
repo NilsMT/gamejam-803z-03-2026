@@ -15,6 +15,7 @@ var OBJECTS_LIST = [
 
 var MOBS_LIST = [
 	"res://mobs/basic/basic_mob.tscn", 90.0,
+	"res://mobs/inverter/inverter_mob.tscn", 9.9,
 ]
 
 # Define a minimum spawn distance from the camera
@@ -56,7 +57,7 @@ func update_radar():
 	else:
 		%Radar.visible = false
 
-func _process(delta):
+func _process(_delta):
 	nearest_object = find_nearest_object()
 	update_radar()
 

@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://c64vt3jfmcpml"]
 
+[ext_resource type="Texture2D" uid="uid://chi64kcl4mmyd" path="res://objects/medpack/medpack.png" id="1_6aioo"]
+
 [node name="Medpack" type="Node2D" unique_id=1637482905]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=492645110]
+position = Vector2(3, 156)
+scale = Vector2(0.17713569, 0.17713568)
+texture = ExtResource("1_6aioo")

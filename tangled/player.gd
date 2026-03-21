@@ -3,9 +3,15 @@ extends CharacterBody2D
 signal health_depleted
 
 const START_HEALTH = 100.0
+var health = START_HEALTH
+const MAX_EFFECT_DURATION = 5.0
 const SPEED = 600.0
 
-var health = START_HEALTH
+enum EFFECTS {
+	INVERT_CONTROLS,
+}
+
+var active_effects := {}
 
 const WEAPON_LIST = [
 	preload("res://weapons/needle_thrower.tscn"),
@@ -45,8 +51,17 @@ func _ready():
 	%ProgressBar.max_value = START_HEALTH
 
 func _physics_process(delta: float) -> void:
+	
+	#effect management
+	_update_effects(delta)
+	
 	# Movement
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	
+	#inverter effect
+	if EFFECTS.INVERT_CONTROLS in active_effects:
+		direction *= -1
+	
 	velocity = direction * SPEED
 	move_and_slide()
 
@@ -68,16 +83,47 @@ func _physics_process(delta: float) -> void:
 	else:
 		%Crocky.play_idle()
 
-	# Handle damage
-	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
-	for mob in overlapping_mobs:
-		health -= mob.DAMAGE * delta
-
+	#handle life and mobs
+	_handle_mobs(delta)
+	
 	%ProgressBar.value = health
 
 	if health <= 0.0:
 		health_depleted.emit()
 		%Crocky.play_death()
+
+func _update_effects(delta: float) -> void:
+	var to_remove := []
+	for effect in active_effects.keys():
+		active_effects[effect] -= delta
+		print("Effect ", effect, " duration: ", active_effects[effect])
+		if active_effects[effect] <= 0.001:
+			to_remove.append(effect)
+	for effect in to_remove:
+		print("Removing effect: ", effect)
+		active_effects.erase(effect)
+
+func _apply_effect(effect_id: int, duration: float) -> void:
+	if effect_id in active_effects:
+		active_effects[effect_id] = min(
+			active_effects[effect_id] + duration,
+			MAX_EFFECT_DURATION
+		)
+	else:
+		active_effects[effect_id] = duration
+
+func _handle_mobs(delta: float) -> void:
+	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
+	
+	for mob in overlapping_mobs:
+		
+		health -= mob.DAMAGE * delta
+		
+		if mob.get("EFFECT_ID") != null:
+			print("Applying effect: ", mob.EFFECT_ID, " for ", mob.EFFECT_DURATION, " seconds")
+			var effect_id = mob.EFFECT_ID
+			_apply_effect(effect_id, mob.EFFECT_DURATION)
+					
 
 func _input(event):
 	#use the weapon
