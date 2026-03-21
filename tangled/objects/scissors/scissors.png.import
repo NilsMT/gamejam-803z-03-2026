@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc41ae0c5c572"
-path="res://.godot/imported/button.svg-f56f6f0e851d53bfd75357fbc49c0501.ctex"
+uid="uid://djleya0shmgsn"
+path="res://.godot/imported/scissors.png-f946b6cadf5707fc7a9a027afa2b8dcb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/button/button.svg"
-dest_files=["res://.godot/imported/button.svg-f56f6f0e851d53bfd75357fbc49c0501.ctex"]
+source_file="res://objects/scissors/scissors.png"
+dest_files=["res://.godot/imported/scissors.png-f946b6cadf5707fc7a9a027afa2b8dcb.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

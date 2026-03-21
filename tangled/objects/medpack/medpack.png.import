@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://keasgvx6lvfo"
-path="res://.godot/imported/needle.svg-783238717a69bf2b24ec65a57fb8b5a5.ctex"
+uid="uid://chi64kcl4mmyd"
+path="res://.godot/imported/medpack.png-c0fb084911da589d98e00fec9546553f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/needle/needle.svg"
-dest_files=["res://.godot/imported/needle.svg-783238717a69bf2b24ec65a57fb8b5a5.ctex"]
+source_file="res://objects/medpack/medpack.png"
+dest_files=["res://.godot/imported/medpack.png-c0fb084911da589d98e00fec9546553f.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
