@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwhf3iokponcu"
-path="res://.godot/imported/placeholder_angy.png-7cbd3d2d6342d7cc5aa49fd3a9856b85.ctex"
+uid="uid://8yso3ogae035"
+path="res://.godot/imported/medpack.svg-b2d75123a14716ea3e719e014c71466c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/angy/placeholder_angy.png"
-dest_files=["res://.godot/imported/placeholder_angy.png-7cbd3d2d6342d7cc5aa49fd3a9856b85.ctex"]
+source_file="res://objects/medpack/medpack.svg"
+dest_files=["res://.godot/imported/medpack.svg-b2d75123a14716ea3e719e014c71466c.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

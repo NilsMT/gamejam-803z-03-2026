@@ -15,6 +15,7 @@ point_count = 5
 script = ExtResource("1_80nbo")
 
 [node name="Player" parent="." unique_id=560301391 instance=ExtResource("2_e2o6t")]
+unique_name_in_owner = true
 z_index = 1
 position = Vector2(954, 527)
 
@@ -39,26 +40,29 @@ rotation = 1.5707964
 
 [node name="Radar" type="Marker2D" parent="Player" unique_id=1367704835]
 unique_name_in_owner = true
-position = Vector2(1.5258789e-05, -112.00001)
 scale = Vector2(0.25585938, 0.26953125)
 
 [node name="Arrow" type="Sprite2D" parent="Player/Radar" unique_id=1708863280]
 position = Vector2(633.1604, 0)
 texture = ExtResource("3_fc0e3")
 
+[node name="PlayerCamera" type="Camera2D" parent="Player" unique_id=1134105365]
+unique_name_in_owner = true
+position = Vector2(0, 112)
+
 [node name="GameOver" parent="." unique_id=653810407 instance=ExtResource("4_fc0e3")]
 unique_name_in_owner = true
 visible = false
 
 [node name="TimerObject" type="Timer" parent="." unique_id=1339317992]
-wait_time = 5.0
+wait_time = 30.0
 autostart = true
 
 [node name="TimerMob" type="Timer" parent="." unique_id=2043572244]
 autostart = true
 
 [node name="TimerProp" type="Timer" parent="." unique_id=679867077]
-wait_time = 30.0
+wait_time = 20.0
 autostart = true
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]

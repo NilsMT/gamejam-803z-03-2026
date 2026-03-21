@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnkwyas5uq58"
-path="res://.godot/imported/Medikit.svg-f5668d7953b3304eec61ed183c9757f0.ctex"
+uid="uid://dvw45cwaxna4j"
+path="res://.godot/imported/button.svg-f56f6f0e851d53bfd75357fbc49c0501.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/medpack/Medikit.svg"
-dest_files=["res://.godot/imported/Medikit.svg-f5668d7953b3304eec61ed183c9757f0.ctex"]
+source_file="res://objects/button/button.svg"
+dest_files=["res://.godot/imported/button.svg-f56f6f0e851d53bfd75357fbc49c0501.ctex"]
 
 [params]
 
