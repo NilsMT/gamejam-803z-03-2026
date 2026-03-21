@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cm5exck25lkl1"]
+
+[ext_resource type="Script" uid="uid://b5fc5oojm74yd" path="res://in_game.gd" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://dd3rw48ne5l2" path="res://player.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://dlaqa2kkclusi" path="res://radar/radar.tscn" id="3_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://bvr1dlrnahj7e" path="res://ui/game_over/game_over.tscn" id="4_fc0e3"]
+
+[sub_resource type="Curve2D" id="Curve2D_feb5d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 960, -540, 0, 0, 0, 0, 960, 540, 0, 0, 0, 0, -960, 540, 0, 0, 0, 0, -960, -540, 0, 0, 0, 0, 960, -540)
+}
+point_count = 5
+
+[node name="InGame" type="Node2D" unique_id=1419428098]
+y_sort_enabled = true
+script = ExtResource("1_80nbo")
+
+[node name="Player" parent="." unique_id=560301391 instance=ExtResource("2_e2o6t")]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(954, 527)
+
+[node name="Path2D" type="Path2D" parent="Player" unique_id=1891581326]
+scale = Vector2(2.2, 2.2)
+curve = SubResource("Curve2D_feb5d")
+
+[node name="MarkerObject" type="PathFollow2D" parent="Player/Path2D" unique_id=741714058]
+unique_name_in_owner = true
+position = Vector2(960, -540)
+rotation = 1.5707964
+
+[node name="MarkerProp" type="PathFollow2D" parent="Player/Path2D" unique_id=400313096]
+unique_name_in_owner = true
+position = Vector2(960, -540)
+rotation = 1.5707964
+
+[node name="MarkerMob" type="PathFollow2D" parent="Player/Path2D" unique_id=1351054468]
+unique_name_in_owner = true
+position = Vector2(960, -540)
+rotation = 1.5707964
+
+[node name="PlayerCamera" type="Camera2D" parent="Player" unique_id=1134105365]
+unique_name_in_owner = true
+position = Vector2(0, 112)
+
+[node name="Radar" parent="Player" unique_id=284120149 instance=ExtResource("3_fc0e3")]
+unique_name_in_owner = true
+
+[node name="GameOver" parent="." unique_id=653810407 instance=ExtResource("4_fc0e3")]
+unique_name_in_owner = true
+visible = false
+
+[node name="TimerObject" type="Timer" parent="." unique_id=1339317992]
+wait_time = 30.0
+autostart = true
+
+[node name="TimerMob" type="Timer" parent="." unique_id=2043572244]
+autostart = true
+
+[node name="TimerProp" type="Timer" parent="." unique_id=679867077]
+autostart = true
+
+[connection signal="add_score" from="." to="." method="_on_add_score"]
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="TimerObject" to="." method="_on_timer_object_timeout"]
+[connection signal="timeout" from="TimerMob" to="." method="_on_timer_mob_timeout"]
+[connection signal="timeout" from="TimerProp" to="." method="_on_timer_prop_timeout"]

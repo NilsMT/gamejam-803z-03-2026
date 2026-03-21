@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b2snwhnsqq1b1"]
+
+[ext_resource type="Texture2D" uid="uid://4bxiqubieauw" path="res://props/prop_pearl/pearl.png" id="1_5degu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7kup8"]
+radius = 38.052597
+
+[node name="PropPearl" type="StaticBody2D" unique_id=182217452]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=662668236]
+shape = SubResource("CircleShape2D_7kup8")
+
+[node name="Pearl" type="Sprite2D" parent="." unique_id=1319543116]
+texture = ExtResource("1_5degu")

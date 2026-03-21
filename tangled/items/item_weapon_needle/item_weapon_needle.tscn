@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_7n0p3"]
 radius = 60.0
 
-[node name="ItemWeaponNeedle" type="CharacterBody2D" unique_id=485299135]
+[node name="ItemWeaponNeedle" type="StaticBody2D" unique_id=867108745]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_cd3iv")
@@ -31,7 +31,7 @@ scale = Vector2(0.55999976, 0.27999976)
 [node name="Needle4" parent="." unique_id=1001780069 instance=ExtResource("2_ia152")]
 position = Vector2(6.000002, -48.00003)
 rotation = 0.259341
-scale = Vector2(0.5599998, 0.27999985)
+scale = Vector2(0.55999976, 0.27999985)
 
 [node name="Needle5" parent="." unique_id=1428239945 instance=ExtResource("2_ia152")]
 position = Vector2(12, -41)
@@ -41,7 +41,7 @@ scale = Vector2(0.5599998, 0.27999982)
 [node name="Needle6" parent="." unique_id=1161959174 instance=ExtResource("2_ia152")]
 position = Vector2(32.000004, -35.000004)
 rotation = 0.35147294
-scale = Vector2(0.55999976, 0.2799998)
+scale = Vector2(0.55999976, 0.27999982)
 
 [node name="Needle7" parent="." unique_id=276427621 instance=ExtResource("2_ia152")]
 position = Vector2(-23.999996, -33.000008)
@@ -50,8 +50,8 @@ scale = Vector2(0.5599998, 0.27999982)
 
 [node name="Needle8" parent="." unique_id=1478872735 instance=ExtResource("2_ia152")]
 position = Vector2(-13.999996, -37)
-rotation = -0.33914936
-scale = Vector2(0.5599998, 0.27999982)
+rotation = -0.3391494
+scale = Vector2(0.55999976, 0.27999982)
 
 [node name="Needle9" parent="." unique_id=1990764215 instance=ExtResource("2_ia152")]
 position = Vector2(-37.999996, -32.999992)
