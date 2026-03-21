@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://7sdxi43l1bxw" path="res://characters/crocky/crocky.tscn" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://y6rtvvgvxl32" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://cwhf3iokponcu" path="res://characters/angy/placeholder_angy.png" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 79.0
@@ -36,10 +35,12 @@ scale = Vector2(0.24000353, 0.23999983)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1545904621]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630267291]
+position = Vector2(0, -112)
 shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=114584655]
 unique_name_in_owner = true
+position = Vector2(0, -112)
 collision_layer = 0
 collision_mask = 2
 
@@ -57,11 +58,6 @@ theme_override_styles/background = SubResource("StyleBoxFlat_onrkg")
 theme_override_styles/fill = SubResource("StyleBoxFlat_i3pqv")
 step = 1.0
 show_percentage = false
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=771747230]
-position = Vector2(0.5, 0.5000086)
-scale = Vector2(0.60546875, 1.1054688)
-texture = ExtResource("3_i3pqv")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1359007654]
 unique_name_in_owner = true
