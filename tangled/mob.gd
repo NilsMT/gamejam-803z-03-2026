@@ -18,5 +18,7 @@ func take_damage():
 	%Angy.play_hurt()
 	
 	if health == 0:
+		%Angy.play_dead()
+		#TODO: wait until animation is done
 		queue_free()
-		#TODO: death animation
+		
