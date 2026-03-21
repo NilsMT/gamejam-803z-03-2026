@@ -75,7 +75,6 @@ Settings/Show_Tooltips=true
 [application]
 
 config/name="Tangled"
-run/main_scene="uid://cm5exck25lkl1"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [audio]
