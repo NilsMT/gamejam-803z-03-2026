@@ -375,6 +375,7 @@ _data = {
 }
 
 [node name="Crocky" type="Node2D" unique_id=269349362]
+position = Vector2(963, 953)
 script = ExtResource("1_ar55t")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1548772175]

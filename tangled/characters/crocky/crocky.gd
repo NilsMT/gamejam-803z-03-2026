@@ -11,3 +11,6 @@ func play_idle():
 	
 func play_hurt():
 	%AnimationPlayer.play("hurt")
+
+func _ready():
+	%AnimationPlayer.play("idle")
