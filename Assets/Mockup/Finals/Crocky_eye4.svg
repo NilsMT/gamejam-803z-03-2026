@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Eye" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #8ba246;
+        stroke: #8ba246;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="137.69" cy="48" r="9.65"/>
+  <ellipse class="cls-1" cx="137.89" cy="44.11" rx="2.44" ry="2.41"/>
+  <ellipse class="cls-1" cx="132.2" cy="48.19" rx="2.44" ry="2.41"/>
+</svg>
