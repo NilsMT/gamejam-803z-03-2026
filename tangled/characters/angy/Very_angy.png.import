@@ -4,6 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhpfjfmivslfn"
 path="res://.godot/imported/Very_angy.png-99aac56950ee583ac8c4f774fae548a2.ctex"
+uid="uid://nupejuljo4du"
+path="res://.godot/imported/very_angy.png-154b25ee55423cfe25516cf92c03ceec.ctex"
 metadata={
 "vram_texture": false
 }
@@ -12,6 +14,8 @@ metadata={
 
 source_file="res://characters/angy/Very_angy.png"
 dest_files=["res://.godot/imported/Very_angy.png-99aac56950ee583ac8c4f774fae548a2.ctex"]
+source_file="res://characters/angy/very_angy.png"
+dest_files=["res://.godot/imported/very_angy.png-154b25ee55423cfe25516cf92c03ceec.ctex"]
 
 [params]
 

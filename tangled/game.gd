@@ -2,82 +2,103 @@ extends Node2D
 
 var spawned_objects = []
 var spawned_mobs = []
+var nearest_object = null
 
-# .tscn spawn_chance
+# Spawn chance lists
 var PROPS_LIST = [
 	"res://props/pearl/pearl.tscn", 0.0,
 ]
 
-# .tscn spawn_chance
 var OBJECTS_LIST = [
 	"res://objects/medpack/medpack.tscn", 0.0,
 ]
 
-# .tscn spawn_chance
 var MOBS_LIST = [
 	"res://mobs/basic/basic_mob.tscn", 90.0,
 ]
 
+# Define a minimum spawn distance from the camera
+const MIN_SPAWN_DISTANCE = 1000.0
+
 func weighted_random_selection(weighted_list):
 	var total_weight = 0.0
-	# Calculate total weight (sum of all chances)
 	for i in range(0, weighted_list.size(), 2):
 		total_weight += weighted_list[i + 1]
 
-	# Generate a random value between 0 and total_weight
 	var random_value = randf() * total_weight
 	var current_weight = 0.0
 
-	# Iterate through the list to find the selected scene
 	for i in range(0, weighted_list.size(), 2):
 		current_weight += weighted_list[i + 1]
 		if random_value <= current_weight:
-			return weighted_list[i]  # Return the scene path
+			return weighted_list[i]
 
-	return null  # Fallback (should not happen if weights are correct)
+	return null
 
+func find_nearest_object():
+	var nearest_distance = INF
+	nearest_object = null
+
+	# Only check spawned_objects, ignore mobs and props
+	for obj in spawned_objects:
+		if obj:
+			var distance = %Player.global_position.distance_to(obj.global_position)
+			if distance < nearest_distance:
+				nearest_distance = distance
+				nearest_object = obj
+
+	return nearest_object
+
+func update_radar():
+	if nearest_object:
+		%Radar.look_at(nearest_object.global_position)
+		%Radar.visible = true
+	else:
+		%Radar.visible = false
+
+func _process(delta):
+	nearest_object = find_nearest_object()
+	update_radar()
+
+func get_random_far_position():
+	# Generate a random angle and distance from the camera
+	var angle = randf_range(0, 2 * PI)
+	var distance = randf_range(MIN_SPAWN_DISTANCE, MIN_SPAWN_DISTANCE * 2)
+	var random_position = %PlayerCamera.global_position + Vector2(cos(angle), sin(angle)) * distance
+	return random_position
 
 func spawn_mob():
 	var selected_scene = weighted_random_selection(MOBS_LIST)
 	if selected_scene:
 		var new_mob = load(selected_scene).instantiate()
-		%MarkerMob.progress_ratio = randf()
-		new_mob.global_position = %MarkerMob.global_position
+		new_mob.global_position = get_random_far_position()
 		add_child(new_mob)
 		spawned_mobs.append(new_mob)
-
 
 func spawn_prop():
 	var selected_scene = weighted_random_selection(PROPS_LIST)
 	if selected_scene:
 		var new_prop = load(selected_scene).instantiate()
-		%MarkerProp.progress_ratio = randf()
-		new_prop.global_position = %MarkerProp.global_position
+		new_prop.global_position = get_random_far_position()
 		add_child(new_prop)
-
 
 func spawn_object():
 	var selected_scene = weighted_random_selection(OBJECTS_LIST)
 	if selected_scene:
 		var new_object = load(selected_scene).instantiate()
-		%MarkerProp.progress_ratio = randf()
-		new_object.global_position = %MarkerProp.global_position
+		new_object.global_position = get_random_far_position()
 		add_child(new_object)
 		spawned_objects.append(new_object)
-
 
 func _on_player_health_depleted() -> void:
 	%GameOver.visible = true
 	get_tree().paused = true
 
-
 func _on_timer_object_timeout() -> void:
 	spawn_object()
 
-
 func _on_timer_mob_timeout() -> void:
 	spawn_mob()
-
 
 func _on_timer_prop_timeout() -> void:
 	spawn_prop()

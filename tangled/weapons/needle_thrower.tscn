@@ -1,17 +1,12 @@
 [gd_scene format=3 uid="uid://ceewkmq0wbfcc"]
 
 [ext_resource type="Script" uid="uid://b141do77i6gaa" path="res://weapons/needle_thrower.gd" id="1_qap4a"]
-[ext_resource type="Texture2D" uid="uid://bsrbn4ccejynp" path="res://characters/crocky/assets/eye1.png" id="2_81ufe"]
 
 [node name="NeedleThrower" type="Node2D" unique_id=117786991]
 script = ExtResource("1_qap4a")
 
 [node name="ReloadTimer" type="Timer" parent="." unique_id=232518559]
 unique_name_in_owner = true
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1765695248]
-position = Vector2(4.7683716e-07, 0)
-texture = ExtResource("2_81ufe")
 
 [node name="Handle" type="Marker2D" parent="." unique_id=838358808]
 unique_name_in_owner = true

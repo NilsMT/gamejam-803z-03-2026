@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://kjkjm5rmd706" path="res://characters/angy/angy.gd" id="1_sh7i8"]
 [ext_resource type="Texture2D" uid="uid://cwhf3iokponcu" path="res://characters/angy/placeholder_angy.png" id="2_glqm8"]
+[ext_resource type="Texture2D" uid="uid://dcnkxsoticoge" path="res://characters/angy/angy.png" id="2_glqm8"]
 
 [sub_resource type="Animation" id="Animation_grla5"]
 resource_name = "death"
@@ -27,4 +28,5 @@ unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_grla5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=643885955]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=604940297]
 texture = ExtResource("2_glqm8")
