@@ -8,3 +8,5 @@ func play_walk():
 	
 func play_hurt():
 	%AnimationPlayer.play("hurt")
+	await %AnimationPlayer.animation_finished
+	%AnimationPlayer.play("RESET")

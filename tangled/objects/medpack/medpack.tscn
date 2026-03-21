@@ -2,15 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://chi64kcl4mmyd" path="res://objects/medpack/medpack.png" id="1_6aioo"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6aioo"]
-radius = 101.0198
-
 [node name="Medpack" type="Node2D" unique_id=2080213028]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=492645110]
 position = Vector2(3, 3.000001)
 scale = Vector2(0.0971363, 0.09713629)
 texture = ExtResource("1_6aioo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2117987865]
-shape = SubResource("CircleShape2D_6aioo")

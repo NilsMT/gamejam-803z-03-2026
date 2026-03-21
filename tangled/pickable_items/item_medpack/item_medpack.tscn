@@ -16,3 +16,4 @@ script = ExtResource("1_haedo")
 shape = SubResource("CircleShape2D_6aioo")
 
 [node name="Medpack" parent="." unique_id=660662577 instance=ExtResource("2_ih7fu")]
+scale = Vector2(0.75, 0.75)

@@ -114,6 +114,42 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(0.030255621, 0.030255623)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Stars3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Stars2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Stars:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_sweqy"]
 resource_name = "confused"
@@ -227,6 +263,42 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(0.030255621, 0.030255623), Vector2(0.05, 0.05), Vector2(0.030255621, 0.030255623), Vector2(0.015, 0.015)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Stars3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Stars2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Stars:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2hs0m"]
 _data = {
@@ -261,6 +333,7 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_onrkg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1811681746]
+unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_2hs0m")
 
 [node name="Crocky" parent="." unique_id=269349362 instance=ExtResource("1_4flbx")]
@@ -301,16 +374,19 @@ unique_name_in_owner = true
 one_shot = true
 
 [node name="Stars3" type="Sprite2D" parent="." unique_id=1217071488]
+visible = false
 position = Vector2(75.00002, -118)
 scale = Vector2(0.02842147, 0.02842147)
 texture = ExtResource("3_i3pqv")
 
 [node name="Stars2" type="Sprite2D" parent="." unique_id=1201914817]
+visible = false
 position = Vector2(-15.000002, -140)
 scale = Vector2(0.018069113, 0.01806911)
 texture = ExtResource("3_i3pqv")
 
 [node name="Stars" type="Sprite2D" parent="." unique_id=472196907]
+visible = false
 position = Vector2(-79.81256, -111.32656)
 scale = Vector2(0.030255621, 0.030255623)
 texture = ExtResource("3_i3pqv")

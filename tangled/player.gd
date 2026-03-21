@@ -57,6 +57,10 @@ func _physics_process(delta: float) -> void:
 	#inverter effect
 	if EFFECTS.INVERT_CONTROLS in active_effects:
 		direction *= -1
+		if %AnimationPlayer.current_animation != "confused":
+			%AnimationPlayer.play("confused")
+	elif %AnimationPlayer.current_animation == "confused":
+		%AnimationPlayer.play("RESET")
 	
 	velocity = direction * SPEED
 	move_and_slide()
