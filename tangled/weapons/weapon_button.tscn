@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://by3icmu8xud3m"]
+
+[ext_resource type="Script" uid="uid://omtlbl0eqk88" path="res://weapons/weapon_button.gd" id="1_tpngd"]
+[ext_resource type="PackedScene" uid="uid://dwqttia3fu5bi" path="res://objects/button/button.tscn" id="2_r7c2d"]
+
+[node name="WeaponButton" type="Node2D" unique_id=117786991]
+script = ExtResource("1_tpngd")
+
+[node name="Handle" type="Marker2D" parent="." unique_id=838358808]
+unique_name_in_owner = true
+position = Vector2(150, 0)
+rotation = -1.5707964
+
+[node name="Button2" parent="Handle" unique_id=1477990494 instance=ExtResource("2_r7c2d")]
+position = Vector2(9.536743e-07, -15)
+
+[node name="Button3" parent="Handle" unique_id=743503053 instance=ExtResource("2_r7c2d")]
+position = Vector2(-15, -6.556708e-07)
+
+[node name="Button" parent="Handle" unique_id=992700302 instance=ExtResource("2_r7c2d")]
+position = Vector2(-7.1525574e-07, 15)
+
+[node name="Button4" parent="Handle" unique_id=1518615234 instance=ExtResource("2_r7c2d")]
+position = Vector2(14.999999, 0)
+
+[node name="Timer" type="Timer" parent="." unique_id=586007182]
+unique_name_in_owner = true
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

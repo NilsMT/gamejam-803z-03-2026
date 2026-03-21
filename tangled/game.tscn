@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://b5fc5oojm74yd" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://dd3rw48ne5l2" path="res://player.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://dlaqa2kkclusi" path="res://radar/radar.tscn" id="3_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://yierowqplfyv" path="res://pickable_items/item_weapon_needle/item_weapon_needle.tscn" id="4_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bvr1dlrnahj7e" path="res://ui/game_over/game_over.tscn" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://b6qcoa5qwdw54" path="res://pickable_items/item_weapon_button/item_weapon_button.tscn" id="5_ryrav"]
+[ext_resource type="PackedScene" uid="uid://bsyx42yldjn2v" path="res://pickable_items/item_medpack/item_medpack.tscn" id="7_eow3j"]
 
 [sub_resource type="Curve2D" id="Curve2D_feb5d"]
 _data = {
@@ -59,6 +62,15 @@ autostart = true
 [node name="TimerProp" type="Timer" parent="." unique_id=679867077]
 wait_time = 20.0
 autostart = true
+
+[node name="WeaponButton" parent="." unique_id=1171577414 instance=ExtResource("5_ryrav")]
+position = Vector2(594, 583)
+
+[node name="WeaponNeedle" parent="." unique_id=351761362 instance=ExtResource("4_7jktm")]
+position = Vector2(364, 566)
+
+[node name="Medpack" parent="." unique_id=660662577 instance=ExtResource("7_eow3j")]
+position = Vector2(718, 422)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="TimerObject" to="." method="_on_timer_object_timeout"]

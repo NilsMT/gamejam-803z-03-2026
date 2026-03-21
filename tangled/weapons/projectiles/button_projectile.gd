@@ -1,8 +1,8 @@
 extends Area2D
 
-const DAMAGE = 25.0
-const MAX_PENETRATION = 5
-const SPEED = 500.0
+const DAMAGE = 2.5
+const MAX_PENETRATION = 1
+const SPEED = 750.0
 
 var penetration_left = MAX_PENETRATION
 

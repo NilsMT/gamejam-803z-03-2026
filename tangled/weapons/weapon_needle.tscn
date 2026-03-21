@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ceewkmq0wbfcc"]
 
-[ext_resource type="Script" uid="uid://b141do77i6gaa" path="res://weapons/needle_thrower.gd" id="1_qap4a"]
+[ext_resource type="Script" uid="uid://b141do77i6gaa" path="res://weapons/weapon_needle.gd" id="1_qap4a"]
 
-[node name="NeedleThrower" type="Node2D" unique_id=117786991]
+[node name="WeaponNeedle" type="Node2D" unique_id=117786991]
 script = ExtResource("1_qap4a")
 
 [node name="ReloadTimer" type="Timer" parent="." unique_id=232518559]

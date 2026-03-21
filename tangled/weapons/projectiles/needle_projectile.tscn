@@ -9,6 +9,7 @@ height = 316.85602
 
 [node name="NeedleProjectile" type="Area2D" unique_id=498769446]
 rotation = 1.5724515
+scale = Vector2(0.5, 0.5)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_nqs7c")

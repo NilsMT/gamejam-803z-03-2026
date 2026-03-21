@@ -29,7 +29,7 @@ func use():
 
 		# Spawn a functional projectile at the handle position
 		var projectile = NEEDLE_PROJECTILE.instantiate()
-		get_parent().add_child(projectile)
+		get_tree().root.add_child(projectile)
 		projectile.global_position = handle.global_position
 		projectile.rotation = handle.global_rotation  # Align with handle
 
