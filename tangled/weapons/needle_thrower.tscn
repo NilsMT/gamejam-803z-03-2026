@@ -13,4 +13,9 @@ unique_name_in_owner = true
 position = Vector2(4.7683716e-07, 0)
 texture = ExtResource("2_81ufe")
 
+[node name="Handle" type="Marker2D" parent="." unique_id=838358808]
+unique_name_in_owner = true
+position = Vector2(150, 0)
+rotation = -1.5707964
+
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
