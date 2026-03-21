@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dthenf60kt0jm"]
 
 [ext_resource type="PackedScene" uid="uid://vf23up0ywxky" path="res://characters/angy/angy.tscn" id="1_dy6sc"]
-[ext_resource type="Script" uid="uid://dwb8t1hxih55n" path="res://mob.gd" id="1_nokgg"]
+[ext_resource type="Script" uid="uid://dwb8t1hxih55n" path="res://mobs/basic/basic_mob.gd" id="1_nokgg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nokgg"]
 radius = 128.0
