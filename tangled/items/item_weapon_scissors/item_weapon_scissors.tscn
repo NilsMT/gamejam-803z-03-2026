@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://8tojubd4xcf7"]
+
+[ext_resource type="Script" uid="uid://dnawvtjcu1fc6" path="res://items/item_weapon_scissors/item_weapon_scissors.gd" id="1_pwcuj"]
+[ext_resource type="PackedScene" uid="uid://x3sf3onrfkab" path="res://objects/object_scissors/object_scissors.tscn" id="2_pwcuj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7n0p3"]
+radius = 60.0
+
+[node name="ItemWeaponScissors" type="CharacterBody2D" unique_id=485299135]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_pwcuj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=546528697]
+shape = SubResource("CircleShape2D_7n0p3")
+
+[node name="ObjectScissors" parent="." unique_id=1097997817 instance=ExtResource("2_pwcuj")]
+position = Vector2(-33, 43)
+rotation = -2.5079935
+scale = Vector2(0.33357698, 0.33357698)

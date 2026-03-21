@@ -7,15 +7,13 @@ const NEEDLE_PROJECTILE = preload("res://weapons/projectiles/needle_projectile.t
 
 var needles = []  # Array to hold visual needles
 
-@onready var handle = $Handle  # Reference to the Marker2D node
-
 func _ready():
 	# Fill the magazine with visual needles
 	for i in range(MAX_MAG_CAPACITY):
 		var needle = NEEDLE_MODEL.instantiate()
 		add_child(needle)
-		needle.position = handle.position  # Position at handle
-		needle.rotation = handle.rotation + deg_to_rad(i * 10)
+		needle.position = %Handle.position  # Position at handle
+		needle.rotation = %Handle.rotation + deg_to_rad(i * 10)
 		needles.append(needle)
 	
 	mag_capacity = MAX_MAG_CAPACITY
@@ -30,8 +28,8 @@ func use():
 		# Spawn a functional projectile at the handle position
 		var projectile = NEEDLE_PROJECTILE.instantiate()
 		get_tree().root.add_child(projectile)
-		projectile.global_position = handle.global_position
-		projectile.rotation = handle.global_rotation  # Align with handle
+		projectile.global_position = %Handle.global_position
+		projectile.rotation = %Handle.global_rotation  # Align with handle
 
 		if mag_capacity == 0:
 			%ReloadTimer.start()
@@ -40,7 +38,7 @@ func _on_reload_timer_timeout():
 	if mag_capacity < MAX_MAG_CAPACITY:
 		# Show the next hidden needle
 		var next_needle = needles[mag_capacity]
-		next_needle.position = handle.position  # Position at handle
+		next_needle.position = %Handle.position  # Position at handle
 		next_needle.visible = true
 		mag_capacity += 1
 

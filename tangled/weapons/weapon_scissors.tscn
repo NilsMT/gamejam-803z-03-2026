@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://dl6fumtakigcc"]
+
+[ext_resource type="Script" uid="uid://bs7l71t188ogy" path="res://weapons/weapon_scissors.gd" id="1_og30n"]
+[ext_resource type="PackedScene" uid="uid://x3sf3onrfkab" path="res://objects/object_scissors/object_scissors.tscn" id="2_og30n"]
+
+[sub_resource type="Animation" id="Animation_q6iin"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Handle/AOE:collision_layer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Handle/AOE:collision_mask")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Handle/AOE:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bokmw"]
+resource_name = "attack"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Handle/AOE:collision_layer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.02, 0.79, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 4, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Handle/AOE:collision_mask")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.02, 0.79, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 2, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Handle/AOE:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.76666665, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2.4041265e-06, -55), Vector2(0, 100), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_moilu"]
+_data = {
+&"RESET": SubResource("Animation_q6iin"),
+&"attack": SubResource("Animation_bokmw")
+}
+
+[node name="WeaponScissors" type="Node2D" unique_id=117786991]
+script = ExtResource("1_og30n")
+
+[node name="Handle" type="Marker2D" parent="." unique_id=838358808]
+unique_name_in_owner = true
+position = Vector2(150, 0)
+rotation = -1.5707964
+
+[node name="AOE" type="Area2D" parent="Handle" unique_id=824512810]
+rotation = 1.5707964
+collision_layer = 0
+collision_mask = 0
+
+[node name="ObjectScissors" parent="Handle/AOE" unique_id=1097997817 instance=ExtResource("2_og30n")]
+rotation = -1.5713056
+
+[node name="DamageBox" type="CollisionPolygon2D" parent="Handle/AOE" unique_id=951299344]
+position = Vector2(231, -7.4140644)
+scale = Vector2(9.671052, 1.328125)
+polygon = PackedVector2Array(-9.5, -9.5, 5.7904778, -2.6999998, 10.960545, 5.582353, 5.893879, 13.111765, -4.653061, 13.111765, -9.512926, 13.111765)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=784747714]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_moilu")
+speed_scale = 2.0
+
+[connection signal="body_entered" from="Handle/AOE" to="." method="_on_aoe_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

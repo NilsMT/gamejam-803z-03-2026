@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c523vuq3p4wwj"]
+
+[ext_resource type="Script" uid="uid://drbqw6n2frbnr" path="res://items/item_weapon_ruler/item_weapon_ruler.gd" id="1_n13ow"]
+[ext_resource type="PackedScene" uid="uid://ct48munyglat4" path="res://objects/object_ruler/object_ruler.tscn" id="2_1t1sj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7n0p3"]
+radius = 60.0
+
+[node name="ItemWeaponRuler" type="CharacterBody2D" unique_id=485299135]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_n13ow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=546528697]
+shape = SubResource("CircleShape2D_7n0p3")
+
+[node name="ObjectRuler2" parent="." unique_id=529879373 instance=ExtResource("2_1t1sj")]
+position = Vector2(-1.0000001, -0.9999995)
+rotation = -2.6820536
+scale = Vector2(0.18604034, 0.18604034)
+
+[node name="ObjectRuler" parent="." unique_id=1746439490 instance=ExtResource("2_1t1sj")]
+position = Vector2(-1.9999998, -1.0000001)
+scale = Vector2(0.18604031, 0.18604031)
