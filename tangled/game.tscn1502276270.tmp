@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b5fc5oojm74yd" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://dd3rw48ne5l2" path="res://player.tscn" id="2_e2o6t"]
-[ext_resource type="Texture2D" uid="uid://cfespuep1c676" path="res://radar/placeholder.png" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bvr1dlrnahj7e" path="res://ui/game_over/game_over.tscn" id="4_fc0e3"]
 
 [sub_resource type="Curve2D" id="Curve2D_feb5d"]
@@ -37,28 +36,17 @@ unique_name_in_owner = true
 position = Vector2(960, -540)
 rotation = 1.5707964
 
-[node name="Radar" type="Marker2D" parent="Player" unique_id=1367704835]
-unique_name_in_owner = true
-position = Vector2(1.5258789e-05, -112.00001)
-scale = Vector2(0.25585938, 0.26953125)
-
-[node name="Arrow" type="Sprite2D" parent="Player/Radar" unique_id=1708863280]
-position = Vector2(633.1604, 0)
-texture = ExtResource("3_fc0e3")
-
 [node name="GameOver" parent="." unique_id=653810407 instance=ExtResource("4_fc0e3")]
 unique_name_in_owner = true
 visible = false
 
 [node name="TimerObject" type="Timer" parent="." unique_id=1339317992]
-wait_time = 5.0
 autostart = true
 
 [node name="TimerMob" type="Timer" parent="." unique_id=2043572244]
 autostart = true
 
 [node name="TimerProp" type="Timer" parent="." unique_id=679867077]
-wait_time = 30.0
 autostart = true
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
