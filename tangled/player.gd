@@ -15,13 +15,13 @@ var active_effects := {}
 
 const WEAPON_LIST = [
 	preload("res://weapons/weapon_needle.tscn"),
-	#preload("res://weapons/scissors.tscn"),
 	preload("res://weapons/weapon_button.tscn"),
-	#preload("res://weapons/ruler.tscn"),
+	preload("res://weapons/weapon_ruler.tscn"),
+	preload("res://weapons/weapon_scissors.tscn"),
 ]
 
 var weapon = null
-var choice = 1
+var choice = 2
 
 func switch_weapon(c):
 	if c < 0 or c >= WEAPON_LIST.size():
@@ -71,8 +71,13 @@ func _physics_process(delta: float) -> void:
 
 	# Rotate weapon toward mouse
 	if weapon:
-		var mouse_pos = get_global_mouse_position()
-		weapon.look_at(mouse_pos)
+		if weapon.get("FOLLOW_MOUSE") != null and not weapon.FOLLOW_MOUSE:
+			# Spin the weapon (frame-rate independent)
+			weapon.rotation += deg_to_rad(weapon.SPIN_SPEED * delta)
+		else:
+			# Follow mouse
+			var mouse_pos = get_global_mouse_position()
+			weapon.look_at(mouse_pos)
 
 	# Play animations
 	if velocity.length() > 0.0:

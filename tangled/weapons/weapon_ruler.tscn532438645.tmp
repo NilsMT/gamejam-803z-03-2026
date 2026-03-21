@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://buefhjm2wpxdj"]
+
+[ext_resource type="Script" uid="uid://bleph6w16sw16" path="res://weapons/weapon_ruler.gd" id="1_q6iin"]
+[ext_resource type="PackedScene" uid="uid://ct48munyglat4" path="res://objects/object_ruler/object_ruler.tscn" id="2_q6iin"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6iin"]
+size = Vector2(175, 47)
+
+[sub_resource type="Animation" id="Animation_q6iin"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ExtendedAOE:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.1415925]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ExtendedAOE:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(319, -3)]
+}
+
+[sub_resource type="Animation" id="Animation_8d71r"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ExtendedAOE:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [3.1415925, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ExtendedAOE:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(319, -3), Vector2(319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_moilu"]
+_data = {
+&"RESET": SubResource("Animation_q6iin"),
+&"attack": SubResource("Animation_8d71r")
+}
+
+[node name="WeaponRuler" type="Node2D" unique_id=117786991]
+script = ExtResource("1_q6iin")
+
+[node name="Handle" type="Marker2D" parent="." unique_id=838358808]
+unique_name_in_owner = true
+position = Vector2(150, 0)
+rotation = -1.5707964
+
+[node name="ExtendedAOE" type="Area2D" parent="." unique_id=28861652]
+position = Vector2(319, -3)
+rotation = 3.1415925
+collision_layer = 4
+collision_mask = 2
+
+[node name="ObjectRuler" parent="ExtendedAOE" unique_id=1266299512 instance=ExtResource("2_q6iin")]
+rotation = -1.5706558
+scale = Vector2(0.4798513, 0.5463123)
+
+[node name="DamageBox" type="CollisionShape2D" parent="ExtendedAOE" unique_id=1037932277]
+position = Vector2(84.5, -1.5)
+shape = SubResource("RectangleShape2D_q6iin")
+debug_color = Color(1, 0, 0, 0.33333334)
+
+[node name="AOE" type="Area2D" parent="." unique_id=824512810]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 2
+
+[node name="ObjectRuler" parent="AOE" unique_id=529879373 instance=ExtResource("2_q6iin")]
+position = Vector2(150, -1.1920929e-07)
+rotation = -1.5706558
+scale = Vector2(0.4798513, 0.5463123)
+
+[node name="DamageBox" type="CollisionShape2D" parent="AOE" unique_id=638623624]
+position = Vector2(234.5, -1.5)
+shape = SubResource("RectangleShape2D_q6iin")
+debug_color = Color(1, 0, 0, 0.33333334)
+
+[node name="DamageTimer" type="Timer" parent="." unique_id=712405037]
+unique_name_in_owner = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=784747714]
+libraries/ = SubResource("AnimationLibrary_moilu")
+
+[connection signal="body_entered" from="AOE" to="." method="_on_aoe_body_entered"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]

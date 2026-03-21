@@ -15,7 +15,9 @@ var PROPS_LIST = [
 var OBJECTS_LIST = [
 	"res://items/item_weapon_button/item_weapon_button.tscn",22.5,
 	"res://items/item_weapon_needle/item_weapon_needle.tscn",22.5,
+	"res://items/item_weapon_ruler/item_weapon_ruler.tscn",22.5,
 	"res://items/item_medpack/item_medpack.tscn", 10.0,
+	#scissors
 ]
 
 var MOBS_LIST = [
