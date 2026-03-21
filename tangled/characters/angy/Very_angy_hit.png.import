@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nupejuljo4du"
-path="res://.godot/imported/Very_angy.png-99aac56950ee583ac8c4f774fae548a2.ctex"
+uid="uid://cgjdm1rfvwulu"
+path="res://.godot/imported/Very_angy_hit.png-90d172f69293efed4b25d8934d94a587.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/angy/Very_angy.png"
-dest_files=["res://.godot/imported/Very_angy.png-99aac56950ee583ac8c4f774fae548a2.ctex"]
+source_file="res://characters/angy/Very_angy_hit.png"
+dest_files=["res://.godot/imported/Very_angy_hit.png-90d172f69293efed4b25d8934d94a587.ctex"]
 
 [params]
 
