@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnkwyas5uq58"
-path="res://.godot/imported/Medikit.svg-f5668d7953b3304eec61ed183c9757f0.ctex"
+uid="uid://4bjgh1wmepwn"
+path="res://.godot/imported/Medikit.png-cc60ac141630af0f1fcf588d495fc92e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/medpack/Medikit.svg"
-dest_files=["res://.godot/imported/Medikit.svg-f5668d7953b3304eec61ed183c9757f0.ctex"]
+source_file="res://objects/medpack/Medikit.png"
+dest_files=["res://.godot/imported/Medikit.png-cc60ac141630af0f1fcf588d495fc92e.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
