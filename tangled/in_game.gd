@@ -3,6 +3,9 @@ extends Node2D
 var spawned_objects = []
 var spawned_mobs = []
 var nearest_object = null
+var current_score = 0
+
+signal add_score(score)
 
 # Spawn chance lists
 var PROPS_LIST = [
@@ -106,3 +109,7 @@ func _on_timer_mob_timeout() -> void:
 
 func _on_timer_prop_timeout() -> void:
 	spawn_prop()
+
+
+func _on_add_score(score: Variant) -> void:
+	current_score += score

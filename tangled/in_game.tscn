@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://cm5exck25lkl1"]
 
-[ext_resource type="Script" uid="uid://b5fc5oojm74yd" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://b5fc5oojm74yd" path="res://in_game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://dd3rw48ne5l2" path="res://player.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://dlaqa2kkclusi" path="res://radar/radar.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bvr1dlrnahj7e" path="res://ui/game_over/game_over.tscn" id="4_fc0e3"]
-[ext_resource type="PackedScene" uid="uid://bsyx42yldjn2v" path="res://items/item_medpack/item_medpack.tscn" id="5_7jktm"]
 
 [sub_resource type="Curve2D" id="Curve2D_feb5d"]
 _data = {
@@ -12,7 +11,7 @@ _data = {
 }
 point_count = 5
 
-[node name="Game" type="Node2D" unique_id=1419428098]
+[node name="InGame" type="Node2D" unique_id=1419428098]
 y_sort_enabled = true
 script = ExtResource("1_80nbo")
 
@@ -62,9 +61,7 @@ autostart = true
 wait_time = 20.0
 autostart = true
 
-[node name="ItemMedpack" parent="." unique_id=106635700 instance=ExtResource("5_7jktm")]
-position = Vector2(713, 562)
-
+[connection signal="add_score" from="." to="." method="_on_add_score"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="TimerObject" to="." method="_on_timer_object_timeout"]
 [connection signal="timeout" from="TimerMob" to="." method="_on_timer_mob_timeout"]

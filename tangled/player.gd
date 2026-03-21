@@ -23,8 +23,6 @@ const WEAPON_LIST = [
 var weapon = null
 var choice = 1
 
-@onready var player = get_node("/root/Game/Player")
-
 func switch_weapon(c):
 	if c < 0 or c >= WEAPON_LIST.size():
 		return
@@ -113,9 +111,6 @@ func _handle_bodies(delta: float) -> void:
 	var overlapping_bodies = %HurtBox.get_overlapping_bodies()
 	
 	for body in overlapping_bodies:
-		
-		print(body.BODY_TYPE)
-		
 		match body.BODY_TYPE:
 			0:
 				health -= body.DAMAGE * delta
@@ -124,7 +119,6 @@ func _handle_bodies(delta: float) -> void:
 					var effect_id = body.EFFECT_ID
 					_apply_effect(effect_id, body.EFFECT_DURATION)
 			1:
-				print("HEAL ME PLS")
 				if (health + body.HEAL) > MAX_HEALTH:
 					health = MAX_HEALTH
 				else:

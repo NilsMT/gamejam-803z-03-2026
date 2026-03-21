@@ -5,8 +5,10 @@ const BODY_TYPE = 0
 var health = 25
 const DAMAGE = 5
 const SPEED = 150.0
+const SCORE = 5
 
-@onready var player = get_node("/root/Game/Player")
+@onready var player = get_node("/root/InGame/Player")
+@onready var game =  get_node("/root/InGame")
 
 func _ready():
 	%Angy.play_walk()
@@ -24,3 +26,4 @@ func take_damage(damage):
 	if health <= 0:
 		queue_free()
 		%Angy.play_death()
+		game.emit_signal("add_score", SCORE)

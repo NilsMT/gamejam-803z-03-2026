@@ -5,10 +5,13 @@ const BODY_TYPE = 0
 var health = 50
 const DAMAGE = 0
 const SPEED = 150.0
+const SCORE = 10
+
 var EFFECT_ID = 0 # Player.EFFECTS.INVERT_CONTROLS
 var EFFECT_DURATION = 10.0
 
-@onready var player = get_node("/root/Game/Player")
+@onready var player = get_node("/root/InGame/Player")
+@onready var game =  get_node("/root/InGame")
 
 func _ready():
 	%VeryAngy.play_walk()
@@ -24,5 +27,6 @@ func take_damage(damage):
 	%VeryAngy.play_hurt()
 	
 	if health <= 0:
-		%VeryAngy.play_death()
 		queue_free()
+		%VeryAngy.play_death()
+		game.emit_signal("add_score", SCORE)
