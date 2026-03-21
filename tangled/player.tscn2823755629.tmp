@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://7sdxi43l1bxw" path="res://characters/crocky/crocky.tscn" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://y6rtvvgvxl32" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://b2rasdyjvrett" path="res://objects/needle/needle.tscn" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 79.0
@@ -62,5 +63,8 @@ position = Vector2(0, 112)
 [node name="ReloadTimer" type="Timer" parent="." unique_id=1389635466]
 unique_name_in_owner = true
 one_shot = true
+
+[node name="Needle" parent="ReloadTimer" unique_id=1575203546 instance=ExtResource("3_i3pqv")]
+position = Vector2(0, 112)
 
 [connection signal="ready" from="Crocky" to="Crocky" method="_on_ready"]

@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://dwqttia3fu5bi"]
 
+[ext_resource type="Texture2D" uid="uid://fdvevg57kprd" path="res://objects/button/button.png" id="1_icwve"]
+
 [node name="Button" type="Node2D" unique_id=743503053]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1897928175]
+position = Vector2(-1.0000153, 154.99998)
+scale = Vector2(0.22083926, 0.22083926)
+texture = ExtResource("1_icwve")
