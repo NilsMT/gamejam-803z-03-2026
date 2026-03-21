@@ -15,7 +15,7 @@ const WEAPON_LIST = [
 ]
 
 const WEAPON_ROTATION_OFFSET = [
-	-90.0,
+	0.0,
 ]
 
 var weapon = null
@@ -32,8 +32,7 @@ func switch_weapon(c):
 
 	weapon = WEAPON_LIST[c].instantiate()
 	add_child(weapon)
-	weapon.position = Vector2(10, 0) #offset from player
-
+	weapon.position = Vector2.ZERO
 	choice = c
 
 func use_weapon():

@@ -13,7 +13,7 @@ func fire():
 	pass  # Movement is handled in _physics_process
 
 func _physics_process(delta):
-	var direction = Vector2.RIGHT.rotated(rotation)
+	var direction = Vector2.DOWN.rotated(rotation)
 	position += direction * SPEED * delta
 
 func _on_body_entered(body):
