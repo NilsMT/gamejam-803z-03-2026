@@ -14,9 +14,9 @@ func _physics_process(delta: float) -> void:
 
 	# Flip sprite
 	if direction.x > 0:
-		%Crocky.scale.x = -1.0
+		%Crocky.scale.x = -0.25
 	elif direction.x < 0:
-		%Crocky.scale.x = 1.0
+		%Crocky.scale.x = 0.25
 	
 	if velocity.length() > 0.0:
 		%Crocky.play_walk()

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://7sdxi43l1bxw" path="res://characters/crocky/crocky.tscn" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://y6rtvvgvxl32" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://c4pcd248p1k07" path="res://weapons/weapon.tscn" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 79.0
@@ -30,7 +31,7 @@ script = ExtResource("1_onrkg")
 [node name="Crocky" parent="." unique_id=269349362 instance=ExtResource("1_4flbx")]
 unique_name_in_owner = true
 position = Vector2(-1, -0.9999695)
-scale = Vector2(0.24000353, 0.23999983)
+scale = Vector2(0.24, 0.24)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1545904621]
 
@@ -61,6 +62,8 @@ show_percentage = false
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1359007654]
 unique_name_in_owner = true
+
+[node name="Weapon" parent="." unique_id=1687932897 instance=ExtResource("3_i3pqv")]
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="ready" from="Crocky" to="Crocky" method="_on_ready"]

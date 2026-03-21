@@ -5,12 +5,12 @@ var spawned_mobs = []
 
 # .tscn spawn_chance
 var PROPS_LIST = [
-	"res://props/x/x.tscn", 0.0,
+	"res://props/pearl/pearl.tscn", 0.0,
 ]
 
 # .tscn spawn_chance
 var OBJECTS_LIST = [
-	"res://objects/x/x.tscn", 0.0,
+	"res://objects/medpack/medpack.tscn", 0.0,
 ]
 
 # .tscn spawn_chance
