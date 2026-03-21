@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://by3icmu8xud3m"]
 
 [ext_resource type="Script" uid="uid://omtlbl0eqk88" path="res://weapons/weapon_button.gd" id="1_tpngd"]
-[ext_resource type="PackedScene" uid="uid://dwqttia3fu5bi" path="res://objects/button/button.tscn" id="2_r7c2d"]
+[ext_resource type="PackedScene" uid="uid://dwqttia3fu5bi" path="res://objects/object_button/object_button.tscn" id="2_r7c2d"]
 
 [node name="WeaponButton" type="Node2D" unique_id=117786991]
 script = ExtResource("1_tpngd")

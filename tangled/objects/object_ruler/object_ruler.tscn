@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ct48munyglat4"]
 
-[ext_resource type="Texture2D" uid="uid://xdtqx13n5845" path="res://objects/ruler/ruler.png" id="1_yqd5j"]
+[ext_resource type="Texture2D" uid="uid://xdtqx13n5845" path="res://objects/object_ruler/ruler.png" id="1_yqd5j"]
 
-[node name="Ruler" type="Node2D" unique_id=529879373]
+[node name="ObjectRuler" type="Node2D" unique_id=529879373]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=714129907]
 position = Vector2(2.9999962, 155)

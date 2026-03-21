@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c64vt3jfmcpml"]
 
-[ext_resource type="Texture2D" uid="uid://chi64kcl4mmyd" path="res://objects/medpack/medpack.png" id="1_6aioo"]
+[ext_resource type="Texture2D" uid="uid://chi64kcl4mmyd" path="res://objects/object_medpack/medpack.png" id="1_6aioo"]
 
-[node name="Medpack" type="Node2D" unique_id=2080213028]
+[node name="ObjectMedpack" type="Node2D" unique_id=2080213028]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=492645110]
 position = Vector2(3, 3.000001)

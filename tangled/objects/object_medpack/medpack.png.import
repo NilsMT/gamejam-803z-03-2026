@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chi64kcl4mmyd"
-path="res://.godot/imported/medpack.png-c0fb084911da589d98e00fec9546553f.ctex"
+path="res://.godot/imported/medpack.png-3d8307388cbaaaa0c44a893725ffc58d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/medpack/medpack.png"
-dest_files=["res://.godot/imported/medpack.png-c0fb084911da589d98e00fec9546553f.ctex"]
+source_file="res://objects/object_medpack/medpack.png"
+dest_files=["res://.godot/imported/medpack.png-3d8307388cbaaaa0c44a893725ffc58d.ctex"]
 
 [params]
 

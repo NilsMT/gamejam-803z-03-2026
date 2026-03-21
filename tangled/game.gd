@@ -10,12 +10,15 @@ var PROPS_LIST = [
 ]
 
 var OBJECTS_LIST = [
-	"res://objects/medpack/medpack.tscn", 0.0,
+	"res://items/item_weapon_button/item_weapon_button.tscn",22.5,
+	"res://items/item_weapon_needle/item_weapon_needle.tscn",22.5,
+	"res://items/item_medpack/item_medpack.tscn", 10.0,
 ]
 
 var MOBS_LIST = [
 	"res://mobs/basic/basic_mob.tscn", 90.0,
-	"res://mobs/inverter/inverter_mob.tscn", 9.9,
+	"res://mobs/inverter/inverter_mob.tscn", 9.99,
+	#mii de la mort, 0.01
 ]
 
 # Define a minimum spawn distance from the camera

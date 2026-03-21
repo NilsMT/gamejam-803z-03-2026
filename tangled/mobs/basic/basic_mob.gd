@@ -22,5 +22,5 @@ func take_damage(damage):
 	%Angy.play_hurt()
 	
 	if health <= 0:
-		%Angy.play_death()
 		queue_free()
+		%Angy.play_death()

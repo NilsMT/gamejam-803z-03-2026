@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dky10771jwh2j"]
 
 [ext_resource type="Script" uid="uid://bgyu3p085aibi" path="res://weapons/projectiles/button_projectile.gd" id="1_kvnkr"]
-[ext_resource type="PackedScene" uid="uid://dwqttia3fu5bi" path="res://objects/button/button.tscn" id="2_kvnkr"]
+[ext_resource type="PackedScene" uid="uid://dwqttia3fu5bi" path="res://objects/object_button/object_button.tscn" id="2_kvnkr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kvnkr"]
 radius = 15.033296

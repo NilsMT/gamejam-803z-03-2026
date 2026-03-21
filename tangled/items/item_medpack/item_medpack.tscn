@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://bsyx42yldjn2v"]
 
-[ext_resource type="Script" uid="uid://b4efscura2o74" path="res://pickable_items/item_medpack/item_medpack.gd" id="1_haedo"]
-[ext_resource type="PackedScene" uid="uid://c64vt3jfmcpml" path="res://objects/medpack/medpack.tscn" id="2_ih7fu"]
+[ext_resource type="Script" uid="uid://b4efscura2o74" path="res://items/item_medpack/item_medpack.gd" id="1_haedo"]
+[ext_resource type="PackedScene" uid="uid://c64vt3jfmcpml" path="res://objects/object_medpack/object_medpack.tscn" id="2_ih7fu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6aioo"]
-radius = 101.0198
+radius = 60.0
 
-[node name="itemMedpack" type="CharacterBody2D" unique_id=106635700]
-scale = Vector2(0.5, 0.5)
+[node name="ItemMedpack" type="CharacterBody2D" unique_id=106635700]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_haedo")
@@ -16,4 +15,4 @@ script = ExtResource("1_haedo")
 shape = SubResource("CircleShape2D_6aioo")
 
 [node name="Medpack" parent="." unique_id=660662577 instance=ExtResource("2_ih7fu")]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.5500017, 0.5500017)

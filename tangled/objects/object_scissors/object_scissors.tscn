@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://x3sf3onrfkab"]
 
-[ext_resource type="Texture2D" uid="uid://djleya0shmgsn" path="res://objects/scissors/scissors.png" id="2_chhh0"]
+[ext_resource type="Texture2D" uid="uid://djleya0shmgsn" path="res://objects/object_scissors/scissors.png" id="2_chhh0"]
 
-[node name="Scissors" type="Node2D" unique_id=1097997817]
+[node name="ObjectScissors" type="Node2D" unique_id=1097997817]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2013808858]
 position = Vector2(-8.266874, 148.54175)

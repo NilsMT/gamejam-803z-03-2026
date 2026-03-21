@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xdtqx13n5845"
-path="res://.godot/imported/ruler.png-cbaf415eff229fda83a428832fe363c7.ctex"
+uid="uid://djleya0shmgsn"
+path="res://.godot/imported/scissors.png-94b168c06123a8465bb314fd1cf341df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/ruler/ruler.png"
-dest_files=["res://.godot/imported/ruler.png-cbaf415eff229fda83a428832fe363c7.ctex"]
+source_file="res://objects/object_scissors/scissors.png"
+dest_files=["res://.godot/imported/scissors.png-94b168c06123a8465bb314fd1cf341df.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b2rasdyjvrett"]
 
-[ext_resource type="Texture2D" uid="uid://bm17jwf5ar3i8" path="res://objects/needle/needle.png" id="1_oqtkx"]
+[ext_resource type="Texture2D" uid="uid://bm17jwf5ar3i8" path="res://objects/object_needle/needle.png" id="1_oqtkx"]
 
-[node name="Needle" type="Node2D" unique_id=1575203546]
+[node name="ObjectNeedle" type="Node2D" unique_id=1575203546]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=385963427]
 position = Vector2(3.5663366, 146.68549)

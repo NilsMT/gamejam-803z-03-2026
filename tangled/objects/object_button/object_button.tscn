@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dwqttia3fu5bi"]
 
-[ext_resource type="Texture2D" uid="uid://fdvevg57kprd" path="res://objects/button/button.png" id="1_icwve"]
+[ext_resource type="Texture2D" uid="uid://fdvevg57kprd" path="res://objects/object_button/button.png" id="1_icwve"]
 
-[node name="Button" type="Node2D" unique_id=743503053]
+[node name="ObjectButton" type="Node2D" unique_id=743503053]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1897928175]
 scale = Vector2(0.02083867, 0.02083867)

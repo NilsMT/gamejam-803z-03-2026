@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fdvevg57kprd"
-path="res://.godot/imported/button.png-748ac07d5b508ae72d9805317baf2c38.ctex"
+uid="uid://xdtqx13n5845"
+path="res://.godot/imported/ruler.png-7bfe1a844231f9298526c0e9d63f1d0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/button/button.png"
-dest_files=["res://.godot/imported/button.png-748ac07d5b508ae72d9805317baf2c38.ctex"]
+source_file="res://objects/object_ruler/ruler.png"
+dest_files=["res://.godot/imported/ruler.png-7bfe1a844231f9298526c0e9d63f1d0e.ctex"]
 
 [params]
 

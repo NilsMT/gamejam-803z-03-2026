@@ -2,7 +2,7 @@ extends Node2D
 
 var mag_capacity = 0
 const MAX_MAG_CAPACITY = 3
-const NEEDLE_MODEL = preload("res://objects/needle/needle.tscn")
+const NEEDLE_MODEL = preload("res://objects/object_needle/object_needle.tscn")
 const NEEDLE_PROJECTILE = preload("res://weapons/projectiles/needle_projectile.tscn")
 
 var needles = []  # Array to hold visual needles
