@@ -2,8 +2,6 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuxnb371evcb4"
-path="res://.godot/imported/Angy.png-10b82cbd6ce05c3618cc8fb9e2b00583.ctex"
 uid="uid://dcnkxsoticoge"
 path="res://.godot/imported/angy.png-af955dfe810ac9b55d868c95b690e476.ctex"
 metadata={
@@ -12,8 +10,6 @@ metadata={
 
 [deps]
 
-source_file="res://characters/angy/Angy.png"
-dest_files=["res://.godot/imported/Angy.png-10b82cbd6ce05c3618cc8fb9e2b00583.ctex"]
 source_file="res://characters/angy/angy.png"
 dest_files=["res://.godot/imported/angy.png-af955dfe810ac9b55d868c95b690e476.ctex"]
 
