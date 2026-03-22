@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dm7qgabd42org"]
+
+[ext_resource type="Texture2D" uid="uid://cfo1l5d4x200u" path="res://objects/object_scissors_planted/scissors_planted.png" id="1_6qklj"]
+
+[node name="ObjectScissorsPlanted" type="Node2D" unique_id=502122774]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=110752504]
+position = Vector2(13, 105)
+scale = Vector2(0.1999991, 0.1999991)
+texture = ExtResource("1_6qklj")

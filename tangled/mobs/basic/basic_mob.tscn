@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://vf23up0ywxky" path="res://characters/angy/angy.tscn" id="1_dy6sc"]
 [ext_resource type="Script" uid="uid://dwb8t1hxih55n" path="res://mobs/basic/basic_mob.gd" id="1_nokgg"]
-[ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="3_hwv0q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_knm5e"]
 radius = 56.0
@@ -13,10 +12,6 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_nokgg")
-
-[node name="ObjectShadow" parent="." unique_id=569395071 instance=ExtResource("3_hwv0q")]
-position = Vector2(14, 110)
-scale = Vector2(1.7433397, 0.4099992)
 
 [node name="Angy" parent="." unique_id=1918388177 instance=ExtResource("1_dy6sc")]
 unique_name_in_owner = true

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8tojubd4xcf7"]
 
 [ext_resource type="Script" uid="uid://dnawvtjcu1fc6" path="res://items/item_weapon_scissors/item_weapon_scissors.gd" id="1_pwcuj"]
-[ext_resource type="PackedScene" uid="uid://x3sf3onrfkab" path="res://objects/object_scissors/object_scissors.tscn" id="2_pwcuj"]
+[ext_resource type="PackedScene" uid="uid://dm7qgabd42org" path="res://objects/object_scissors_planted/object_scissors_planted.tscn" id="3_f8u0f"]
 [ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="3_nb1uy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7n0p3"]
@@ -13,13 +13,12 @@ collision_mask = 0
 script = ExtResource("1_pwcuj")
 
 [node name="ObjectShadow" parent="." unique_id=569395071 instance=ExtResource("3_nb1uy")]
-position = Vector2(3.5762787e-06, 57.999996)
-scale = Vector2(0.3299989, 0.089999184)
+position = Vector2(6.82121e-13, 56.000004)
+scale = Vector2(-0.12361898, -0.033714075)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=546528697]
 shape = SubResource("CircleShape2D_7n0p3")
 
-[node name="ObjectScissors" parent="." unique_id=1097997817 instance=ExtResource("2_pwcuj")]
-position = Vector2(-33, 43)
-rotation = -2.5079935
-scale = Vector2(0.33357698, 0.33357698)
+[node name="ObjectScissorsPlanted" parent="." unique_id=502122774 instance=ExtResource("3_f8u0f")]
+position = Vector2(-4, -44)
+scale = Vector2(0.44000024, 0.44000024)
