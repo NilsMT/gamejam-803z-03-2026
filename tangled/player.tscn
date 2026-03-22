@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://chy01qhuas1sh" path="res://textures/ui/progress_bar_front.png" id="4_sweqy"]
 [ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="6_2hs0m"]
 [ext_resource type="AudioStream" uid="uid://clp0e214wso60" path="res://sounds/crocky_stunned.mp3" id="7_1jxqw"]
+[ext_resource type="AudioStream" uid="uid://duipwdixvus57" path="res://sounds/crocky_death.mp3" id="8_dw050"]
 
 [sub_resource type="Animation" id="Animation_hqtel"]
 length = 0.001
@@ -442,5 +443,8 @@ texture = ExtResource("3_i3pqv")
 
 [node name="crocky_stunned" type="AudioStreamPlayer2D" parent="." unique_id=1559211540]
 stream = ExtResource("7_1jxqw")
+
+[node name="crocky_death" type="AudioStreamPlayer2D" parent="." unique_id=302234554]
+stream = ExtResource("8_dw050")
 
 [connection signal="ready" from="Crocky" to="Crocky" method="_on_ready"]

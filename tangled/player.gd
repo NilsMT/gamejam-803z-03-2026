@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var effect_audio = $crocky_stunned
+@onready var crocky_death = $crocky_death
 
 signal health_depleted
 
@@ -111,6 +112,7 @@ func _physics_process(delta: float) -> void:
 			health_depleted.emit()
 			is_game_ended = true
 			weapon.queue_free()
+			crocky_death.play()
 			%Crocky.play_death()
 
 
