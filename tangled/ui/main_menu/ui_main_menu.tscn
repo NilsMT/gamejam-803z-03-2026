@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dfi1hoo1u5lal"]
+
+[ext_resource type="Texture2D" uid="uid://liqhtak1jncs" path="res://ui/main_menu/background.jpg" id="1_f63xd"]
+
+[node name="UiGameMenu" type="CanvasLayer" unique_id=768309926]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=952506729]
+offset_right = 1916.0
+offset_bottom = 1095.0
+texture = ExtResource("1_f63xd")
