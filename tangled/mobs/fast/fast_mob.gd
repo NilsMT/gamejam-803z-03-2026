@@ -4,10 +4,10 @@ const BODY_TYPE = 0
 
 
 
-var HEALTH = Balance.VALUES["mobs"]["fast_mob"]["HEALTH"]
-var DAMAGE = Balance.VALUES["mobs"]["fast_mob"]["DAMAGE"]
-var SPEED = Balance.VALUES["mobs"]["fast_mob"]["SPEED"]
-var SCORE = Balance.VALUES["mobs"]["fast_mob"]["SCORE"]
+var HEALTH = 0
+var DAMAGE = 0
+var SPEED = 0
+var SCORE = 0
 
 var busy = false
 
@@ -15,6 +15,10 @@ var busy = false
 @onready var game = get_parent()
 
 func _ready():
+	HEALTH = Balance.VALUES["mobs"]["fast_mob"]["HEALTH"]
+	DAMAGE = Balance.VALUES["mobs"]["fast_mob"]["DAMAGE"]
+	SPEED = Balance.VALUES["mobs"]["fast_mob"]["SPEED"]
+	SCORE = Balance.VALUES["mobs"]["fast_mob"]["SCORE"]
 	%Angy.play_walk()
 
 func _physics_process(_delta: float) -> void:

@@ -1,7 +1,7 @@
 extends Node2D
 
-var TIME_FOR_GROWTH = Balance.VALUES["game"]["TIME_FOR_GROWTH"] 
-var MIN_SPAWN_DISTANCE = Balance.VALUES["game"]["MIN_SPAWN_DISTANCE"]
+var TIME_FOR_GROWTH = 0
+var MIN_SPAWN_DISTANCE = 0
 
 var spawned_objects = []
 var spawned_mobs = []
@@ -105,6 +105,8 @@ func update_radar():
 		%Radar.visible = false
 
 func _ready():
+	TIME_FOR_GROWTH = Balance.VALUES["game"]["TIME_FOR_GROWTH"] 
+	MIN_SPAWN_DISTANCE = Balance.VALUES["game"]["MIN_SPAWN_DISTANCE"]
 	%GameTime.start()
 
 func _process(delta):

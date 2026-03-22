@@ -4,13 +4,13 @@ const BODY_TYPE = 0
 
 
 
-var HEALTH = Balance.VALUES["mobs"]["inverter_mob"]["HEALTH"]
-var DAMAGE = Balance.VALUES["mobs"]["inverter_mob"]["DAMAGE"]
-var SPEED = Balance.VALUES["mobs"]["inverter_mob"]["SPEED"]
-var SCORE = Balance.VALUES["mobs"]["inverter_mob"]["SCORE"]
+var HEALTH = 0
+var DAMAGE = 0
+var SPEED = 0
+var SCORE = 0
 
 var EFFECT_ID = 0 # Player.EFFECTS.INVERT_CONTROLS
-var EFFECT_DURATION = Balance.VALUES["mobs"]["inverter_mob"]["EFFECT_DURATION"]
+var EFFECT_DURATION = 0
 
 var busy = false
 
@@ -18,6 +18,11 @@ var busy = false
 @onready var game = get_parent()
 
 func _ready():
+	HEALTH = Balance.VALUES["mobs"]["inverter_mob"]["HEALTH"]
+	DAMAGE = Balance.VALUES["mobs"]["inverter_mob"]["DAMAGE"]
+	SPEED = Balance.VALUES["mobs"]["inverter_mob"]["SPEED"]
+	SCORE = Balance.VALUES["mobs"]["inverter_mob"]["SCORE"]
+	EFFECT_DURATION = Balance.VALUES["mobs"]["inverter_mob"]["EFFECT_DURATION"]
 	%Angy.play_walk()
 
 func _physics_process(_delta: float) -> void:

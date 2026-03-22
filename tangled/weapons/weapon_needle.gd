@@ -9,13 +9,15 @@ const NEEDLE_PROJECTILE = preload("res://weapons/projectiles/needle_projectile.t
 
 
 
-var RELOAD_TIME = Balance.VALUES["weapons"]["needle"]["RELOAD_TIME"]
-var MAX_MAG_CAPACITY = Balance.VALUES["weapons"]["needle"]["MAX_MAG_CAPACITY"]
+var RELOAD_TIME = 0
+var MAX_MAG_CAPACITY = 0
 
 var mag_capacity = 0
 var needles = []  # Array to hold visual needles
 
 func _ready():
+	RELOAD_TIME = Balance.VALUES["weapons"]["needle"]["RELOAD_TIME"]
+	MAX_MAG_CAPACITY = Balance.VALUES["weapons"]["needle"]["MAX_MAG_CAPACITY"]
 	%ReloadTimer.wait_time = RELOAD_TIME
 	# Fill the magazine with visual needles
 	for i in range(MAX_MAG_CAPACITY):

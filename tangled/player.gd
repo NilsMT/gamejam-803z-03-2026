@@ -3,9 +3,9 @@ extends CharacterBody2D
 signal health_depleted
 signal animation_death_done
 
-var MAX_HEALTH = Balance.VALUES["player"]["MAX_HEALTH"]
-var MAX_EFFECT_DURATION = Balance.VALUES["player"]["MAX_EFFECT_DURATION"]
-var SPEED = Balance.VALUES["player"]["SPEED"]
+var MAX_HEALTH = 0
+var MAX_EFFECT_DURATION = 0
+var SPEED = 0
 
 var is_game_ended = false
 
@@ -65,6 +65,9 @@ func _input(event):
 
 
 func _ready():
+	MAX_HEALTH = Balance.VALUES["player"]["MAX_HEALTH"]
+	MAX_EFFECT_DURATION = Balance.VALUES["player"]["MAX_EFFECT_DURATION"]
+	SPEED = Balance.VALUES["player"]["SPEED"]
 	switch_weapon(choice)
 	%ProgressBar.value = health
 	%ProgressBar.max_value = MAX_HEALTH

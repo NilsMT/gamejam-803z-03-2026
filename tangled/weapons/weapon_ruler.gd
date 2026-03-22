@@ -8,13 +8,18 @@ const FOLLOW_MOUSE = false
 
 
 
-var SPIN_SPEED = Balance.VALUES["weapons"]["ruler"]["SPIN_SPEED"]
-var RATIO_MODE = Balance.VALUES["weapons"]["ruler"]["RATIO_MODE"]
-var DAMAGE = Balance.VALUES["weapons"]["ruler"]["DAMAGE"]
+var SPIN_SPEED = 0
+var RATIO_MODE = 0
+var DAMAGE = 0
 
 var SPIN_CHECK = 0.0
 
 var isExtended = false
+
+func _ready():
+	SPIN_SPEED = Balance.VALUES["weapons"]["ruler"]["SPIN_SPEED"]
+	RATIO_MODE = Balance.VALUES["weapons"]["ruler"]["RATIO_MODE"]
+	DAMAGE = Balance.VALUES["weapons"]["ruler"]["DAMAGE"]
 
 func _process(delta):
 	var rotation_this_frame = SPIN_SPEED * delta

@@ -4,10 +4,10 @@ const BODY_TYPE = 0
 
 
 
-var HEALTH = Balance.VALUES["mobs"]["matt_mob"]["HEALTH"]
-var DAMAGE = Balance.VALUES["mobs"]["matt_mob"]["DAMAGE"]
-var SPEED = Balance.VALUES["mobs"]["matt_mob"]["SPEED"]
-var SCORE = Balance.VALUES["mobs"]["matt_mob"]["SCORE"]
+var HEALTH = 0
+var DAMAGE = 0
+var SPEED = 0
+var SCORE = 0
 
 var busy = false
 var canMove = false
@@ -16,6 +16,10 @@ var canMove = false
 @onready var game = get_parent()
 
 func _ready():
+	HEALTH = Balance.VALUES["mobs"]["matt_mob"]["HEALTH"]
+	DAMAGE = Balance.VALUES["mobs"]["matt_mob"]["DAMAGE"]
+	SPEED = Balance.VALUES["mobs"]["matt_mob"]["SPEED"]
+	SCORE = Balance.VALUES["mobs"]["matt_mob"]["SCORE"]
 	%MattSpawn.play()
 	await %MattSpawn.finished
 	canMove = true

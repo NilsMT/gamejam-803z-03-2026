@@ -5,9 +5,10 @@ extends Node2D
 const BUTTON_PROJECTILE = preload("res://weapons/projectiles/button_projectile.tscn")
 
 
-var FIRE_RATE = Balance.VALUES["weapons"]["button"]["FIRE_RATE"]
+var FIRE_RATE = 0
 
 func _ready():
+	FIRE_RATE = Balance.VALUES["weapons"]["button"]["FIRE_RATE"]
 	%Timer.wait_time = FIRE_RATE
 	%Timer.start()
 

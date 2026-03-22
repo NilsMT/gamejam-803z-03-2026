@@ -4,10 +4,12 @@ extends Node2D
 
 
 
-var DAMAGE = Balance.VALUES["weapons"]["scissors"]["DAMAGE"]
-var ATTACK_SPEED = Balance.VALUES["weapons"]["scissors"]["ATTACK_SPEED"]
+var DAMAGE = 0
+var ATTACK_SPEED = 0
 
 func _ready():
+	DAMAGE = Balance.VALUES["weapons"]["scissors"]["DAMAGE"]
+	ATTACK_SPEED = Balance.VALUES["weapons"]["scissors"]["ATTACK_SPEED"]
 	%AnimationPlayer.speed_scale = ATTACK_SPEED
 
 func use():
