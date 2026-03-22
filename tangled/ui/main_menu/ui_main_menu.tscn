@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://vf23up0ywxky" path="res://characters/angy/angy.tscn" id="8_i7ndj"]
 [ext_resource type="PackedScene" uid="uid://bpcox517byfn8" path="res://characters/mii_goku/matt.tscn" id="8_p16qy"]
 [ext_resource type="PackedScene" uid="uid://x3sf3onrfkab" path="res://objects/object_scissors/object_scissors.tscn" id="10_ngjk0"]
+[ext_resource type="Texture2D" uid="uid://jxtjoqcfo0b" path="res://ui/main_menu/icon.png" id="11_i7ndj"]
 
 [node name="UiGameMenu" type="CanvasLayer" unique_id=768309926]
 script = ExtResource("1_32j0l")
@@ -60,12 +61,29 @@ texture_hover = ExtResource("4_32j0l")
 [node name="LogoShadow" type="Sprite2D" parent="." unique_id=682790069]
 modulate = Color(0, 0, 0, 0.27450982)
 position = Vector2(1607.0001, 814.00006)
-scale = Vector2(0.3199994, 0.3199994)
+scale = Vector2(0.35, 0.35)
 texture = ExtResource("7_ngjk0")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=330033034]
+modulate = Color(0, 0, 0, 0.27450982)
+offset_left = 484.0
+offset_top = 248.0
+offset_right = 2933.608
+offset_bottom = 1423.355
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("11_i7ndj")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=819060572]
+offset_left = 484.0
+offset_top = 247.00003
+offset_right = 2933.6086
+offset_bottom = 1365.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("11_i7ndj")
 
 [node name="Logo" type="Sprite2D" parent="." unique_id=1025626783]
 position = Vector2(1609, 785)
-scale = Vector2(0.3199994, 0.3199994)
+scale = Vector2(0.35, 0.35)
 texture = ExtResource("7_ngjk0")
 
 [node name="Matt" parent="." unique_id=711195047 instance=ExtResource("8_p16qy")]
