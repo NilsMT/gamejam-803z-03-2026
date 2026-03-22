@@ -115,8 +115,8 @@ func spawn_object():
 		spawned_objects.append(new_object)
 
 func _on_player_health_depleted() -> void:
-	%GameOver.visible = true
-	get_tree().paused = true
+	%UiGameOver.visible = true
+	#get_tree().paused = true
 
 func _on_timer_object_timeout() -> void:
 	spawn_object()

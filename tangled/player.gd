@@ -58,18 +58,22 @@ func _physics_process(delta: float) -> void:
 	#inverter effect
 	if EFFECTS.INVERT_CONTROLS in active_effects:
 		input_direction *= -1
-		if %AnimationPlayer.current_animation != "confused":
+		if %AnimationPlayerConfused.current_animation != "confused":
 			if not crocky_stunned.playing:
 				crocky_stunned.play()
-			%AnimationPlayer.play("confused")
-	elif EFFECTS.POISON in active_effects:
+			%AnimationPlayerConfused.play("confused")
+			
+	if EFFECTS.POISON in active_effects:
 		health -= 0.1
-		if %AnimationPlayer.current_animation != "poisoned":
+		if %AnimationPlayerPoisoned.current_animation != "poisoned":
 			if not crocky_stunned.playing:
 				crocky_stunned.play()
-			%AnimationPlayer.play("poisoned")
-	elif %AnimationPlayer.current_animation != "RESET":
-			%AnimationPlayer.play("RESET")
+			%AnimationPlayerPoisoned.play("poisoned")
+			
+	if active_effects.is_empty():
+		if %AnimationPlayerPoisoned.current_animation != "RESET" and %AnimationPlayerConfused.current_animation != "RESET":
+			%AnimationPlayerConfused.play("RESET")
+			%AnimationPlayerPoisoned.play("RESET")
 	
 	velocity = input_direction * SPEED
 	move_and_slide()
