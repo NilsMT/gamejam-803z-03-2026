@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bs7l71t188ogy" path="res://weapons/weapon_scissors.gd" id="1_og30n"]
 [ext_resource type="PackedScene" uid="uid://x3sf3onrfkab" path="res://objects/object_scissors/object_scissors.tscn" id="2_og30n"]
+[ext_resource type="AudioStream" uid="uid://cdv23njiwppqw" path="res://sounds/scissors_sound.mp3" id="3_bokmw"]
 
 [sub_resource type="Animation" id="Animation_q6iin"]
 length = 0.001
@@ -114,6 +115,11 @@ polygon = PackedVector2Array(-9.5, -9.5, 5.7904778, -2.6999998, 10.960545, 5.582
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_moilu")
 speed_scale = 2.0
+
+[node name="scissors_sound" type="AudioStreamPlayer2D" parent="." unique_id=170229419]
+stream = ExtResource("3_bokmw")
+volume_db = -10.0
+pitch_scale = 1.7
 
 [connection signal="body_entered" from="Handle/AOE" to="." method="_on_aoe_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

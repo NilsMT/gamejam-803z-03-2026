@@ -1,9 +1,12 @@
 extends Node2D
 
+@onready var scissors_sound = $scissors_sound
+
 var DAMAGE = 12.5
 
 func use():
 	if %AnimationPlayer.current_animation != "attack" or not %AnimationPlayer.is_playing():
+		scissors_sound.play()
 		%AnimationPlayer.play("attack")
 
 func _on_aoe_body_entered(body: Node2D) -> void:
