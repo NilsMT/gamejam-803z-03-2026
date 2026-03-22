@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://yierowqplfyv"]
 
 [ext_resource type="Script" uid="uid://bwb4y0raj781c" path="res://items/item_weapon_needle/item_weapon_needle.gd" id="1_cd3iv"]
-[ext_resource type="PackedScene" uid="uid://b2rasdyjvrett" path="res://objects/object_needle/object_needle.tscn" id="2_ia152"]
+[ext_resource type="PackedScene" uid="uid://dm445qhrh7flq" path="res://objects/object_needle_item/object_needle_item.tscn" id="2_ehhb2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7n0p3"]
 radius = 60.0
@@ -14,46 +14,6 @@ script = ExtResource("1_cd3iv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=546528697]
 shape = SubResource("CircleShape2D_7n0p3")
 
-[node name="Needle" parent="." unique_id=1575203546 instance=ExtResource("2_ia152")]
-position = Vector2(-4, -35)
-scale = Vector2(0.5599998, 0.27999985)
-
-[node name="Needle2" parent="." unique_id=1876846725 instance=ExtResource("2_ia152")]
-position = Vector2(2, -35.999985)
-rotation = -0.0794245
-scale = Vector2(0.5599998, 0.27999982)
-
-[node name="Needle3" parent="." unique_id=1506437182 instance=ExtResource("2_ia152")]
-position = Vector2(0, -38.000004)
-rotation = 0.092131935
-scale = Vector2(0.55999976, 0.27999976)
-
-[node name="Needle4" parent="." unique_id=1001780069 instance=ExtResource("2_ia152")]
-position = Vector2(6.000002, -48.00003)
-rotation = 0.259341
-scale = Vector2(0.55999976, 0.27999985)
-
-[node name="Needle5" parent="." unique_id=1428239945 instance=ExtResource("2_ia152")]
-position = Vector2(12, -41)
-rotation = 0.25834358
-scale = Vector2(0.5599998, 0.27999982)
-
-[node name="Needle6" parent="." unique_id=1161959174 instance=ExtResource("2_ia152")]
-position = Vector2(32.000004, -35.000004)
-rotation = 0.35147294
-scale = Vector2(0.55999976, 0.27999982)
-
-[node name="Needle7" parent="." unique_id=276427621 instance=ExtResource("2_ia152")]
-position = Vector2(-23.999996, -33.000008)
-rotation = -0.25972486
-scale = Vector2(0.5599998, 0.27999982)
-
-[node name="Needle8" parent="." unique_id=1478872735 instance=ExtResource("2_ia152")]
-position = Vector2(-13.999996, -37)
-rotation = -0.3391494
-scale = Vector2(0.55999976, 0.27999982)
-
-[node name="Needle9" parent="." unique_id=1990764215 instance=ExtResource("2_ia152")]
-position = Vector2(-37.999996, -32.999992)
-rotation = -0.57288504
-scale = Vector2(0.55999976, 0.27999976)
+[node name="ObjectNeedleItem" parent="." unique_id=743503053 instance=ExtResource("2_ehhb2")]
+position = Vector2(3.9999998, -3)
+scale = Vector2(1.65, 1.65)

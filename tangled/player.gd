@@ -11,7 +11,7 @@ enum EFFECTS {
 	INVERT_CONTROLS,
 }
 
-var active_effects := {}
+var active_effects = {}
 
 const WEAPON_LIST = [
 	preload("res://weapons/weapon_needle.tscn"),
@@ -21,7 +21,7 @@ const WEAPON_LIST = [
 ]
 
 var weapon = null
-var choice = 2
+var choice = 1
 
 func switch_weapon(c):
 	if c < 0 or c >= WEAPON_LIST.size():
@@ -50,23 +50,23 @@ func _physics_process(delta: float) -> void:
 	_update_effects(delta)
 	
 	# Movement
-	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	#inverter effect
 	if EFFECTS.INVERT_CONTROLS in active_effects:
-		direction *= -1
+		input_direction *= -1
 		if %AnimationPlayer.current_animation != "confused":
 			%AnimationPlayer.play("confused")
 	elif %AnimationPlayer.current_animation == "confused":
 		%AnimationPlayer.play("RESET")
 	
-	velocity = direction * SPEED
+	velocity = input_direction * SPEED
 	move_and_slide()
 
 	# Flip sprite
-	if direction.x > 0:
+	if input_direction.x > 0:
 		%Crocky.scale.x = -0.5
-	elif direction.x < 0:
+	elif input_direction.x < 0:
 		%Crocky.scale.x = 0.5
 
 	# Rotate weapon toward mouse
@@ -75,8 +75,16 @@ func _physics_process(delta: float) -> void:
 			# Spin the weapon (frame-rate independent)
 			weapon.rotation += deg_to_rad(weapon.SPIN_SPEED * delta)
 		else:
-			# Follow mouse
 			var mouse_pos = get_global_mouse_position()
+			var direction = (mouse_pos - weapon.global_position).normalized()
+			var angle_deg = direction.angle() * 180 / PI  # convert to degrees
+
+			# flip weapon if aiming left
+			if angle_deg > 90 or angle_deg < -90:
+				weapon.get_node("Handle").get_node("Object").scale.y = -1
+			else:
+				weapon.get_node("Handle").get_node("Object").scale.y = 1
+				 
 			weapon.look_at(mouse_pos)
 
 	# Play animations

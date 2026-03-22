@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://srd5c1531kct"]
+
+[ext_resource type="Texture2D" uid="uid://cmn4hww8eivcn" path="res://objects/object_gun/Gun.png" id="1_fpovv"]
+
+[node name="ObjectGun" type="Node2D" unique_id=743503053]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2054060045]
+rotation = 0.17126606
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_fpovv")

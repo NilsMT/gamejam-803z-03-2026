@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo4py5m0oxqeg"
-path="res://.godot/imported/Nails_logo.png-175be0a2fbc3128ed340d101487d18b9.ctex"
+uid="uid://cmn4hww8eivcn"
+path="res://.godot/imported/Gun.png-6e498683e3cdaf5a485896436a164437.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/item_weapon_needle/Nails_logo.png"
-dest_files=["res://.godot/imported/Nails_logo.png-175be0a2fbc3128ed340d101487d18b9.ctex"]
+source_file="res://objects/object_gun/Gun.png"
+dest_files=["res://.godot/imported/Gun.png-6e498683e3cdaf5a485896436a164437.ctex"]
 
 [params]
 

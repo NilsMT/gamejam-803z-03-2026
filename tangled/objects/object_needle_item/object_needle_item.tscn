@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dm445qhrh7flq"]
+
+[ext_resource type="Texture2D" uid="uid://bo4py5m0oxqeg" path="res://objects/object_needle_item/Nails_logo.png" id="1_cb24c"]
+
+[node name="ObjectNeedleItem" type="Node2D" unique_id=743503053]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1897928175]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_cb24c")

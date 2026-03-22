@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dwqttia3fu5bi" path="res://objects/object_button/object_button.tscn" id="1_1dy5b"]
 [ext_resource type="Script" uid="uid://bocc5aut63dp" path="res://items/item_weapon_button/item_weapon_button.gd" id="1_ghdyw"]
+[ext_resource type="PackedScene" uid="uid://srd5c1531kct" path="res://objects/object_gun/object_gun.tscn" id="2_81hvp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7n0p3"]
 radius = 60.0
@@ -14,126 +15,9 @@ script = ExtResource("1_ghdyw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=546528697]
 shape = SubResource("CircleShape2D_7n0p3")
 
-[node name="Button" parent="." unique_id=1809408835 instance=ExtResource("1_1dy5b")]
-position = Vector2(2, 9)
-scale = Vector2(1.56, 1.56)
+[node name="ObjectButton" parent="." unique_id=743503053 instance=ExtResource("1_1dy5b")]
+position = Vector2(37.999992, -20)
+scale = Vector2(0.8399998, 0.8399998)
 
-[node name="Button2" parent="." unique_id=743503053 instance=ExtResource("1_1dy5b")]
-position = Vector2(2, 6)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button3" parent="." unique_id=221539844 instance=ExtResource("1_1dy5b")]
-position = Vector2(2, 3)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button4" parent="." unique_id=1442615603 instance=ExtResource("1_1dy5b")]
-position = Vector2(2, 0)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button5" parent="." unique_id=1422893633 instance=ExtResource("1_1dy5b")]
-position = Vector2(2, -3)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button6" parent="." unique_id=1177013576 instance=ExtResource("1_1dy5b")]
-position = Vector2(2, -6)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button7" parent="." unique_id=2143809222 instance=ExtResource("1_1dy5b")]
-position = Vector2(2, -9)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button8" parent="." unique_id=918775998 instance=ExtResource("1_1dy5b")]
-position = Vector2(2, -12)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button9" parent="." unique_id=1202667849 instance=ExtResource("1_1dy5b")]
-position = Vector2(2, -15)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button10" parent="." unique_id=1462105298 instance=ExtResource("1_1dy5b")]
-position = Vector2(2, -18)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button11" parent="." unique_id=727033045 instance=ExtResource("1_1dy5b")]
-position = Vector2(2, -21)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button12" parent="." unique_id=1597876670 instance=ExtResource("1_1dy5b")]
-position = Vector2(2, -24)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button13" parent="." unique_id=295184893 instance=ExtResource("1_1dy5b")]
-position = Vector2(2, -27)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button14" parent="." unique_id=1190096389 instance=ExtResource("1_1dy5b")]
-position = Vector2(2, -30)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button15" parent="." unique_id=1584681676 instance=ExtResource("1_1dy5b")]
-position = Vector2(2, -33)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button20" parent="." unique_id=514796853 instance=ExtResource("1_1dy5b")]
-position = Vector2(-19, 21)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button21" parent="." unique_id=2081287317 instance=ExtResource("1_1dy5b")]
-position = Vector2(-19, 18)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button22" parent="." unique_id=1085937117 instance=ExtResource("1_1dy5b")]
-position = Vector2(-19, 15)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button23" parent="." unique_id=630732264 instance=ExtResource("1_1dy5b")]
-position = Vector2(-19, 12)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button24" parent="." unique_id=1554922442 instance=ExtResource("1_1dy5b")]
-position = Vector2(-19, 9)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button25" parent="." unique_id=1054008761 instance=ExtResource("1_1dy5b")]
-position = Vector2(-19, 6)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button26" parent="." unique_id=1762120599 instance=ExtResource("1_1dy5b")]
-position = Vector2(-19, 3)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button27" parent="." unique_id=518636125 instance=ExtResource("1_1dy5b")]
-position = Vector2(-19, 0)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button28" parent="." unique_id=2068976258 instance=ExtResource("1_1dy5b")]
-position = Vector2(-19, -3)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button29" parent="." unique_id=2078847130 instance=ExtResource("1_1dy5b")]
-position = Vector2(-19, -6)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button30" parent="." unique_id=350738605 instance=ExtResource("1_1dy5b")]
-position = Vector2(-19, -9)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button33" parent="." unique_id=267694923 instance=ExtResource("1_1dy5b")]
-position = Vector2(16, 28)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button34" parent="." unique_id=1779582386 instance=ExtResource("1_1dy5b")]
-position = Vector2(16, 25)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button35" parent="." unique_id=439319095 instance=ExtResource("1_1dy5b")]
-position = Vector2(16, 22)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button36" parent="." unique_id=1652280280 instance=ExtResource("1_1dy5b")]
-position = Vector2(16, 19)
-scale = Vector2(1.56, 1.56)
-
-[node name="Button37" parent="." unique_id=1782768181 instance=ExtResource("1_1dy5b")]
-position = Vector2(16, 16)
-scale = Vector2(1.56, 1.56)
+[node name="ObjectGun" parent="." unique_id=1552747084 instance=ExtResource("2_81hvp")]
+scale = Vector2(1.6000004, 1.6000004)
