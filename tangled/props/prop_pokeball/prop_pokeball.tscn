@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cw0spbb2f5532"]
+
+[ext_resource type="Texture2D" uid="uid://dd5b4qmkprgex" path="res://props/prop_pokeball/pokeball.png" id="1_3msrr"]
+[ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="1_emruy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_emruy"]
+radius = 18.005486
+height = 175.98547
+
+[node name="PropPokeball" type="Area2D" unique_id=714939349]
+
+[node name="ObjectShadow" parent="." unique_id=569395071 instance=ExtResource("1_emruy")]
+position = Vector2(10, 92)
+scale = Vector2(0.64999866, 0.17727134)
+
+[node name="Pokeball" type="Sprite2D" parent="." unique_id=2139422592]
+position = Vector2(0, 1)
+texture = ExtResource("1_3msrr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=213799586]
+position = Vector2(12, 96)
+rotation = -1.5765833
+shape = SubResource("CapsuleShape2D_emruy")

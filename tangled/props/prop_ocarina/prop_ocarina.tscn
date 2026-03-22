@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dk0ev8ifyv8nw"]
+
+[ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="1_7uhgt"]
+[ext_resource type="Texture2D" uid="uid://bys0qek73m1lf" path="res://props/prop_ocarina/ocarina.png" id="1_s8ujp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7uhgt"]
+radius = 18.017714
+height = 208.00583
+
+[node name="PropOcarina" type="Area2D" unique_id=714939349]
+
+[node name="ObjectShadow" parent="." unique_id=569395071 instance=ExtResource("1_7uhgt")]
+position = Vector2(16.000002, 45)
+scale = Vector2(0.7699984, 0.20999834)
+
+[node name="Ocarina" type="Sprite2D" parent="." unique_id=721694553]
+position = Vector2(25, -8)
+rotation = 0.7135383
+texture = ExtResource("1_s8ujp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1911099689]
+position = Vector2(16, 48)
+rotation = -1.5672314
+shape = SubResource("CapsuleShape2D_7uhgt")
