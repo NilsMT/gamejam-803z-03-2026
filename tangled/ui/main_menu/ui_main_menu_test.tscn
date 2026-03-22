@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://cc0vcyxqlectb"]
+
+[ext_resource type="Script" uid="uid://dp7t1lk7c76oy" path="res://ui/main_menu/ui_main_menu.gd" id="1_e8jvq"]
+[ext_resource type="Texture2D" uid="uid://cbd1wsxpc2keq" path="res://textures/wood.jpg" id="2_i8e7x"]
+[ext_resource type="Texture2D" uid="uid://bspdkp1tufo7e" path="res://textures/ui/menu_background.png" id="3_6x354"]
+[ext_resource type="Texture2D" uid="uid://b5a4hp6c8d60h" path="res://textures/logo.png" id="7_m72fq"]
+[ext_resource type="Texture2D" uid="uid://jxtjoqcfo0b" path="res://ui/main_menu/icon.png" id="8_7s2oh"]
+[ext_resource type="PackedScene" uid="uid://b2rasdyjvrett" path="res://objects/object_needle/object_needle.tscn" id="9_miv7a"]
+[ext_resource type="PackedScene" uid="uid://bpcox517byfn8" path="res://characters/mii_goku/matt.tscn" id="9_qw832"]
+[ext_resource type="PackedScene" uid="uid://vf23up0ywxky" path="res://characters/angy/angy.tscn" id="10_o4xga"]
+[ext_resource type="PackedScene" uid="uid://x3sf3onrfkab" path="res://objects/object_scissors/object_scissors.tscn" id="11_hhcdy"]
+
+[node name="UiGameMenu" type="CanvasLayer" unique_id=768309926]
+script = ExtResource("1_e8jvq")
+
+[node name="Ground" type="TextureRect" parent="." unique_id=531747611]
+offset_right = 1260.0
+offset_bottom = 1000.0
+texture = ExtResource("2_i8e7x")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=952506729]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -931.0
+offset_top = -507.0
+offset_right = 1106.0071
+offset_bottom = 654.7306
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.59308064, 0.59308064)
+texture = ExtResource("3_6x354")
+
+[node name="LogoShadow" type="Sprite2D" parent="." unique_id=682790069]
+modulate = Color(0, 0, 0, 0.27450982)
+position = Vector2(1045.07, 807.39307)
+scale = Vector2(0.22562847, 0.22562847)
+texture = ExtResource("7_m72fq")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=330033034]
+modulate = Color(0, 0, 0, 0.27450982)
+offset_left = 183.0
+offset_top = 138.99997
+offset_right = 2632.608
+offset_bottom = 1314.355
+scale = Vector2(0.3778617, 0.3778617)
+texture = ExtResource("8_7s2oh")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=819060572]
+offset_left = 183.0
+offset_top = 138.0
+offset_right = 2632.6086
+offset_bottom = 1256.0
+scale = Vector2(0.3778617, 0.3778617)
+texture = ExtResource("8_7s2oh")
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=1025626783]
+position = Vector2(1045, 791)
+scale = Vector2(0.22562847, 0.22562847)
+texture = ExtResource("7_m72fq")
+
+[node name="Matt" parent="." unique_id=711195047 instance=ExtResource("9_qw832")]
+position = Vector2(23.999996, 89)
+rotation = 0.40179884
+scale = Vector2(0.20242292, 0.20242292)
+
+[node name="Angy2" parent="." unique_id=1584495043 instance=ExtResource("10_o4xga")]
+position = Vector2(233, 937)
+scale = Vector2(0.2451144, 0.2451144)
+script = null
+
+[node name="Angy" parent="." unique_id=659300807 instance=ExtResource("10_o4xga")]
+unique_name_in_owner = true
+modulate = Color(0.67974406, 0.0035019934, 0.97104925, 1)
+position = Vector2(140, 760.00006)
+scale = Vector2(0.8046516, 0.8046516)
+script = null
+
+[node name="Angy3" parent="." unique_id=1385946587 instance=ExtResource("10_o4xga")]
+unique_name_in_owner = true
+modulate = Color(0.9999998, 0.20177674, 0.2386508, 1)
+position = Vector2(79.00001, 570.00006)
+scale = Vector2(0.4023258, 0.4023258)
+script = null
+
+[node name="Angy4" parent="." unique_id=1008443726 instance=ExtResource("10_o4xga")]
+unique_name_in_owner = true
+modulate = Color(2.0214916e-06, 0.89618814, 0.30955827, 1)
+position = Vector2(40, 948.00006)
+scale = Vector2(0.4023258, 0.4023258)
+script = null
+
+[node name="ObjectScissorsShadow" parent="." unique_id=1097997817 instance=ExtResource("11_hhcdy")]
+modulate = Color(0, 0, 0, 0.27450982)
+position = Vector2(1242, 207.00006)
+rotation = 2.0113406
+scale = Vector2(1.4440224, 1.4440224)
+
+[node name="ObjectScissors" parent="." unique_id=158071699 instance=ExtResource("11_hhcdy")]
+position = Vector2(1239, 191)
+rotation = 2.0113406
+scale = Vector2(1.4440224, 1.4440224)
+
+[node name="ObjectNeedle" parent="." unique_id=1575203546 instance=ExtResource("9_miv7a")]
+position = Vector2(907.00006, 1110)
+rotation = 2.6146486
+scale = Vector2(1.87, 1.87)
+
+[node name="ObjectNeedle2" parent="." unique_id=866061833 instance=ExtResource("9_miv7a")]
+position = Vector2(907.00006, 1110)
+rotation = 2.4819553
+scale = Vector2(1.87, 1.87)
+
+[node name="ObjectNeedle3" parent="." unique_id=1475289873 instance=ExtResource("9_miv7a")]
+position = Vector2(907.00006, 1110)
+rotation = 2.3752491
+scale = Vector2(1.87, 1.87)
