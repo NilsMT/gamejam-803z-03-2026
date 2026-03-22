@@ -16,6 +16,8 @@ func _ready():
 	%Angy.play_walk()
 
 func _physics_process(_delta: float) -> void:
+	if busy:
+		return
 	var direction = global_position.direction_to(player.global_position)
 	
 	velocity = direction * SPEED
@@ -25,7 +27,6 @@ func take_damage(damage):
 	if not busy:
 		HEALTH -= damage
 		%Angy.play_hurt()
-		
 		if HEALTH <= 0:
 			busy= true
 			%Angy.play_death()

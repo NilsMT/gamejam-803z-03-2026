@@ -16,6 +16,8 @@ func _ready():
 	%Angy.play_walk()
 
 func _physics_process(_delta: float) -> void:
+	if busy:
+		return
 	var direction = global_position.direction_to(player.global_position)
 	
 	velocity = direction * SPEED

@@ -13,6 +13,8 @@ var busy = false
 @onready var game = get_parent()
 
 func _physics_process(_delta: float) -> void:
+	if busy:
+		return
 	var direction = global_position.direction_to(player.global_position)
 	
 	velocity = direction * SPEED

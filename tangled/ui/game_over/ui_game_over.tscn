@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://c77uwiywo0efp" path="res://ui/game_over/curtain.jpg" id="1_fjgec"]
 [ext_resource type="Script" uid="uid://b5am1k4nxqmtb" path="res://ui/game_over/ui_game_over.gd" id="1_yi6kq"]
+[ext_resource type="Texture2D" uid="uid://cjyluyei74lsd" path="res://ui/game_over/Bouton_game_over.png" id="3_c8o6h"]
+[ext_resource type="Texture2D" uid="uid://bnshe0sqo7p1q" path="res://ui/game_over/Bouton_game_over_clicked.png" id="4_lcr3l"]
+[ext_resource type="Texture2D" uid="uid://6524crtrndya" path="res://ui/game_over/Bouton_game_over_hover.png" id="5_b31v0"]
 
 [sub_resource type="Animation" id="Animation_yi6kq"]
 length = 0.001
@@ -28,6 +31,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureButton:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureButton:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.15, 0.15)]
 }
 
 [sub_resource type="Animation" id="Animation_a7f5v"]
@@ -57,6 +84,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, -1097.06), Vector2(0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureButton:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.8333333),
+"transitions": PackedFloat32Array(1, 1.5157168),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureButton:scale")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.8333333, 3.4333334, 3.5666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.18, 0.18), Vector2(0.15, 0.15)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3yqh1"]
 _data = {
@@ -80,9 +131,15 @@ offset_bottom = 1095.0
 texture = ExtResource("1_fjgec")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1359088507]
-offset_left = 620.0
-offset_top = 358.5
-offset_right = 1320.0
-offset_bottom = 721.5
+visible = false
+offset_left = -2043.0
+offset_top = -260.0
+offset_right = 3381.0
+offset_bottom = 1099.0
+scale = Vector2(0.15, 0.15)
+pivot_offset = Vector2(2695.8496, 686.896)
+texture_normal = ExtResource("3_c8o6h")
+texture_pressed = ExtResource("4_lcr3l")
+texture_hover = ExtResource("5_b31v0")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
