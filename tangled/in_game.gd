@@ -14,6 +14,15 @@ signal game_ended
 
 var gameover = false
 
+
+
+
+
+
+
+
+
+
 # Spawn chance lists
 var PROPS_LIST = [
 	"res://props/prop_pearl/prop_pearl.tscn", 1.0,
@@ -81,9 +90,21 @@ func update_radar():
 func _ready():
 	%GameTime.start()
 
-func _process(_delta):
+func _process(delta):
 	nearest_object = find_nearest_object()
 	update_radar()
+	_check_konamicode(delta)
+
+
+
+
+
+
+
+
+
+
+
 
 func get_random_far_position():
 	# Generate a random angle and distance from the camera
@@ -118,6 +139,14 @@ func spawn_object():
 		add_child(new_object)
 		spawned_objects.append(new_object)
 
+
+
+
+
+
+
+
+
 func _on_player_health_depleted() -> void:
 	%UiGameOver.visible = true
 	gameover = true
@@ -148,3 +177,53 @@ func _on_game_time_timeout() -> void:
 func _on_ui_game_over_game_ended() -> void:
 	get_tree().call_group("mobs", "queue_free")
 	game_ended.emit()
+
+
+
+
+
+
+
+
+
+
+################################################################
+# Define the Konami Code sequence using your Input Map actions
+var konami_sequence = [
+	"move_up",
+	"move_up",
+	"move_down",
+	"move_down",
+	"move_left",
+	"move_right",
+	"move_left",
+    "move_right"
+]
+
+var input_buffer = []
+
+func _check_konamicode(_delta):
+	# Loop over all defined actions and check if they were just pressed
+	for action in ["move_up", "move_down", "move_left", "move_right"]:
+		if Input.is_action_just_pressed(action):
+			input_buffer.append(action)
+			# Keep buffer the same length as the sequence
+			if input_buffer.size() > konami_sequence.size():
+				input_buffer.pop_front()
+			
+			# Check if the sequence matches
+			if input_buffer == konami_sequence:
+				_on_konami_code()
+				input_buffer.clear()
+
+# Custom function called when Konami Code is entered
+func _on_konami_code():
+	var selected_scene = "res://mobs/matt/matt_mob.tscn"
+	if selected_scene:
+		var new_mob = load(selected_scene).instantiate()
+		new_mob.global_position = get_random_far_position()
+		new_mob.DAMAGE *= 1 + elapsed_seconds/TIME_FOR_GROWTH
+		new_mob.HEALTH *= 1 + elapsed_seconds/TIME_FOR_GROWTH
+		add_child(new_mob)
+		spawned_mobs.append(new_mob)
+		new_mob.add_to_group("mobs")

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bpcox517byfn8"]
+
+[ext_resource type="Texture2D" uid="uid://drl30ihk2g1qm" path="res://characters/mii_goku/Matt_mii.png" id="1_mdtsc"]
+
+[node name="Matt" type="Node2D" unique_id=711195047]
+
+[node name="MattMii" type="Sprite2D" parent="." unique_id=915023249]
+position = Vector2(-3, -2)
+texture = ExtResource("1_mdtsc")

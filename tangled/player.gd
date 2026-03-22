@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var crocky_stunned = $crocky_stunned
+@onready var effect_audio = $crocky_stunned
 
 signal health_depleted
 
@@ -9,7 +9,7 @@ var health = MAX_HEALTH
 const MAX_EFFECT_DURATION = 5.0
 const SPEED = 600.0
 
-var dead = false
+var is_game_ended = false
 
 enum EFFECTS {
 	INVERT_CONTROLS,
@@ -17,6 +17,12 @@ enum EFFECTS {
 }
 
 var active_effects = {}
+
+
+
+
+
+
 
 const WEAPON_LIST = [
 	preload("res://weapons/weapon_needle.tscn"),
@@ -44,40 +50,39 @@ func use_weapon():
 	if weapon:
 		weapon.use()
 
+func _input(event):
+	#use the weapon
+	if event.is_action_pressed("attack"):
+		use_weapon()
+
+
+
+
+
+
+
+
+
+
+
 func _ready():
 	switch_weapon(choice)
 	%ProgressBar.value = health
 	%ProgressBar.max_value = MAX_HEALTH
 
 func _physics_process(delta: float) -> void:
-	if dead == false:
+	if is_game_ended == false:
 		#effect management
 		_update_effects(delta)
 		
 		# Movement
 		var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		
-		if dead:
+		if is_game_ended:
 			input_direction = Vector2.ZERO
 		
-		#inverter effect
-		if EFFECTS.INVERT_CONTROLS in active_effects:
-			input_direction *= -1
-			if %AnimationPlayerConfused.current_animation != "confused":
-				if not crocky_stunned.playing:
-					crocky_stunned.play()
-				%AnimationPlayerConfused.play("confused")
-		else:
-			%AnimationPlayerConfused.play("RESET")
-				
-		if EFFECTS.POISON in active_effects:
-			health -= 0.1
-			if %AnimationPlayerPoisoned.current_animation != "poisoned":
-				if not crocky_stunned.playing:
-					crocky_stunned.play()
-				%AnimationPlayerPoisoned.play("poisoned")
-		else:
-			%AnimationPlayerPoisoned.play("RESET")
+		#Effects
+		input_direction = handle_effects(delta,input_direction)
 		
 		velocity = input_direction * SPEED
 		move_and_slide()
@@ -89,7 +94,34 @@ func _physics_process(delta: float) -> void:
 			%Crocky.scale.x = 0.5
 
 		# Rotate weapon toward mouse
-		if weapon:
+		handle_weapon_rotation(delta)
+
+		# Play animations
+		if velocity.length() > 0.0:
+			%Crocky.play_walk()
+		else:
+			%Crocky.play_idle()
+
+		#handle bodies (mobs & items)
+		_handle_bodies(delta)
+		
+		%ProgressBar.value = health
+
+		if health <= 0.0:
+			health_depleted.emit()
+			is_game_ended = true
+			weapon.queue_free()
+			%Crocky.play_death()
+
+
+
+
+
+
+
+
+func handle_weapon_rotation(delta):
+	if weapon:
 			if weapon.get("FOLLOW_MOUSE") != null and not weapon.FOLLOW_MOUSE:
 				# Spin the weapon (frame-rate independent)
 				weapon.rotation += deg_to_rad(weapon.SPIN_SPEED * delta)
@@ -106,22 +138,32 @@ func _physics_process(delta: float) -> void:
 						weapon.get_node("Handle").get_node("AOE").get_node("Object").scale.y = 1
 				weapon.look_at(mouse_pos)
 
-		# Play animations
-		if velocity.length() > 0.0:
-			%Crocky.play_walk()
-		else:
-			%Crocky.play_idle()
+func handle_effects(delta,input_direction) -> Vector2:
+	if EFFECTS.INVERT_CONTROLS in active_effects:
+		input_direction *= -1
+		if %AnimationPlayerConfused.current_animation != "confused":
+			if not effect_audio.playing:
+				effect_audio.play()
+				%AnimationPlayerConfused.play("confused")
+			else:
+				%AnimationPlayerConfused.play("RESET")
 
-		#handle bodies (mobs & items)
-		_handle_bodies(delta)
+	if EFFECTS.POISON in active_effects:
+		health -= 0.1
+		if %AnimationPlayerPoisoned.current_animation != "poisoned":
+			if not effect_audio.playing:
+				effect_audio.play()
+			%AnimationPlayerPoisoned.play("poisoned")
+	else:
+		%AnimationPlayerPoisoned.play("RESET")
 		
-		%ProgressBar.value = health
+	return input_direction
 
-		if health <= 0.0:
-			health_depleted.emit()
-			dead = true
-			weapon.queue_free()
-			%Crocky.play_death()
+
+
+
+
+
 
 func _update_effects(delta: float) -> void:
 	var to_remove := []
@@ -140,6 +182,12 @@ func _apply_effect(effect_id: int, duration: float) -> void:
 		)
 	else:
 		active_effects[effect_id] = duration
+
+
+
+
+
+
 
 func _handle_bodies(delta: float) -> void:
 	var overlapping_bodies = %HurtBox.get_overlapping_bodies()
@@ -161,8 +209,3 @@ func _handle_bodies(delta: float) -> void:
 			2:
 				switch_weapon(body.WEAPON_TYPE)
 				body.queue_free()
-
-func _input(event):
-	#use the weapon
-	if event.is_action_pressed("attack"):
-		use_weapon()

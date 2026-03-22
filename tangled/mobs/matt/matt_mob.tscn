@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bjoqjk6pif83u"]
+
+[ext_resource type="Script" uid="uid://cxh3gh5geeove" path="res://mobs/matt/matt_mob.gd" id="1_xjw2l"]
+[ext_resource type="PackedScene" uid="uid://bpcox517byfn8" path="res://characters/mii_goku/matt.tscn" id="2_72qe2"]
+[ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="3_7ifke"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sp4lu"]
+radius = 263.3335
+height = 1333.4359
+
+[node name="MattMob" type="CharacterBody2D" unique_id=2054343311]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_xjw2l")
+
+[node name="ObjectShadow" parent="." unique_id=569395071 instance=ExtResource("3_7ifke")]
+position = Vector2(2, 2)
+scale = Vector2(0.7833421, 0.18422666)
+
+[node name="Matt" parent="." unique_id=711195047 instance=ExtResource("2_72qe2")]
+position = Vector2(-2, -382)
+scale = Vector2(0.76000375, 0.76000375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=688593198]
+position = Vector2(-6, -372)
+rotation = -0.004270315
+scale = Vector2(0.59999967, 0.59999967)
+shape = SubResource("CapsuleShape2D_sp4lu")

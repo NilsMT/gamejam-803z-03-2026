@@ -98,6 +98,7 @@ position = Vector2(957.99994, 640)
 scale = Vector2(2.2, 2.2)
 
 [connection signal="add_score" from="." to="." method="_on_add_score"]
+[connection signal="game_ended" from="TextureRect" to="TextureRect" method="_on_game_ended"]
 [connection signal="game_ended" from="UiGameOver" to="." method="_on_ui_game_over_game_ended"]
 [connection signal="timeout" from="TimerObject" to="." method="_on_timer_object_timeout"]
 [connection signal="timeout" from="TimerMob" to="." method="_on_timer_mob_timeout"]
