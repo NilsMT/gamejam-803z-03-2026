@@ -103,6 +103,7 @@ position = Vector2(210, 0)
 position = Vector2(462, -6)
 
 [node name="ItemWeaponScissors" parent="." unique_id=297575322 instance=ExtResource("12_pav82")]
+position = Vector2(717, 0)
 
 [connection signal="add_score" from="." to="." method="_on_add_score"]
 [connection signal="timeout" from="TimerObject" to="." method="_on_timer_object_timeout"]
