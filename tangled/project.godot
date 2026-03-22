@@ -75,8 +75,10 @@ Settings/Show_Tooltips=true
 [application]
 
 config/name="Tangled"
+config/description="Made for the gamejam 2026 organized by 803z with the theme \"Tangled\""
 run/main_scene="uid://cm5exck25lkl1"
 config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="uid://b5a4hp6c8d60h"
 
 [audio]
 
