@@ -12,8 +12,8 @@ var EFFECT_DURATION = 10.0
 
 var busy = false
 
-@onready var player = get_node("/root/InGame/Player")
-@onready var game =  get_node("/root/InGame")
+@onready var player = get_parent().get_node("Player")
+@onready var game = get_parent()
 
 func _ready():
 	%Angy.play_walk()
@@ -23,8 +23,6 @@ func _physics_process(_delta: float) -> void:
 	
 	velocity = direction * SPEED
 	
-	if busy == true:
-		velocity = Vector2.ZERO
 	move_and_slide()
 
 func take_damage(damage):

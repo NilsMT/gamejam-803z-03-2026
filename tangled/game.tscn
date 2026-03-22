@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://debicfk7qde6n"]
+
+[ext_resource type="PackedScene" uid="uid://dfi1hoo1u5lal" path="res://ui/main_menu/ui_main_menu.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://bsa76rqc0nxev" path="res://game.gd" id="1_e2o6t"]
+
+[node name="Game" type="Node2D" unique_id=2113725629]
+script = ExtResource("1_e2o6t")
+
+[node name="UiGameMenu" parent="." unique_id=768309926 instance=ExtResource("1_80nbo")]
+unique_name_in_owner = true
+
+[connection signal="playing" from="UiGameMenu" to="." method="_on_ui_game_menu_playing"]

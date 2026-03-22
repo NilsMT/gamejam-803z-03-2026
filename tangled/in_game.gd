@@ -10,6 +10,9 @@ var current_score = 0
 var elapsed_seconds = 0
 
 signal add_score(score)
+signal game_ended
+
+var gameover = false
 
 # Spawn chance lists
 var PROPS_LIST = [
@@ -98,6 +101,7 @@ func spawn_mob():
 		new_mob.HEALTH *= 1 + elapsed_seconds/TIME_FOR_GROWTH
 		add_child(new_mob)
 		spawned_mobs.append(new_mob)
+		new_mob.add_to_group("mobs")
 
 func spawn_prop():
 	var selected_scene = weighted_random_selection(PROPS_LIST)
@@ -116,7 +120,7 @@ func spawn_object():
 
 func _on_player_health_depleted() -> void:
 	%UiGameOver.visible = true
-	%UiIngame.visible = false
+	gameover = true
 	%UiGameOver.play_animation()
 	#get_tree().paused = true
 
@@ -137,4 +141,10 @@ func _on_add_score(score: Variant) -> void:
 
 func _on_game_time_timeout() -> void:
 	elapsed_seconds += 0.1
-	%UiIngame.set_time_text(elapsed_seconds)
+	if gameover == false:
+		%UiIngame.set_time_text(elapsed_seconds)
+
+
+func _on_ui_game_over_game_ended() -> void:
+	get_tree().call_group("mobs", "queue_free")
+	game_ended.emit()

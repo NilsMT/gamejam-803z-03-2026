@@ -84,3 +84,5 @@ offset_left = 620.0
 offset_top = 358.5
 offset_right = 1320.0
 offset_bottom = 721.5
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
