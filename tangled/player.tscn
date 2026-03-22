@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://ptjwbomqiao6" path="res://sounds/crocky_stunned.mp3" id="7_1jxqw"]
 [ext_resource type="AudioStream" uid="uid://t5g2pof5vb6u" path="res://sounds/crocky_death_sad.mp3" id="8_b26j0"]
 [ext_resource type="AudioStream" uid="uid://duipwdixvus57" path="res://sounds/crocky_death.mp3" id="8_dw050"]
+[ext_resource type="AudioStream" uid="uid://b7am2ph7fk2k2" path="res://sounds/heal.mp3" id="9_b26j0"]
 
 [sub_resource type="Animation" id="Animation_hqtel"]
 length = 0.001
@@ -456,5 +457,8 @@ volume_db = -10.0
 [node name="crocky_death" type="AudioStreamPlayer2D" parent="." unique_id=302234554]
 unique_name_in_owner = true
 stream = ExtResource("8_dw050")
+
+[node name="pickup" type="AudioStreamPlayer2D" parent="." unique_id=544047417]
+stream = ExtResource("9_b26j0")
 
 [connection signal="ready" from="Crocky" to="Crocky" method="_on_ready"]
