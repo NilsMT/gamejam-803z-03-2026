@@ -11,6 +11,7 @@ const SPEED = 600.0
 
 enum EFFECTS {
 	INVERT_CONTROLS,
+	POISON
 }
 
 var active_effects = {}
@@ -60,8 +61,12 @@ func _physics_process(delta: float) -> void:
 		if %AnimationPlayer.current_animation != "confused":
 			crocky_stunned.play()
 			%AnimationPlayer.play("confused")
-	elif %AnimationPlayer.current_animation == "confused":
-		%AnimationPlayer.play("RESET")
+	elif EFFECTS.POISON in active_effects:
+		health -= 0.1
+		if %AnimationPlayer.current_animation != "poisoned":
+			%AnimationPlayer.play("poisoned")
+	elif %AnimationPlayer.current_animation != "RESET":
+			%AnimationPlayer.play("RESET")
 	
 	velocity = input_direction * SPEED
 	move_and_slide()

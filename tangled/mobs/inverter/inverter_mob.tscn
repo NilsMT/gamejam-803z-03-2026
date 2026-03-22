@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://b57bb2b51ndx0"]
 
 [ext_resource type="Script" uid="uid://d1wkfe4xo3x16" path="res://mobs/inverter/inverter_mob.gd" id="1_pg2eu"]
-[ext_resource type="PackedScene" uid="uid://0ui5px17wowg" path="res://characters/angy/very_angy.tscn" id="2_pg2eu"]
+[ext_resource type="PackedScene" uid="uid://vf23up0ywxky" path="res://characters/angy/angy.tscn" id="3_ehxl0"]
 [ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="3_rskkc"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_knm5e"]
-radius = 56.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rskkc"]
+radius = 134.0
 height = 496.0
 
 [node name="InverterMob" type="CharacterBody2D" unique_id=2054343311]
@@ -18,10 +18,11 @@ script = ExtResource("1_pg2eu")
 position = Vector2(14, 110)
 scale = Vector2(1.7433397, 0.4099992)
 
-[node name="VeryAngy" parent="." unique_id=1584495043 instance=ExtResource("2_pg2eu")]
+[node name="Angy" parent="." unique_id=1584495043 instance=ExtResource("3_ehxl0")]
 unique_name_in_owner = true
+modulate = Color(0.9999998, 0.20177674, 0.2386508, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=879723439]
-position = Vector2(0, 88)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1063236807]
+position = Vector2(0, 4)
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_knm5e")
+shape = SubResource("CapsuleShape2D_rskkc")

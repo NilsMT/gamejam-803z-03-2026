@@ -28,9 +28,12 @@ var OBJECTS_LIST = [
 ]
 
 var MOBS_LIST = [
-	"res://mobs/basic/basic_mob.tscn", 90.0,
-	"res://mobs/inverter/inverter_mob.tscn", 9.99,
-	#mii de la mort, 0.01
+	"res://mobs/basic/basic_mob.tscn", 50.0,
+	"res://mobs/inverter/inverter_mob.tscn", 15.0,
+	"res://mobs/fast/fast_mob.tscn", 10.0,
+	"res://mobs/big/big_mob.tscn", 10,
+	"res://mobs/poison/poison_mob.tscn", 4.999,
+	#mii de la mort, 0.001
 ]
 
 func weighted_random_selection(weighted_list):

@@ -169,6 +169,7 @@ _data = {
 }
 
 [node name="WeaponRuler" type="Node2D" unique_id=117786991]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_q6iin")
 
 [node name="Handle" type="Marker2D" parent="." unique_id=838358808]

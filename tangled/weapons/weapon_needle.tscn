@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cj25r6khxpasn" path="res://sounds/needle_sound.mp3" id="3_ejdal"]
 
 [node name="WeaponNeedle" type="Node2D" unique_id=117786991]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_qap4a")
 
 [node name="ReloadTimer" type="Timer" parent="." unique_id=232518559]
