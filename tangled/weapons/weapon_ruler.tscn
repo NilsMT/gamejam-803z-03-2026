@@ -184,7 +184,7 @@ rotation = 4.712389
 collision_layer = 0
 collision_mask = 0
 
-[node name="ObjectRuler" parent="Handle/ExtendedAOE" unique_id=1266299512 instance=ExtResource("2_q6iin")]
+[node name="Object" parent="Handle/ExtendedAOE" unique_id=1266299512 instance=ExtResource("2_q6iin")]
 rotation = -1.5706558
 scale = Vector2(0.4798513, 0.5463123)
 
@@ -199,7 +199,7 @@ rotation = 1.5707964
 collision_layer = 4
 collision_mask = 2
 
-[node name="ObjectRuler" parent="Handle/AOE" unique_id=529879373 instance=ExtResource("2_q6iin")]
+[node name="Object" parent="Handle/AOE" unique_id=529879373 instance=ExtResource("2_q6iin")]
 position = Vector2(150, -1.1920929e-07)
 rotation = -1.5706558
 scale = Vector2(0.4798513, 0.5463123)

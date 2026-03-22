@@ -102,7 +102,7 @@ rotation = 1.5707964
 collision_layer = 0
 collision_mask = 0
 
-[node name="ObjectScissors" parent="Handle/AOE" unique_id=1097997817 instance=ExtResource("2_og30n")]
+[node name="Object" parent="Handle/AOE" unique_id=1097997817 instance=ExtResource("2_og30n")]
 rotation = -1.5713056
 
 [node name="DamageBox" type="CollisionPolygon2D" parent="Handle/AOE" unique_id=951299344]

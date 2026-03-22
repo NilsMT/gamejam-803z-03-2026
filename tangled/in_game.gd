@@ -7,7 +7,7 @@ var spawned_objects = []
 var spawned_mobs = []
 var nearest_object = null
 var current_score = 0
-var elapsed_seconds := 0
+var elapsed_seconds = 0
 
 signal add_score(score)
 
@@ -72,6 +72,9 @@ func update_radar():
 	else:
 		%Radar.visible = false
 
+func _ready():
+	%GameTime.start()
+
 func _process(_delta):
 	nearest_object = find_nearest_object()
 	update_radar()
@@ -124,7 +127,9 @@ func _on_timer_prop_timeout() -> void:
 
 func _on_add_score(score: Variant) -> void:
 	current_score += score
+	%UiIngame.set_score_text(score)
 
 
 func _on_game_time_timeout() -> void:
 	elapsed_seconds += 0.1
+	%UiIngame.set_time_text(elapsed_seconds)

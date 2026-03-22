@@ -45,9 +45,8 @@ visible = false
 scale = Vector2(1.5, 1.5)
 transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
 
-[node name="UiIngame" parent="." unique_id=65261578 instance=ExtResource("6_n3cn4")]
-scale = Vector2(1.5, 1.5)
-transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+[node name="UiIngame" parent="." unique_id=895109810 instance=ExtResource("6_n3cn4")]
+unique_name_in_owner = true
 
 [node name="TimerObject" type="Timer" parent="." unique_id=1339317992]
 wait_time = 15.0
@@ -61,8 +60,8 @@ wait_time = 10.0
 autostart = true
 
 [node name="GameTime" type="Timer" parent="." unique_id=1944973101]
+unique_name_in_owner = true
 wait_time = 0.1
-autostart = true
 
 [node name="Player" parent="." unique_id=560301391 instance=ExtResource("2_e2o6t")]
 unique_name_in_owner = true

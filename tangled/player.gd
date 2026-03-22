@@ -91,7 +91,10 @@ func _physics_process(delta: float) -> void:
 			if angle_deg > 90 or angle_deg < -90:
 				weapon.get_node("Handle").get_node("Object").scale.y = -1
 			else:
-				weapon.get_node("Handle").get_node("Object").scale.y = 1
+				if weapon.get_node("Handle").get_node("Object") != null:
+					weapon.get_node("Handle").get_node("Object").scale.y = 1
+				elif weapon.get_node("Handle").get_node("AOE").get_node("Object") != null:
+					weapon.get_node("Handle").get_node("AOE").get_node("Object").scale.y = 1
 				 
 			weapon.look_at(mouse_pos)
 
