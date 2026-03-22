@@ -151,6 +151,7 @@ func _on_player_health_depleted() -> void:
 	%UiGameOver.visible = true
 	gameover = true
 	%UiGameOver.play_animation()
+	%Ground.game_ended.emit()
 	#get_tree().paused = true
 
 func _on_timer_object_timeout() -> void:

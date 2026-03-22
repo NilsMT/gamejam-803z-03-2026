@@ -121,22 +121,27 @@ func _physics_process(delta: float) -> void:
 
 
 func handle_weapon_rotation(delta):
-	if weapon:
-			if weapon.get("FOLLOW_MOUSE") != null and not weapon.FOLLOW_MOUSE:
-				# Spin the weapon (frame-rate independent)
-				weapon.rotation += deg_to_rad(weapon.SPIN_SPEED * delta)
-			else:
-				var mouse_pos = get_global_mouse_position()
-				var direction = (mouse_pos - weapon.global_position).normalized()
-				var angle_deg = direction.angle() * 180 / PI  # convert to degrees
-				
-				# flip weapon if aiming left
-				if angle_deg > 90 or angle_deg < -90:
-					if weapon.get_node("Handle").get_node("Object") != null:
-						weapon.get_node("Handle").get_node("Object").scale.y = 1
-					elif weapon.get_node("Handle").get_node("AOE").get_node("Object") != null:
-						weapon.get_node("Handle").get_node("AOE").get_node("Object").scale.y = 1
-				weapon.look_at(mouse_pos)
+	if not weapon:
+		return
+
+	if weapon.get("FOLLOW_MOUSE") and not weapon.FOLLOW_MOUSE:
+		weapon.rotation += deg_to_rad(weapon.SPIN_SPEED * delta)
+	else:
+		var mouse_pos = get_global_mouse_position()
+		var direction = (mouse_pos - weapon.global_position).normalized()
+		var angle_deg = rad_to_deg(direction.angle())
+
+		# Rotate weapon
+		weapon.look_at(mouse_pos)
+
+		# Flip inner object if aiming left
+		var handle = weapon.get_node("Handle")
+		if handle.has_node("Object"):
+			var obj = handle.get_node("Object")
+			obj.scale.y = -1 if angle_deg > 90 or angle_deg < -90 else 1
+		elif handle.has_node("AOE/Object"):
+			var obj = handle.get_node("AOE/Object")
+			obj.scale.y = -1 if angle_deg > 90 or angle_deg < -90 else 1
 
 func handle_effects(delta,input_direction) -> Vector2:
 	if EFFECTS.INVERT_CONTROLS in active_effects:

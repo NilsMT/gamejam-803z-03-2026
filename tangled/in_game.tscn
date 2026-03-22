@@ -24,7 +24,8 @@ point_count = 5
 y_sort_enabled = true
 script = ExtResource("1_80nbo")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1117285767]
+[node name="Ground" type="TextureRect" parent="." unique_id=1117285767]
+unique_name_in_owner = true
 z_index = -2
 texture_repeat = 2
 material = SubResource("ShaderMaterial_nvoy2")
@@ -98,7 +99,7 @@ position = Vector2(957.99994, 640)
 scale = Vector2(2.2, 2.2)
 
 [connection signal="add_score" from="." to="." method="_on_add_score"]
-[connection signal="game_ended" from="TextureRect" to="TextureRect" method="_on_game_ended"]
+[connection signal="game_ended" from="Ground" to="Ground" method="_on_game_ended"]
 [connection signal="game_ended" from="UiGameOver" to="." method="_on_ui_game_over_game_ended"]
 [connection signal="timeout" from="TimerObject" to="." method="_on_timer_object_timeout"]
 [connection signal="timeout" from="TimerMob" to="." method="_on_timer_mob_timeout"]
