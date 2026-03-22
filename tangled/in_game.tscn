@@ -4,12 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://dd3rw48ne5l2" path="res://player.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://dlaqa2kkclusi" path="res://radar/radar.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bvr1dlrnahj7e" path="res://ui/game_over/game_over.tscn" id="4_fc0e3"]
+[ext_resource type="Shader" uid="uid://dkrfbdx8kyg8j" path="res://in_game.gdshader" id="5_pj0gh"]
+[ext_resource type="Texture2D" uid="uid://cgal5r0s7ytr6" path="res://textures/wood.jpg" id="6_nvoy2"]
+[ext_resource type="Script" uid="uid://c6ipk1nn7gsqp" path="res://texture_rect.gd" id="7_nvoy2"]
 
 [sub_resource type="Curve2D" id="Curve2D_feb5d"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 960, -540, 0, 0, 0, 0, 960, 540, 0, 0, 0, 0, -960, 540, 0, 0, 0, 0, -960, -540, 0, 0, 0, 0, 960, -540)
 }
 point_count = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nvoy2"]
+shader = ExtResource("5_pj0gh")
+shader_parameter/offset = Vector2(0, 0)
 
 [node name="InGame" type="Node2D" unique_id=1419428098]
 y_sort_enabled = true
@@ -22,9 +29,11 @@ visible = false
 [node name="Player" parent="." unique_id=560301391 instance=ExtResource("2_e2o6t")]
 unique_name_in_owner = true
 z_index = 1
+y_sort_enabled = true
 position = Vector2(954, 527)
 
 [node name="Path2D" type="Path2D" parent="Player" unique_id=1891581326]
+z_index = -1
 scale = Vector2(4, 4)
 curve = SubResource("Curve2D_feb5d")
 
@@ -50,6 +59,20 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="Radar" parent="Player" unique_id=284120149 instance=ExtResource("3_fc0e3")]
 unique_name_in_owner = true
+
+[node name="TextureRect" type="TextureRect" parent="Player" unique_id=1117285767]
+z_index = -1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_nvoy2")
+offset_left = -954.0
+offset_top = -527.0
+offset_right = 966.0
+offset_bottom = 553.0
+scale = Vector2(2.2, 2.2)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("6_nvoy2")
+stretch_mode = 1
+script = ExtResource("7_nvoy2")
 
 [node name="TimerObject" type="Timer" parent="." unique_id=1339317992]
 wait_time = 30.0
