@@ -29,7 +29,7 @@ var MOBS_LIST = [
 ]
 
 # Define a minimum spawn distance from the camera
-const MIN_SPAWN_DISTANCE = 1000.0
+const MIN_SPAWN_DISTANCE = 1500.0
 
 func weighted_random_selection(weighted_list):
 	var total_weight = 0.0

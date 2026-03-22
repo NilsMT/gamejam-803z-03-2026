@@ -15,6 +15,7 @@ collision_mask = 2
 script = ExtResource("1_nqs7c")
 
 [node name="Needle" parent="." unique_id=1575203546 instance=ExtResource("1_nweyl")]
+scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1314737411]
 position = Vector2(0, 148)

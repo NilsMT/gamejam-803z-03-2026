@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bm17jwf5ar3i8" path="res://objects/object_needle/needle.png" id="1_oqtkx"]
 
 [node name="ObjectNeedle" type="Node2D" unique_id=1575203546]
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=385963427]
 position = Vector2(3.5663366, 146.68549)

@@ -65,9 +65,9 @@ func _physics_process(delta: float) -> void:
 
 	# Flip sprite
 	if direction.x > 0:
-		%Crocky.scale.x = -0.25
+		%Crocky.scale.x = -0.5
 	elif direction.x < 0:
-		%Crocky.scale.x = 0.25
+		%Crocky.scale.x = 0.5
 
 	# Rotate weapon toward mouse
 	if weapon:

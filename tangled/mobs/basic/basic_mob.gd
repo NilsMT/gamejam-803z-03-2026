@@ -7,6 +7,8 @@ const DAMAGE = 5
 const SPEED = 150.0
 const SCORE = 5
 
+var busy = false
+
 @onready var player = get_node("/root/InGame/Player")
 @onready var game =  get_node("/root/InGame")
 
@@ -20,10 +22,13 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func take_damage(damage):
-	health -= damage
-	%Angy.play_hurt()
-	
-	if health <= 0:
-		queue_free()
-		%Angy.play_death()
-		game.emit_signal("add_score", SCORE)
+	if not busy:
+		health -= damage
+		%Angy.play_hurt()
+		
+		if health <= 0:
+			busy= true
+			%Angy.play_death()
+			await %Angy.death_finished
+			queue_free()
+			game.emit_signal("add_score", SCORE)
