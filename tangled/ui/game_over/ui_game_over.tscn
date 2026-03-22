@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bvr1dlrnahj7e"]
 
-[ext_resource type="Texture2D" uid="uid://c77uwiywo0efp" path="res://ui/game_over/curtain.jpg" id="1_fjgec"]
 [ext_resource type="Script" uid="uid://b5am1k4nxqmtb" path="res://ui/game_over/ui_game_over.gd" id="1_yi6kq"]
+[ext_resource type="Texture2D" uid="uid://ds3ccsvoduqp2" path="res://ui/game_over/curtain.png" id="2_c8o6h"]
 [ext_resource type="Texture2D" uid="uid://cjyluyei74lsd" path="res://ui/game_over/Bouton_game_over.png" id="3_c8o6h"]
 [ext_resource type="Texture2D" uid="uid://bnshe0sqo7p1q" path="res://ui/game_over/Bouton_game_over_clicked.png" id="4_lcr3l"]
 [ext_resource type="Texture2D" uid="uid://6524crtrndya" path="res://ui/game_over/Bouton_game_over_hover.png" id="5_b31v0"]
@@ -82,7 +82,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.43333334, 2.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -1097.06), Vector2(0, 0)]
+"values": [Vector2(0, -1097.06), Vector2(17.97, -96.305)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -126,16 +126,17 @@ libraries/ = SubResource("AnimationLibrary_3yqh1")
 
 [node name="TextureRect" type="TextureRect" parent="Sprite2D" unique_id=1355188783]
 visible = false
-offset_right = 1920.0
-offset_bottom = 1095.0
-texture = ExtResource("1_fjgec")
+offset_left = -145.97
+offset_right = 1955.1677
+offset_bottom = 1198.305
+texture = ExtResource("2_c8o6h")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1359088507]
 visible = false
 offset_left = -2043.0
-offset_top = -260.0
+offset_top = -299.0
 offset_right = 3381.0
-offset_bottom = 1099.0
+offset_bottom = 1060.0
 scale = Vector2(0.15, 0.15)
 pivot_offset = Vector2(2695.8496, 686.896)
 texture_normal = ExtResource("3_c8o6h")
