@@ -46,7 +46,7 @@ autostart = true
 autostart = true
 
 [node name="TimerProp" type="Timer" parent="." unique_id=679867077]
-wait_time = 15.0
+wait_time = 10.0
 autostart = true
 
 [node name="GameTime" type="Timer" parent="." unique_id=1944973101]
