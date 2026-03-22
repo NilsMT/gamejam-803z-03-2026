@@ -1,3 +1,83 @@
 [gd_scene format=3 uid="uid://bvr1dlrnahj7e"]
 
+[ext_resource type="Texture2D" uid="uid://c77uwiywo0efp" path="res://ui/game_over/curtain.jpg" id="1_fjgec"]
+
+[sub_resource type="Animation" id="Animation_yi6kq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_a7f5v"]
+resource_name = "game_over"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.43333334, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -1097.06), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3yqh1"]
+_data = {
+&"RESET": SubResource("Animation_yi6kq"),
+&"game_over": SubResource("Animation_a7f5v")
+}
+
 [node name="UiGameOver" type="CanvasLayer" unique_id=653810407]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=670807654]
+libraries/ = SubResource("AnimationLibrary_3yqh1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2020544801]
+
+[node name="TextureRect" type="TextureRect" parent="Sprite2D" unique_id=1355188783]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1095.0
+texture = ExtResource("1_fjgec")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1359088507]
+offset_left = 620.0
+offset_top = 358.5
+offset_right = 1320.0
+offset_bottom = 721.5
