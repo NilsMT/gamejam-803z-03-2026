@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bvr1dlrnahj7e"]
 
 [ext_resource type="Texture2D" uid="uid://c77uwiywo0efp" path="res://ui/game_over/curtain.jpg" id="1_fjgec"]
+[ext_resource type="Script" uid="uid://b5am1k4nxqmtb" path="res://ui/game_over/ui_game_over.gd" id="1_yi6kq"]
 
 [sub_resource type="Animation" id="Animation_yi6kq"]
 length = 0.001
@@ -64,8 +65,10 @@ _data = {
 }
 
 [node name="UiGameOver" type="CanvasLayer" unique_id=653810407]
+script = ExtResource("1_yi6kq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=670807654]
+unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_3yqh1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2020544801]

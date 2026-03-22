@@ -19,6 +19,8 @@ func _physics_process(_delta: float) -> void:
 	var direction = global_position.direction_to(player.global_position)
 	
 	velocity = direction * SPEED
+	if busy == true:
+		velocity = Vector2.ZERO
 	move_and_slide()
 
 func take_damage(damage):
