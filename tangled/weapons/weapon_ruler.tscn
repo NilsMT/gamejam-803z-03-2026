@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ct48munyglat4" path="res://objects/object_ruler/object_ruler.tscn" id="2_q6iin"]
 [ext_resource type="AudioStream" uid="uid://dj4irgkg6c23b" path="res://sounds/ruler_woosh.mp3" id="3_8d71r"]
 [ext_resource type="AudioStream" uid="uid://cj25r6khxpasn" path="res://sounds/needle_sound.mp3" id="4_moilu"]
+[ext_resource type="Texture2D" uid="uid://dmsfql85wamwq" path="res://items/item_weapon_ruler/Button_eye.png" id="5_by545"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6iin"]
 size = Vector2(175, 47)
@@ -58,6 +59,30 @@ tracks/3/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Handle/ButtonEye:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(23.999992, 170.66669)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Handle/ButtonEye:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5707964]
+}
 
 [sub_resource type="Animation" id="Animation_8d71r"]
 resource_name = "extend"
@@ -108,6 +133,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(3, 169), Vector2(0, 171)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Handle/ButtonEye:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5707964]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Handle/ButtonEye:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 170.667)]
 }
 
 [sub_resource type="Animation" id="Animation_moilu"]
@@ -160,6 +209,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(0, 171), Vector2(3, 169)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Handle/ButtonEye:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 170.667)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Handle/ButtonEye:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5707964]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_moilu"]
 _data = {
@@ -208,6 +281,12 @@ scale = Vector2(0.4798513, 0.5463123)
 position = Vector2(234.5, -1.5)
 shape = SubResource("RectangleShape2D_q6iin")
 debug_color = Color(1, 0, 0, 0.33333334)
+
+[node name="ButtonEye" type="Sprite2D" parent="Handle" unique_id=717221286]
+position = Vector2(23.999992, 170.66669)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_by545")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=784747714]
 unique_name_in_owner = true
