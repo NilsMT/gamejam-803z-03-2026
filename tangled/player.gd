@@ -67,6 +67,8 @@ func _physics_process(delta: float) -> void:
 				if not crocky_stunned.playing:
 					crocky_stunned.play()
 				%AnimationPlayerConfused.play("confused")
+		else:
+			%AnimationPlayerConfused.play("RESET")
 				
 		if EFFECTS.POISON in active_effects:
 			health -= 0.1
@@ -74,11 +76,8 @@ func _physics_process(delta: float) -> void:
 				if not crocky_stunned.playing:
 					crocky_stunned.play()
 				%AnimationPlayerPoisoned.play("poisoned")
-				
-		if active_effects.is_empty():
-			if %AnimationPlayerPoisoned.current_animation != "RESET" and %AnimationPlayerConfused.current_animation != "RESET":
-				%AnimationPlayerConfused.play("RESET")
-				%AnimationPlayerPoisoned.play("RESET")
+		else:
+			%AnimationPlayerPoisoned.play("RESET")
 		
 		velocity = input_direction * SPEED
 		move_and_slide()

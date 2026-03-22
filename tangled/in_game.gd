@@ -116,6 +116,7 @@ func spawn_object():
 
 func _on_player_health_depleted() -> void:
 	%UiGameOver.visible = true
+	%UiIngame.visible = false
 	%UiGameOver.play_animation()
 	#get_tree().paused = true
 
