@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://beunfla7rqa74"]
 
+[ext_resource type="Theme" uid="uid://6g6enttm1a1v" path="res://ui/ui.tres" id="1_p8bwy"]
+
 [node name="UiIngame" type="CanvasLayer" unique_id=653810407]
 
 [node name="Time" type="Label" parent="." unique_id=1823993597]
@@ -7,9 +9,11 @@ offset_left = 1880.0
 offset_top = 1.0
 offset_right = 1920.0
 offset_bottom = 24.0
+theme = ExtResource("1_p8bwy")
 text = "XXX"
 
 [node name="Score" type="Label" parent="." unique_id=1929477141]
 offset_right = 40.0
 offset_bottom = 23.0
+theme = ExtResource("1_p8bwy")
 text = "XXX"
