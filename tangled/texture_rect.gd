@@ -6,6 +6,12 @@ var scroll_offset := Vector2.ZERO
 var smoothing := 8.0
 
 func _process(delta):
+	var pos = %Player.global_position
+	
+	pos -= size
+	
+	global_position = pos
+	
 	# accumulate scroll based on player velocity
 	scroll_offset += %Player.velocity * delta * 0.0005  # tweak speed
 

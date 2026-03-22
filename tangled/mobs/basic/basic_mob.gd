@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 const BODY_TYPE = 0
 
-var health = 25
-const DAMAGE = 5
+var HEALTH = 25
+var DAMAGE = 5
 const SPEED = 150.0
 const SCORE = 5
 
@@ -23,10 +23,10 @@ func _physics_process(_delta: float) -> void:
 
 func take_damage(damage):
 	if not busy:
-		health -= damage
+		HEALTH -= damage
 		%Angy.play_hurt()
 		
-		if health <= 0:
+		if HEALTH <= 0:
 			busy= true
 			%Angy.play_death()
 			await %Angy.death_finished

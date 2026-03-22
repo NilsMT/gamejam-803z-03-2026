@@ -1,9 +1,13 @@
 extends Node2D
 
+const TIME_FOR_GROWTH = 60
+const MIN_SPAWN_DISTANCE = 2000.0
+
 var spawned_objects = []
 var spawned_mobs = []
 var nearest_object = null
 var current_score = 0
+var elapsed_seconds := 0
 
 signal add_score(score)
 
@@ -27,9 +31,6 @@ var MOBS_LIST = [
 	"res://mobs/inverter/inverter_mob.tscn", 9.99,
 	#mii de la mort, 0.01
 ]
-
-# Define a minimum spawn distance from the camera
-const MIN_SPAWN_DISTANCE = 1500.0
 
 func weighted_random_selection(weighted_list):
 	var total_weight = 0.0
@@ -83,6 +84,8 @@ func spawn_mob():
 	if selected_scene:
 		var new_mob = load(selected_scene).instantiate()
 		new_mob.global_position = get_random_far_position()
+		new_mob.DAMAGE *= 1 + elapsed_seconds/TIME_FOR_GROWTH
+		new_mob.HEALTH *= 1 + elapsed_seconds/TIME_FOR_GROWTH
 		add_child(new_mob)
 		spawned_mobs.append(new_mob)
 
@@ -117,3 +120,8 @@ func _on_timer_prop_timeout() -> void:
 
 func _on_add_score(score: Variant) -> void:
 	current_score += score
+
+
+func _on_game_time_timeout() -> void:
+	elapsed_seconds += 1
+	print("Seconds passed: ", elapsed_seconds)
