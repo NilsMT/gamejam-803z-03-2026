@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal health_depleted
+signal animation_death_done
 
 const MAX_HEALTH = 100.0
 var health = MAX_HEALTH
@@ -30,7 +31,7 @@ const WEAPON_LIST = [
 ]
 
 var weapon = null
-var choice = 2
+var choice = 0
 
 func switch_weapon(c):
 	if c < 0 or c >= WEAPON_LIST.size():
@@ -238,3 +239,7 @@ func _handle_bodies(delta: float) -> void:
 				%pickup.play()
 				switch_weapon(body.WEAPON_TYPE)
 				body.queue_free()
+
+
+func _on_crocky_animation_death_done() -> void:
+	animation_death_done.emit()

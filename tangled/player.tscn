@@ -462,4 +462,5 @@ stream = ExtResource("8_dw050")
 unique_name_in_owner = true
 stream = ExtResource("9_b26j0")
 
+[connection signal="animation_death_done" from="Crocky" to="." method="_on_crocky_animation_death_done"]
 [connection signal="ready" from="Crocky" to="Crocky" method="_on_ready"]

@@ -13,7 +13,31 @@ signal add_score(score)
 signal game_ended
 
 var gameover = false
-
+var gamePhase = -1
+var phaseTime = [0.0,150.0,300.0,600.0]
+var phaseList = [
+	[
+		"res://mobs/basic/basic_mob.tscn", 50.0,
+		"res://mobs/inverter/inverter_mob.tscn", 15.0,
+		"res://mobs/fast/fast_mob.tscn", 10.0,
+		"res://mobs/big/big_mob.tscn", 10.0,
+		"res://mobs/poison/poison_mob.tscn", 5,
+	],
+	[
+		"res://mobs/basic/basic_mob.tscn", 30.0,
+		"res://mobs/inverter/inverter_mob.tscn", 20.0,
+		"res://mobs/fast/fast_mob.tscn", 15.0,
+		"res://mobs/big/big_mob.tscn", 15.0,
+		"res://mobs/poison/poison_mob.tscn", 10,
+	],
+	[
+		"res://mobs/matt/matt_mob.tscn", 10.0,
+		"res://mobs/big/big_mob.tscn", 90.0,
+	],
+	[
+		"res://mobs/matt/matt_mob.tscn", 100.0,
+	]
+]
 
 
 
@@ -42,14 +66,7 @@ var OBJECTS_LIST = [
 	#scissors
 ]
 
-var MOBS_LIST = [
-	"res://mobs/basic/basic_mob.tscn", 50.0,
-	"res://mobs/inverter/inverter_mob.tscn", 15.0,
-	"res://mobs/fast/fast_mob.tscn", 10.0,
-	"res://mobs/big/big_mob.tscn", 10,
-	"res://mobs/poison/poison_mob.tscn", 4.999,
-	#mii de la mort, 0.001
-]
+var MOBS_LIST = []
 
 func weighted_random_selection(weighted_list):
 	var total_weight = 0.0
@@ -147,12 +164,6 @@ func spawn_object():
 
 
 
-func _on_player_health_depleted() -> void:
-	%UiGameOver.visible = true
-	gameover = true
-	%UiGameOver.play_animation()
-	%Ground.game_ended.emit()
-	#get_tree().paused = true
 
 func _on_timer_object_timeout() -> void:
 	spawn_object()
@@ -171,9 +182,13 @@ func _on_add_score(score: Variant) -> void:
 
 func _on_game_time_timeout() -> void:
 	elapsed_seconds += 0.1
+	
 	if gameover == false:
 		%UiIngame.set_time_text(elapsed_seconds)
-
+		
+		if elapsed_seconds <= phaseTime[gamePhase]:
+			gamePhase += 1
+			MOBS_LIST = phaseList[gamePhase]
 
 func _on_ui_game_over_game_ended() -> void:
 	get_tree().call_group("mobs", "queue_free")
@@ -228,3 +243,10 @@ func _on_konami_code():
 		add_child(new_mob)
 		spawned_mobs.append(new_mob)
 		new_mob.add_to_group("mobs")
+
+
+func _on_player_animation_death_done() -> void:
+	%UiGameOver.visible = true
+	gameover = true
+	%UiGameOver.play_animation()
+	%Ground.game_ended.emit()

@@ -39,7 +39,6 @@ script = ExtResource("7_nvoy2")
 
 [node name="UiGameOver" parent="." unique_id=653810407 instance=ExtResource("4_fc0e3")]
 unique_name_in_owner = true
-visible = false
 scale = Vector2(1.5, 1.5)
 transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
 
@@ -105,4 +104,4 @@ scale = Vector2(2.2, 2.2)
 [connection signal="timeout" from="TimerMob" to="." method="_on_timer_mob_timeout"]
 [connection signal="timeout" from="TimerProp" to="." method="_on_timer_prop_timeout"]
 [connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
-[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="animation_death_done" from="Player" to="." method="_on_player_animation_death_done"]
