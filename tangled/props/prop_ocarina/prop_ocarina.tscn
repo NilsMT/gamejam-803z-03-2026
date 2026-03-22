@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bys0qek73m1lf" path="res://props/prop_ocarina/ocarina.png" id="1_s8ujp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7uhgt"]
-radius = 18.017714
+radius = 33.999786
 height = 208.00583
 
 [node name="PropOcarina" type="Area2D" unique_id=714939349]
@@ -19,6 +19,6 @@ rotation = 0.7135383
 texture = ExtResource("1_s8ujp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1911099689]
-position = Vector2(16, 48)
+position = Vector2(15.999998, 35.999992)
 rotation = -1.5672314
 shape = SubResource("CapsuleShape2D_7uhgt")

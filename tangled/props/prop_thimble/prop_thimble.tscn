@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="2_5ob5x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ob5x"]
-radius = 12.496893
+radius = 12.517147
 height = 85.01592
 
 [node name="PropThimble" type="StaticBody2D" unique_id=663621505]
