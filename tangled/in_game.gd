@@ -1,7 +1,7 @@
 extends Node2D
 
-const TIME_FOR_GROWTH = 60
-const MIN_SPAWN_DISTANCE = 2000.0
+var TIME_FOR_GROWTH = Balance.VALUES["game"]["TIME_FOR_GROWTH"] 
+var MIN_SPAWN_DISTANCE = Balance.VALUES["game"]["MIN_SPAWN_DISTANCE"]
 
 var spawned_objects = []
 var spawned_mobs = []

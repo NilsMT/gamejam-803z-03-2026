@@ -3,10 +3,9 @@ extends CharacterBody2D
 signal health_depleted
 signal animation_death_done
 
-const MAX_HEALTH = 100.0
-var health = MAX_HEALTH
-const MAX_EFFECT_DURATION = 5.0
-const SPEED = 600.0
+var MAX_HEALTH = Balance.VALUES["player"]["MAX_HEALTH"]
+var MAX_EFFECT_DURATION = Balance.VALUES["player"]["MAX_EFFECT_DURATION"]
+var SPEED = Balance.VALUES["player"]["SPEED"]
 
 var is_game_ended = false
 
@@ -15,6 +14,7 @@ enum EFFECTS {
 	POISON
 }
 
+var health = MAX_HEALTH
 var active_effects = {}
 
 

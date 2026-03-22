@@ -2,74 +2,83 @@ extends Node2D
 class_name BalanceValues
 
 @export var VALUES: Dictionary = {
-	"mobs" : {
-		"basic_mob" : {
-			"HEALTH" : 25,
-			"DAMAGE" : 5,
-			"SPEED" : 150.0,
-			"SCORE" : 5,
+	"game": {
+		"TIME_FOR_GROWTH": 90,  # Slower scaling for better pacing
+		"MIN_SPAWN_DISTANCE": 2000.0,
+	},
+	"player": {
+		"MAX_HEALTH": 120.0,  # Slightly more survivability
+		"MAX_EFFECT_DURATION": 20.0,  # Shorter max debuff duration
+		"SPEED": 650.0,  # Faster movement
+	},
+	"mobs": {
+		"basic_mob": {
+			"HEALTH": 30,
+			"DAMAGE": 4,
+			"SPEED": 120.0,
+			"SCORE": 5,
 		},
-		"big_mob" : {
-			"HEALTH" : 100,
-			"DAMAGE" : 10,
-			"SPEED" : 100.0,
-			"SCORE" : 20,
+		"big_mob": {
+			"HEALTH": 120,
+			"DAMAGE": 8,
+			"SPEED": 80.0,
+			"SCORE": 25,
 		},
-		"fast_mob" : {
-			"HEALTH" : 20,
-			"DAMAGE" : 5,
-			"SPEED" : 400.0,
-			"SCORE" : 10,
+		"fast_mob": {
+			"HEALTH": 15,
+			"DAMAGE": 3,
+			"SPEED": 350.0,
+			"SCORE": 12,
 		},
-		"inverter_mob" : {
-			"HEALTH" : 50,
-			"DAMAGE" : 0,
-			"SPEED" : 150.0,
-			"SCORE" : 15,
-			"EFFECT_DURATION" : 10.0,
+		"inverter_mob": {
+			"HEALTH": 40,
+			"DAMAGE": 0,
+			"SPEED": 130.0,
+			"SCORE": 20,
+			"EFFECT_DURATION": 8.0,
 		},
-		"matt_mob" : {
-			"HEALTH" : 0.001,
-			"DAMAGE" : 1000,
-			"SPEED" : 2000.0,
-			"SCORE" : 1000,
+		"matt_mob": {
+			"HEALTH": 1.0,  # Still almost one-shot
+			"DAMAGE": 800,  # Slightly less one-shot potential
+			"SPEED": 1800.0,  # Still very fast
+			"SCORE": 1000,  # Extreme reward
 		},
-		"poison_mob" : {
-			"HEALTH" : 50,
-			"DAMAGE" : 5,
-			"SPEED" : 200.0,
-			"SCORE" : 15,
-			"EFFECT_DURATION" : 10.0,
+		"poison_mob": {
+			"HEALTH": 40,
+			"DAMAGE": 3,
+			"SPEED": 180.0,
+			"SCORE": 18,
+			"EFFECT_DURATION": 8.0,
 		}
 	},
-	"weapons" : {
-		"needle" : {
-			"MAX_MAG_CAPACITY" : 3,
-			"RELOAD_TIME" : 1.0,
-			"projectile" : {
-				"DAMAGE" : 25.0,
-				"MAX_PENETRATION" : 5,
-				"SPEED" : 500.0,
-				"LIFETIME" : 5.0,
+	"weapons": {
+		"needle": {
+			"MAX_MAG_CAPACITY": 5,
+			"RELOAD_TIME": 1.2,
+			"projectile": {
+				"DAMAGE": 20.0,
+				"MAX_PENETRATION": 3,
+				"SPEED": 600.0,
+				"LIFETIME": 4.0,
 			}
 		},
-		"button" : {
-			"FIRE_RATE" : 0.3,
-			"projectile" : {
-				"DAMAGE" : 2.5,
- 				"MAX_PENETRATION" : 1,
-				"SPEED" : 750.0,
-				"LIFETIME" : 2.0,
+		"button": {
+			"FIRE_RATE": 0.25,
+			"projectile": {
+				"DAMAGE": 3.0,
+				"MAX_PENETRATION": 1,
+				"SPEED": 800.0,
+				"LIFETIME": 1.5,
 			}
 		},
-		"ruler" : {
-			"SPIN_SPEED" : 500.0,
-			"DAMAGE" : 5,
-			"RATIO_MODE" : 2
+		"ruler": {
+			"SPIN_SPEED": 400.0,
+			"DAMAGE": 7,
+			"RATIO_MODE": 2
 		},
-		"scissors" : {
-			"DAMAGE" : 12.5,
-			"ATTACK_SPEED" : 2.0
+		"scissors": {
+			"DAMAGE": 15.0,
+			"ATTACK_SPEED": 1.5
 		}
 	}
 }

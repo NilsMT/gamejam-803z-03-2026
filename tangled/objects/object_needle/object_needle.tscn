@@ -6,6 +6,7 @@
 scale = Vector2(0.75, 0.75)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=385963427]
+modulate = Color(0.81349576, 0.88757867, 1, 1)
 position = Vector2(3.5663366, 146.68549)
 rotation = -0.65100783
 scale = Vector2(0.2423084, 0.2377869)
