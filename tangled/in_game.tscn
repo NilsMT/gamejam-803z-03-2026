@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c523vuq3p4wwj" path="res://items/item_weapon_ruler/item_weapon_ruler.tscn" id="10_n3cn4"]
 [ext_resource type="PackedScene" uid="uid://yierowqplfyv" path="res://items/item_weapon_needle/item_weapon_needle.tscn" id="11_5jqcy"]
 [ext_resource type="PackedScene" uid="uid://8tojubd4xcf7" path="res://items/item_weapon_scissors/item_weapon_scissors.tscn" id="12_pav82"]
+[ext_resource type="PackedScene" uid="uid://dk0ev8ifyv8nw" path="res://props/prop_ocarina/prop_ocarina.tscn" id="14_5jqcy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nvoy2"]
 shader = ExtResource("5_pj0gh")
@@ -110,6 +111,9 @@ position = Vector2(462, -6)
 
 [node name="ItemWeaponScissors" parent="." unique_id=297575322 instance=ExtResource("12_pav82")]
 position = Vector2(717, 0)
+
+[node name="PropOcarina" parent="." unique_id=714939349 instance=ExtResource("14_5jqcy")]
+position = Vector2(625, 500)
 
 [connection signal="add_score" from="." to="." method="_on_add_score"]
 [connection signal="timeout" from="TimerObject" to="." method="_on_timer_object_timeout"]

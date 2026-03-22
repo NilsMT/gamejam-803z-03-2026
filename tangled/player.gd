@@ -59,11 +59,14 @@ func _physics_process(delta: float) -> void:
 	if EFFECTS.INVERT_CONTROLS in active_effects:
 		input_direction *= -1
 		if %AnimationPlayer.current_animation != "confused":
-			crocky_stunned.play()
+			if not crocky_stunned.playing:
+				crocky_stunned.play()
 			%AnimationPlayer.play("confused")
 	elif EFFECTS.POISON in active_effects:
 		health -= 0.1
 		if %AnimationPlayer.current_animation != "poisoned":
+			if not crocky_stunned.playing:
+				crocky_stunned.play()
 			%AnimationPlayer.play("poisoned")
 	elif %AnimationPlayer.current_animation != "RESET":
 			%AnimationPlayer.play("RESET")
@@ -86,16 +89,13 @@ func _physics_process(delta: float) -> void:
 			var mouse_pos = get_global_mouse_position()
 			var direction = (mouse_pos - weapon.global_position).normalized()
 			var angle_deg = direction.angle() * 180 / PI  # convert to degrees
-
+			
 			# flip weapon if aiming left
 			if angle_deg > 90 or angle_deg < -90:
-				weapon.get_node("Handle").get_node("Object").scale.y = -1
-			else:
 				if weapon.get_node("Handle").get_node("Object") != null:
 					weapon.get_node("Handle").get_node("Object").scale.y = 1
 				elif weapon.get_node("Handle").get_node("AOE").get_node("Object") != null:
 					weapon.get_node("Handle").get_node("AOE").get_node("Object").scale.y = 1
-				 
 			weapon.look_at(mouse_pos)
 
 	# Play animations

@@ -339,8 +339,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
-radius = 13.0
-height = 104.0
+radius = 36.99891
+height = 120.01636
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
 radius = 99.0
@@ -364,8 +364,8 @@ position = Vector2(22.000017, 3.9999695)
 scale = Vector2(0.6599978, 0.17999837)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630267291]
-position = Vector2(10, 110)
-rotation = 1.5707964
+position = Vector2(1, 89)
+rotation = 1.5784839
 shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=114584655]
@@ -373,7 +373,7 @@ unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=583846421]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtBox" unique_id=583846421]
 shape = SubResource("CapsuleShape2D_i3pqv")
 debug_color = Color(1, 0, 0, 0.33333334)
 

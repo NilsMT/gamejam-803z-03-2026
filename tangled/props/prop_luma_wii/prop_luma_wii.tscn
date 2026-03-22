@@ -3,18 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://brptimyb5i4x1" path="res://props/prop_luma_wii/luma_wii.png" id="1_7y1up"]
 [ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="2_5527o"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cdgw2"]
-radius = 60.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5527o"]
+radius = 8.982494
+height = 82.67299
 
 [node name="PropLumaWii" type="StaticBody2D" unique_id=582109375]
 scale = Vector2(3, 3)
 
 [node name="ObjectShadow" parent="." unique_id=569395071 instance=ExtResource("2_5527o")]
-position = Vector2(3.5762787e-06, 57.999996)
+position = Vector2(2, 49.33334)
 scale = Vector2(0.3299989, 0.089999184)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=499316192]
-shape = SubResource("CircleShape2D_cdgw2")
+position = Vector2(1.6666667, 51.33334)
+rotation = -1.5765833
+shape = SubResource("CapsuleShape2D_5527o")
 
 [node name="LumaWii" type="Sprite2D" parent="." unique_id=1137196193]
 position = Vector2(-1.1874971, -1.1417967)

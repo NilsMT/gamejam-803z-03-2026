@@ -23,7 +23,7 @@ debug_color = Color(1, 0, 0, 0.33333334)
 
 [node name="Timer" type="Timer" parent="." unique_id=482879760]
 unique_name_in_owner = true
-wait_time = 2.0
+wait_time = 5.0
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

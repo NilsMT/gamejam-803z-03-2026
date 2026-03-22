@@ -17,6 +17,9 @@ var PROPS_LIST = [
 	"res://props/prop_luma_wii/prop_luma_wii.tscn", 1.0,
 	"res://props/prop_thimble/prop_thimble.tscn", 1.0,
 	"res://props/prop_mat/prop_mat.tscn", 1.0,
+	"res://props/prop_ocarina/prop_ocarina.tscn", 1.0,
+	"res://props/prop_pokeball/prop_pokeball.tscn", 1.0,
+	"res://props/prop_mask/prop_mask.tscn", 1.0,
 ]
 
 var OBJECTS_LIST = [
@@ -127,7 +130,7 @@ func _on_timer_prop_timeout() -> void:
 
 func _on_add_score(score: Variant) -> void:
 	current_score += score
-	%UiIngame.set_score_text(score)
+	%UiIngame.set_score_text(current_score)
 
 
 func _on_game_time_timeout() -> void:

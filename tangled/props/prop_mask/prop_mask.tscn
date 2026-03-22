@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b8g3qr3athmp8"]
+
+[ext_resource type="Texture2D" uid="uid://dl40vfk8mg0y" path="res://props/prop_mask/mask_outerwild.png" id="2_ol2oi"]
+
+[node name="PropMask" type="Node2D" unique_id=1030952231]
+
+[node name="MaskOuterwild2" type="Sprite2D" parent="." unique_id=1171490315]
+modulate = Color(0.30544624, 0.3054462, 0.3054462, 1)
+position = Vector2(34, 18)
+rotation = -3.1415927
+scale = Vector2(1, -1)
+texture = ExtResource("2_ol2oi")
+
+[node name="MaskOuterwild" type="Sprite2D" parent="." unique_id=519441010]
+position = Vector2(27, 17)
+rotation = -3.1415927
+scale = Vector2(1, -1)
+texture = ExtResource("2_ol2oi")
