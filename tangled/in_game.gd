@@ -127,5 +127,4 @@ func _on_add_score(score: Variant) -> void:
 
 
 func _on_game_time_timeout() -> void:
-	elapsed_seconds += 1
-	print("Seconds passed: ", elapsed_seconds)
+	elapsed_seconds += 0.1
