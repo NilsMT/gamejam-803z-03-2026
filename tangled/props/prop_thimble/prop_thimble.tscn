@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://dd5it8mwkxfmt"]
 
 [ext_resource type="Texture2D" uid="uid://btimo5o8v7ug5" path="res://props/prop_thimble/thimble.png" id="1_plrff"]
+[ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="2_5ob5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_st4j5"]
 size = Vector2(82, 102)
 
 [node name="PropThimble" type="StaticBody2D" unique_id=663621505]
+
+[node name="ObjectShadow" parent="." unique_id=569395071 instance=ExtResource("2_5ob5x")]
+position = Vector2(2.2737368e-13, 39.000008)
+scale = Vector2(0.3299989, 0.089999184)
 
 [node name="Thimble" type="Sprite2D" parent="." unique_id=237298564]
 position = Vector2(1.999999, -2.000002)

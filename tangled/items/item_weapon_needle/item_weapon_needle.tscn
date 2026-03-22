@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bwb4y0raj781c" path="res://items/item_weapon_needle/item_weapon_needle.gd" id="1_cd3iv"]
 [ext_resource type="PackedScene" uid="uid://dm445qhrh7flq" path="res://objects/object_needle_item/object_needle_item.tscn" id="2_ehhb2"]
+[ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="3_0o7iu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7n0p3"]
 radius = 60.0
@@ -10,6 +11,10 @@ radius = 60.0
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_cd3iv")
+
+[node name="ObjectShadow" parent="." unique_id=569395071 instance=ExtResource("3_0o7iu")]
+position = Vector2(3.5762787e-06, 57.999996)
+scale = Vector2(0.3299989, 0.089999184)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=546528697]
 shape = SubResource("CircleShape2D_7n0p3")

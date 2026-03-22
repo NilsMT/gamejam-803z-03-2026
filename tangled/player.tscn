@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://0w35l886igiu" path="res://textures/ui/progress_bar.png" id="3_hqtel"]
 [ext_resource type="Texture2D" uid="uid://1v2s2c4mqoju" path="res://effects/Stars.png" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://chy01qhuas1sh" path="res://textures/ui/progress_bar_front.png" id="4_sweqy"]
+[ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="6_2hs0m"]
 
 [sub_resource type="Animation" id="Animation_hqtel"]
 length = 0.001
@@ -325,8 +326,13 @@ libraries/ = SubResource("AnimationLibrary_2hs0m")
 
 [node name="Crocky" parent="." unique_id=269349362 instance=ExtResource("1_4flbx")]
 unique_name_in_owner = true
-position = Vector2(-1.0000076, 111.000015)
+position = Vector2(-11.000008, 111.000015)
 scale = Vector2(0.5, 0.5)
+
+[node name="ObjectShadow" parent="Crocky" unique_id=569395071 instance=ExtResource("6_2hs0m")]
+z_index = -1
+position = Vector2(22.000017, 3.9999695)
+scale = Vector2(0.6599978, 0.17999837)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630267291]
 position = Vector2(10, 110)
