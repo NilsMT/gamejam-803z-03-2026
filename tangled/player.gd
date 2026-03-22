@@ -14,7 +14,7 @@ enum EFFECTS {
 	POISON
 }
 
-var health = MAX_HEALTH
+var health = 0
 var active_effects = {}
 
 
@@ -68,6 +68,8 @@ func _ready():
 	MAX_HEALTH = Balance.VALUES["player"]["MAX_HEALTH"]
 	MAX_EFFECT_DURATION = Balance.VALUES["player"]["MAX_EFFECT_DURATION"]
 	SPEED = Balance.VALUES["player"]["SPEED"]
+	
+	health = MAX_HEALTH
 	switch_weapon(choice)
 	%ProgressBar.value = health
 	%ProgressBar.max_value = MAX_HEALTH

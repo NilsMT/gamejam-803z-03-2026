@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 const BODY_TYPE = 0
 
-
 var HEALTH = 0
 var DAMAGE = 0
 var SPEED = 0
