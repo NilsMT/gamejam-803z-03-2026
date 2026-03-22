@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dcnkxsoticoge" path="res://characters/angy/Angy.png" id="2_grla5"]
 [ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="2_xnwk0"]
 [ext_resource type="Texture2D" uid="uid://cikoum6asjnv5" path="res://characters/angy/Angy_death.png" id="3_xnwk0"]
+[ext_resource type="AudioStream" uid="uid://bhnn7b206raes" path="res://sounds/angy_death.mp3" id="5_xnwk0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_krglj"]
 load_path = "res://.godot/imported/Angy.png-10b82cbd6ce05c3618cc8fb9e2b00583.ctex"
@@ -199,3 +200,8 @@ libraries/ = SubResource("AnimationLibrary_grla5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=604940297]
 texture = SubResource("CompressedTexture2D_krglj")
+
+[node name="angy_death" type="AudioStreamPlayer2D" parent="." unique_id=1695109169]
+stream = ExtResource("5_xnwk0")
+volume_db = -5.0
+pitch_scale = 1.5
