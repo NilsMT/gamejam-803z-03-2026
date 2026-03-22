@@ -1,27 +1,113 @@
 [gd_scene format=3 uid="uid://dfi1hoo1u5lal"]
 
 [ext_resource type="Script" uid="uid://dp7t1lk7c76oy" path="res://ui/main_menu/ui_main_menu.gd" id="1_32j0l"]
-[ext_resource type="Texture2D" uid="uid://liqhtak1jncs" path="res://ui/main_menu/background.jpg" id="1_f63xd"]
 [ext_resource type="Texture2D" uid="uid://6ihdepqun0xh" path="res://ui/main_menu/Button.png" id="2_koveq"]
+[ext_resource type="Texture2D" uid="uid://cgal5r0s7ytr6" path="res://textures/wood.jpg" id="2_xeo8i"]
 [ext_resource type="Texture2D" uid="uid://bu8qwnshhe5ha" path="res://ui/main_menu/Button_clicked.png" id="3_h50s7"]
+[ext_resource type="Texture2D" uid="uid://bspdkp1tufo7e" path="res://textures/ui/menu_background.png" id="3_p16qy"]
 [ext_resource type="Texture2D" uid="uid://den50sq80va7n" path="res://ui/main_menu/Button_hover.png" id="4_32j0l"]
+[ext_resource type="Texture2D" uid="uid://b5a4hp6c8d60h" path="res://textures/logo.png" id="7_ngjk0"]
+[ext_resource type="PackedScene" uid="uid://vf23up0ywxky" path="res://characters/angy/angy.tscn" id="8_i7ndj"]
+[ext_resource type="PackedScene" uid="uid://bpcox517byfn8" path="res://characters/mii_goku/matt.tscn" id="8_p16qy"]
+[ext_resource type="PackedScene" uid="uid://x3sf3onrfkab" path="res://objects/object_scissors/object_scissors.tscn" id="10_ngjk0"]
 
 [node name="UiGameMenu" type="CanvasLayer" unique_id=768309926]
 script = ExtResource("1_32j0l")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=952506729]
-offset_right = 1916.0
+[node name="Ground" type="TextureRect" parent="." unique_id=531747611]
+offset_right = 1920.0
 offset_bottom = 1095.0
-texture = ExtResource("1_f63xd")
+texture = ExtResource("2_xeo8i")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=952506729]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -887.0
+offset_top = -492.5
+offset_right = 1033.0
+offset_bottom = 602.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.92000014, 0.92000014)
+texture = ExtResource("3_p16qy")
+
+[node name="Button Shadow" type="Sprite2D" parent="." unique_id=110056095]
+modulate = Color(0, 0, 0, 0.27450982)
+position = Vector2(976.00006, 903)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_koveq")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1745594806]
-offset_left = 88.0
-offset_top = 803.0
-offset_right = 2588.0
-offset_bottom = 2162.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -295.0
+offset_right = 2330.0
+offset_bottom = 1064.0
+grow_horizontal = 2
+grow_vertical = 0
 scale = Vector2(0.15, 0.15)
 texture_normal = ExtResource("2_koveq")
 texture_pressed = ExtResource("3_h50s7")
 texture_hover = ExtResource("4_32j0l")
+
+[node name="LogoShadow" type="Sprite2D" parent="." unique_id=682790069]
+modulate = Color(0, 0, 0, 0.27450982)
+position = Vector2(1607.0001, 814.00006)
+scale = Vector2(0.3199994, 0.3199994)
+texture = ExtResource("7_ngjk0")
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=1025626783]
+position = Vector2(1609, 785)
+scale = Vector2(0.3199994, 0.3199994)
+texture = ExtResource("7_ngjk0")
+
+[node name="Matt" parent="." unique_id=711195047 instance=ExtResource("8_p16qy")]
+position = Vector2(22.000004, 104)
+rotation = 0.40179884
+scale = Vector2(0.314003, 0.314003)
+
+[node name="Angy2" parent="." unique_id=1584495043 instance=ExtResource("8_i7ndj")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(289, 703)
+scale = Vector2(0.20519987, 0.20519987)
+script = null
+
+[node name="Angy" parent="." unique_id=659300807 instance=ExtResource("8_i7ndj")]
+unique_name_in_owner = true
+modulate = Color(0.67974406, 0.0035019934, 0.97104925, 1)
+position = Vector2(219, 895)
+script = null
+
+[node name="Angy3" parent="." unique_id=1385946587 instance=ExtResource("8_i7ndj")]
+unique_name_in_owner = true
+modulate = Color(0.9999998, 0.20177674, 0.2386508, 1)
+position = Vector2(92, 688)
+scale = Vector2(0.5, 0.5)
+script = null
+
+[node name="Angy4" parent="." unique_id=1008443726 instance=ExtResource("8_i7ndj")]
+unique_name_in_owner = true
+modulate = Color(2.0214916e-06, 0.89618814, 0.30955827, 1)
+position = Vector2(241, 552)
+scale = Vector2(0.5, 0.5)
+script = null
+
+[node name="ObjectScissorsShadow" parent="." unique_id=1097997817 instance=ExtResource("10_ngjk0")]
+modulate = Color(0, 0, 0, 0.27450982)
+position = Vector2(1957.0001, 287.00006)
+rotation = 2.0113406
+scale = Vector2(2.24, 2.24)
+
+[node name="ObjectScissors" parent="." unique_id=158071699 instance=ExtResource("10_ngjk0")]
+position = Vector2(1954.0001, 271)
+rotation = 2.0113406
+scale = Vector2(2.2400002, 2.2400002)
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -8,11 +8,20 @@ const SPEED = 2000.0
 const SCORE = 1000
 
 var busy = false
+var canMove = false
 
 @onready var player = get_parent().get_node("Player")
 @onready var game = get_parent()
 
+func _ready():
+	%MattSpawn.play()
+	await %MattSpawn.finished
+	canMove = true
+
 func _physics_process(_delta: float) -> void:
+	if not canMove:
+		return
+	
 	if busy:
 		return
 	var direction = global_position.direction_to(player.global_position)

@@ -1,8 +1,5 @@
 extends CharacterBody2D
 
-@onready var effect_audio = $crocky_stunned
-@onready var crocky_death = $crocky_death
-
 signal health_depleted
 
 const MAX_HEALTH = 100.0
@@ -72,48 +69,51 @@ func _ready():
 	%ProgressBar.max_value = MAX_HEALTH
 
 func _physics_process(delta: float) -> void:
-	if is_game_ended == false:
-		#effect management
-		_update_effects(delta)
-		
-		# Movement
-		var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-		
-		if is_game_ended:
-			input_direction = Vector2.ZERO
-		
-		#Effects
-		input_direction = handle_effects(delta,input_direction)
-		
-		velocity = input_direction * SPEED
-		move_and_slide()
+	if is_game_ended:
+		return
+	
+	#effect management
+	_update_effects(delta)
+	
+	# Movement
+	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	
+	if is_game_ended:
+		input_direction = Vector2.ZERO
+	
+	#Effects
+	input_direction = handle_effects(delta,input_direction)
+	
+	velocity = input_direction * SPEED
+	move_and_slide()
 
-		# Flip sprite
-		if input_direction.x > 0:
-			%Crocky.scale.x = -0.5
-		elif input_direction.x < 0:
-			%Crocky.scale.x = 0.5
+	# Flip sprite
+	if input_direction.x > 0:
+		%Crocky.scale.x = -0.5
+	elif input_direction.x < 0:
+		%Crocky.scale.x = 0.5
 
-		# Rotate weapon toward mouse
-		handle_weapon_rotation(delta)
+	# Rotate weapon toward mouse
+	handle_weapon_rotation(delta)
 
-		# Play animations
-		if velocity.length() > 0.0:
-			%Crocky.play_walk()
-		else:
-			%Crocky.play_idle()
+	# Play animations
+	if velocity.length() > 0.0:
+		%Crocky.play_walk()
+	else:
+		%Crocky.play_idle()
 
-		#handle bodies (mobs & items)
-		_handle_bodies(delta)
-		
-		%ProgressBar.value = health
+	#handle bodies (mobs & items)
+	_handle_bodies(delta)
+	
+	%ProgressBar.value = health
 
-		if health <= 0.0:
-			health_depleted.emit()
-			is_game_ended = true
-			weapon.queue_free()
-			crocky_death.play()
-			%Crocky.play_death()
+	if health <= 0.0:
+		health_depleted.emit()
+		is_game_ended = true
+		weapon.queue_free()
+		%crocky_death.play()
+		%crocky_death_sad.play()
+		%Crocky.play_death()
 
 
 
@@ -145,25 +145,45 @@ func handle_weapon_rotation(delta):
 			var obj = handle.get_node("AOE/Object")
 			obj.scale.y = -1 if angle_deg > 90 or angle_deg < -90 else 1
 
-func handle_effects(delta,input_direction) -> Vector2:
+func handle_effects(delta, input_direction) -> Vector2:
+	# -----------------------
+	# 🧠 CONFUSE
+	# -----------------------
 	if EFFECTS.INVERT_CONTROLS in active_effects:
 		input_direction *= -1
-		if %AnimationPlayerConfused.current_animation != "confused":
-			if not effect_audio.playing:
-				effect_audio.play()
-				%AnimationPlayerConfused.play("confused")
-			else:
-				%AnimationPlayerConfused.play("RESET")
 
-	if EFFECTS.POISON in active_effects:
-		health -= 0.1
-		if %AnimationPlayerPoisoned.current_animation != "poisoned":
-			if not effect_audio.playing:
-				effect_audio.play()
-			%AnimationPlayerPoisoned.play("poisoned")
+		# Play sound if not already playing
+		if not %crocky_stunned.playing:
+			%crocky_stunned.play()
+
+		# Only play if:
+		# - not already playing
+		# - OR finished
+		if not %AnimationPlayerConfused.is_playing():
+			%AnimationPlayerConfused.play("confused")
+
 	else:
-		%AnimationPlayerPoisoned.play("RESET")
-		
+		# Only reset if not already reset AND not playing
+		if %AnimationPlayerConfused.current_animation != "RESET":
+			%AnimationPlayerConfused.play("RESET")
+
+
+	# -----------------------
+	# ☠️ POISON
+	# -----------------------
+	if EFFECTS.POISON in active_effects:
+		health -= 0.1 * delta  # (fixed framerate issue)
+
+		if not %crocky_stunned.playing:
+			%crocky_stunned.play()
+
+		if not %AnimationPlayerPoisoned.is_playing():
+			%AnimationPlayerPoisoned.play("poisoned")
+
+	else:
+		if %AnimationPlayerPoisoned.current_animation != "RESET":
+			%AnimationPlayerPoisoned.play("RESET")
+
 	return input_direction
 
 

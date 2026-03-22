@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://1v2s2c4mqoju" path="res://effects/Stars.png" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://chy01qhuas1sh" path="res://textures/ui/progress_bar_front.png" id="4_sweqy"]
 [ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="6_2hs0m"]
-[ext_resource type="AudioStream" uid="uid://clp0e214wso60" path="res://sounds/crocky_stunned.mp3" id="7_1jxqw"]
+[ext_resource type="AudioStream" uid="uid://ptjwbomqiao6" path="res://sounds/crocky_stunned.mp3" id="7_1jxqw"]
+[ext_resource type="AudioStream" uid="uid://t5g2pof5vb6u" path="res://sounds/crocky_death_sad.mp3" id="8_b26j0"]
 [ext_resource type="AudioStream" uid="uid://duipwdixvus57" path="res://sounds/crocky_death.mp3" id="8_dw050"]
 
 [sub_resource type="Animation" id="Animation_hqtel"]
@@ -360,12 +361,12 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
-radius = 36.99891
-height = 120.01636
+radius = 70.97096
+height = 283.82666
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
-radius = 99.0
-height = 320.0
+radius = 112.0
+height = 324.0
 
 [node name="Player" type="CharacterBody2D" unique_id=560301391]
 script = ExtResource("1_onrkg")
@@ -389,8 +390,8 @@ position = Vector2(22.000017, 3.9999695)
 scale = Vector2(0.6599978, 0.17999837)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630267291]
-position = Vector2(1, 89)
-rotation = 1.5784839
+position = Vector2(-7, -13)
+rotation = 3.112993
 shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=114584655]
@@ -399,6 +400,7 @@ collision_layer = 0
 collision_mask = 10
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtBox" unique_id=583846421]
+position = Vector2(-1, -18)
 shape = SubResource("CapsuleShape2D_i3pqv")
 debug_color = Color(1, 0, 0, 0.33333334)
 
@@ -442,9 +444,17 @@ scale = Vector2(0.030255621, 0.030255623)
 texture = ExtResource("3_i3pqv")
 
 [node name="crocky_stunned" type="AudioStreamPlayer2D" parent="." unique_id=1559211540]
+unique_name_in_owner = true
 stream = ExtResource("7_1jxqw")
+volume_db = -10.0
+
+[node name="crocky_death_sad" type="AudioStreamPlayer2D" parent="." unique_id=2100202842]
+unique_name_in_owner = true
+stream = ExtResource("8_b26j0")
+volume_db = -10.0
 
 [node name="crocky_death" type="AudioStreamPlayer2D" parent="." unique_id=302234554]
+unique_name_in_owner = true
 stream = ExtResource("8_dw050")
 
 [connection signal="ready" from="Crocky" to="Crocky" method="_on_ready"]

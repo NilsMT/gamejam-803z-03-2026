@@ -14,12 +14,12 @@ scale = Vector2(3, 3)
 position = Vector2(2, 49.33334)
 scale = Vector2(0.3299989, 0.089999184)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=499316192]
-position = Vector2(1.6666667, 51.33334)
-rotation = -1.5765833
-shape = SubResource("CapsuleShape2D_5527o")
-
 [node name="LumaWii" type="Sprite2D" parent="." unique_id=1137196193]
 position = Vector2(-1.1874971, -1.1417967)
 scale = Vector2(0.135907, 0.13590696)
 texture = ExtResource("1_7y1up")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=499316192]
+position = Vector2(1.6666667, 51.33334)
+rotation = -1.5765833
+shape = SubResource("CapsuleShape2D_5527o")
