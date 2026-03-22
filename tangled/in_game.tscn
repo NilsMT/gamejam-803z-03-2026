@@ -39,14 +39,14 @@ unique_name_in_owner = true
 visible = false
 
 [node name="TimerObject" type="Timer" parent="." unique_id=1339317992]
-wait_time = 30.0
+wait_time = 15.0
 autostart = true
 
 [node name="TimerMob" type="Timer" parent="." unique_id=2043572244]
 autostart = true
 
 [node name="TimerProp" type="Timer" parent="." unique_id=679867077]
-wait_time = 30.0
+wait_time = 15.0
 autostart = true
 
 [node name="GameTime" type="Timer" parent="." unique_id=1944973101]

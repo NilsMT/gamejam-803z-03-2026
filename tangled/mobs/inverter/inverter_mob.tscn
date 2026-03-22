@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://0ui5px17wowg" path="res://characters/angy/very_angy.tscn" id="2_pg2eu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_knm5e"]
-radius = 150.0
+radius = 56.0
 height = 496.0
 
 [node name="InverterMob" type="CharacterBody2D" unique_id=2054343311]
@@ -17,5 +17,6 @@ script = ExtResource("1_pg2eu")
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=879723439]
+position = Vector2(0, 88)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_knm5e")

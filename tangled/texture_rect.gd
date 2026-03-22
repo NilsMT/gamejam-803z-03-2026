@@ -13,7 +13,7 @@ func _process(delta):
 	global_position = pos
 	
 	# accumulate scroll based on player velocity
-	scroll_offset += %Player.velocity * delta * 0.0005  # tweak speed
+	scroll_offset += (%Player.velocity * delta) * 0.0005  # tweak speed
 
 	# optional: smooth the scroll
 	var smooth_offset = scroll_offset.lerp(scroll_offset, delta * smoothing)  # can skip if you like

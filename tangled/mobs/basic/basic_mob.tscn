@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dwb8t1hxih55n" path="res://mobs/basic/basic_mob.gd" id="1_nokgg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_knm5e"]
-radius = 150.0
+radius = 56.0
 height = 496.0
 
 [node name="Mob" type="CharacterBody2D" unique_id=2054343311]
@@ -16,6 +16,7 @@ script = ExtResource("1_nokgg")
 [node name="Angy" parent="." unique_id=1918388177 instance=ExtResource("1_dy6sc")]
 unique_name_in_owner = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=879723439]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2057646453]
+position = Vector2(0, 88)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_knm5e")
