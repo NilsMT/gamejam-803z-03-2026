@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var effect_audio = $crocky_stunned
 @onready var crocky_death = $crocky_death
+@onready var pickup  = $pickup
 
 signal health_depleted
 
@@ -208,11 +209,13 @@ func _handle_bodies(delta: float) -> void:
 					var effect_id = body.EFFECT_ID
 					_apply_effect(effect_id, body.EFFECT_DURATION)
 			1:
+				pickup.play()
 				if (health + body.HEAL) > MAX_HEALTH:
 					health = MAX_HEALTH
 				else:
 					health += body.HEAL
 				body.queue_free()
 			2:
+				pickup.play()
 				switch_weapon(body.WEAPON_TYPE)
 				body.queue_free()

@@ -21,5 +21,6 @@ position = Vector2(1.0000001, -2)
 
 [node name="needle_sound" type="AudioStreamPlayer2D" parent="." unique_id=778383827]
 stream = ExtResource("3_ejdal")
+volume_db = -10.0
 
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
