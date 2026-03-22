@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b20e5dhpasnrf"]
+
+[ext_resource type="Script" uid="uid://nb3hg80fkc2b" path="res://mobs/big/big_mob.gd" id="1_hqju1"]
+[ext_resource type="PackedScene" uid="uid://vf23up0ywxky" path="res://characters/angy/angy.tscn" id="2_t5374"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tegx8"]
+radius = 134.0
+height = 496.0
+
+[node name="BigMob" type="CharacterBody2D" unique_id=2054343311]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_hqju1")
+
+[node name="Angy" parent="." unique_id=1918388177 instance=ExtResource("2_t5374")]
+unique_name_in_owner = true
+modulate = Color(0.67974406, 0.0035019934, 0.97104925, 1)
+scale = Vector2(2.2799997, 2.2799997)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2015722144]
+position = Vector2(0, 4)
+rotation = 1.5707964
+scale = Vector2(2.2799993, 2.2799993)
+shape = SubResource("CapsuleShape2D_tegx8")

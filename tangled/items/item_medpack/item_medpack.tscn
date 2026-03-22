@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bsyx42yldjn2v"]
 
 [ext_resource type="Script" uid="uid://b4efscura2o74" path="res://items/item_medpack/item_medpack.gd" id="1_haedo"]
+[ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="2_6o3yo"]
 [ext_resource type="PackedScene" uid="uid://c64vt3jfmcpml" path="res://objects/object_medpack/object_medpack.tscn" id="2_ih7fu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6aioo"]
@@ -10,6 +11,10 @@ radius = 60.0
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_haedo")
+
+[node name="ObjectShadow" parent="." unique_id=569395071 instance=ExtResource("2_6o3yo")]
+position = Vector2(0.99999994, 39.000008)
+scale = Vector2(0.28999966, 0.119090974)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2117987865]
 shape = SubResource("CircleShape2D_6aioo")

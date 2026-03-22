@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dm445qhrh7flq" path="res://objects/object_needle_item/object_needle_item.tscn" id="2_ef8ua"]
 
 [node name="WeaponNeedle" type="Node2D" unique_id=117786991]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_qap4a")
 
 [node name="ReloadTimer" type="Timer" parent="." unique_id=232518559]

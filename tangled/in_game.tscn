@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cgal5r0s7ytr6" path="res://textures/wood.jpg" id="6_nvoy2"]
 [ext_resource type="Script" uid="uid://c6ipk1nn7gsqp" path="res://texture_rect.gd" id="7_nvoy2"]
 [ext_resource type="PackedScene" uid="uid://ddpnnpjrgtdfe" path="res://props/prop_mat/prop_mat.tscn" id="8_bjxrw"]
+[ext_resource type="PackedScene" uid="uid://bsyx42yldjn2v" path="res://items/item_medpack/item_medpack.tscn" id="9_ywj4u"]
+[ext_resource type="PackedScene" uid="uid://c523vuq3p4wwj" path="res://items/item_weapon_ruler/item_weapon_ruler.tscn" id="10_n3cn4"]
+[ext_resource type="PackedScene" uid="uid://yierowqplfyv" path="res://items/item_weapon_needle/item_weapon_needle.tscn" id="11_5jqcy"]
+[ext_resource type="PackedScene" uid="uid://8tojubd4xcf7" path="res://items/item_weapon_scissors/item_weapon_scissors.tscn" id="12_pav82"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nvoy2"]
 shader = ExtResource("5_pj0gh")
@@ -89,6 +93,16 @@ unique_name_in_owner = true
 [node name="PropMat" parent="." unique_id=150245113 instance=ExtResource("8_bjxrw")]
 position = Vector2(957.99994, 640)
 scale = Vector2(2.2, 2.2)
+
+[node name="ItemMedpack" parent="." unique_id=817756361 instance=ExtResource("9_ywj4u")]
+
+[node name="ItemWeaponRuler" parent="." unique_id=949128297 instance=ExtResource("10_n3cn4")]
+position = Vector2(210, 0)
+
+[node name="ItemWeaponNeedle" parent="." unique_id=867108745 instance=ExtResource("11_5jqcy")]
+position = Vector2(462, -6)
+
+[node name="ItemWeaponScissors" parent="." unique_id=297575322 instance=ExtResource("12_pav82")]
 
 [connection signal="add_score" from="." to="." method="_on_add_score"]
 [connection signal="timeout" from="TimerObject" to="." method="_on_timer_object_timeout"]

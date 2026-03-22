@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://srd5c1531kct" path="res://objects/object_gun/object_gun.tscn" id="2_4v447"]
 
 [node name="WeaponButton" type="Node2D" unique_id=117786991]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_tpngd")
 
 [node name="Handle" type="Marker2D" parent="." unique_id=838358808]

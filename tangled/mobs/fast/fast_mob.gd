@@ -2,13 +2,10 @@ extends CharacterBody2D
 
 const BODY_TYPE = 0
 
-var HEALTH = 50
-var DAMAGE = 0
-const SPEED = 150.0
-const SCORE = 15
-
-var EFFECT_ID = 0 # Player.EFFECTS.INVERT_CONTROLS
-var EFFECT_DURATION = 10.0
+var HEALTH = 20
+var DAMAGE = 5
+const SPEED = 400.0
+const SCORE = 10
 
 var busy = false
 

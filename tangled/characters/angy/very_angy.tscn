@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://0ui5px17wowg"]
 
 [ext_resource type="Script" uid="uid://kjkjm5rmd706" path="res://characters/angy/angy.gd" id="1_056ao"]
-[ext_resource type="Texture2D" uid="uid://nupejuljo4du" path="res://characters/angy/Very_angy.png" id="2_056ao"]
 [ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="2_bp7ky"]
-[ext_resource type="Texture2D" uid="uid://cgjdm1rfvwulu" path="res://characters/angy/Very_angy_hit.png" id="3_b4avm"]
-[ext_resource type="Texture2D" uid="uid://ccmsd8tpjsf0v" path="res://characters/angy/Very_angy_death.png" id="3_it8w7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_056ao"]
+load_path = "res://.godot/imported/Very_angy.png-99aac56950ee583ac8c4f774fae548a2.ctex"
 
 [sub_resource type="Animation" id="Animation_it8w7"]
 length = 0.001
@@ -30,7 +30,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_056ao")]
+"values": [SubResource("CompressedTexture2D_056ao")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -81,6 +81,9 @@ tracks/5/keys = {
 "values": [1.569051]
 }
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b4avm"]
+load_path = "res://.godot/imported/Very_angy_death.png-a2990f5dc2d3946bad763ec6a71acaf4.ctex"
+
 [sub_resource type="Animation" id="Animation_grla5"]
 resource_name = "death"
 tracks/0/type = "value"
@@ -93,7 +96,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.73333335),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("2_056ao"), ExtResource("3_it8w7")]
+"values": [SubResource("CompressedTexture2D_056ao"), SubResource("CompressedTexture2D_b4avm")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -144,6 +147,9 @@ tracks/4/keys = {
 "values": [0.0, 1.569051]
 }
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_it8w7"]
+load_path = "res://.godot/imported/Very_angy_hit.png-90d172f69293efed4b25d8934d94a587.ctex"
+
 [sub_resource type="Animation" id="Animation_glqm8"]
 resource_name = "hurt"
 tracks/0/type = "value"
@@ -156,7 +162,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_b4avm")]
+"values": [SubResource("CompressedTexture2D_it8w7")]
 }
 
 [sub_resource type="Animation" id="Animation_krglj"]
@@ -196,4 +202,4 @@ unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_grla5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=604940297]
-texture = ExtResource("2_056ao")
+texture = SubResource("CompressedTexture2D_056ao")
