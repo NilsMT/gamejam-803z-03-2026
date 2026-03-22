@@ -32,7 +32,7 @@ const WEAPON_LIST = [
 ]
 
 var weapon = null
-var choice = 1
+var choice = 2
 
 func switch_weapon(c):
 	if c < 0 or c >= WEAPON_LIST.size():
@@ -124,7 +124,7 @@ func handle_weapon_rotation(delta):
 	if not weapon:
 		return
 
-	if weapon.get("FOLLOW_MOUSE") and not weapon.FOLLOW_MOUSE:
+	if weapon.get("FOLLOW_MOUSE") != null and weapon.FOLLOW_MOUSE == false:
 		weapon.rotation += deg_to_rad(weapon.SPIN_SPEED * delta)
 	else:
 		var mouse_pos = get_global_mouse_position()
