@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var needle_sound = $needle_sound
+
 var mag_capacity = 0
 const MAX_MAG_CAPACITY = 3
 const NEEDLE_MODEL = preload("res://objects/object_needle/object_needle.tscn")
@@ -20,6 +22,7 @@ func _ready():
 
 func use():
 	if mag_capacity > 0:
+		needle_sound.play()
 		mag_capacity -= 1
 		# Hide the visual needle
 		var visual_needle = needles[mag_capacity]

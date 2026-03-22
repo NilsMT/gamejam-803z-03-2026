@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://omtlbl0eqk88" path="res://weapons/weapon_button.gd" id="1_tpngd"]
 [ext_resource type="PackedScene" uid="uid://srd5c1531kct" path="res://objects/object_gun/object_gun.tscn" id="2_4v447"]
+[ext_resource type="AudioStream" uid="uid://oqucgot33dgr" path="res://sounds/button_sound.mp3" id="3_k42bd"]
 
 [node name="WeaponButton" type="Node2D" unique_id=117786991]
 script = ExtResource("1_tpngd")
@@ -17,7 +18,11 @@ rotation = 1.5865602
 
 [node name="Timer" type="Timer" parent="." unique_id=586007182]
 unique_name_in_owner = true
-wait_time = 0.1
+wait_time = 0.3
 autostart = true
+
+[node name="button_sound" type="AudioStreamPlayer2D" parent="." unique_id=313588988]
+stream = ExtResource("3_k42bd")
+volume_db = -20.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bleph6w16sw16" path="res://weapons/weapon_ruler.gd" id="1_q6iin"]
 [ext_resource type="PackedScene" uid="uid://ct48munyglat4" path="res://objects/object_ruler/object_ruler.tscn" id="2_q6iin"]
+[ext_resource type="AudioStream" uid="uid://dj4irgkg6c23b" path="res://sounds/ruler_woosh.mp3" id="3_8d71r"]
+[ext_resource type="AudioStream" uid="uid://cj25r6khxpasn" path="res://sounds/needle_sound.mp3" id="4_moilu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6iin"]
 size = Vector2(175, 47)
@@ -210,6 +212,13 @@ debug_color = Color(1, 0, 0, 0.33333334)
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_moilu")
 speed_scale = 2.0
+
+[node name="ruler_woosh" type="AudioStreamPlayer2D" parent="." unique_id=191370036]
+stream = ExtResource("3_8d71r")
+
+[node name="ruler_spin" type="AudioStreamPlayer2D" parent="." unique_id=1006222866]
+stream = ExtResource("4_moilu")
+volume_db = -10.0
 
 [connection signal="body_entered" from="Handle/ExtendedAOE" to="." method="_on_extended_aoe_body_entered"]
 [connection signal="body_entered" from="Handle/AOE" to="." method="_on_aoe_body_entered"]

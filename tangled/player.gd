@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var crocky_stunned = $crocky_stunned
+
 signal health_depleted
 
 const MAX_HEALTH = 100.0
@@ -56,6 +58,7 @@ func _physics_process(delta: float) -> void:
 	if EFFECTS.INVERT_CONTROLS in active_effects:
 		input_direction *= -1
 		if %AnimationPlayer.current_animation != "confused":
+			crocky_stunned.play()
 			%AnimationPlayer.play("confused")
 	elif %AnimationPlayer.current_animation == "confused":
 		%AnimationPlayer.play("RESET")

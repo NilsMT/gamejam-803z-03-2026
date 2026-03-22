@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://1v2s2c4mqoju" path="res://effects/Stars.png" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://chy01qhuas1sh" path="res://textures/ui/progress_bar_front.png" id="4_sweqy"]
 [ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="6_2hs0m"]
+[ext_resource type="AudioStream" uid="uid://clp0e214wso60" path="res://sounds/crocky_stunned.mp3" id="7_1jxqw"]
 
 [sub_resource type="Animation" id="Animation_hqtel"]
 length = 0.001
@@ -390,5 +391,8 @@ visible = false
 position = Vector2(-79.81256, -111.32656)
 scale = Vector2(0.030255621, 0.030255623)
 texture = ExtResource("3_i3pqv")
+
+[node name="crocky_stunned" type="AudioStreamPlayer2D" parent="." unique_id=1559211540]
+stream = ExtResource("7_1jxqw")
 
 [connection signal="ready" from="Crocky" to="Crocky" method="_on_ready"]
