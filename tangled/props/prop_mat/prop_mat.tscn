@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ddpnnpjrgtdfe"]
+
+[ext_resource type="Texture2D" uid="uid://cmt22fvpolpva" path="res://props/prop_mat/cutting_mat.png" id="1_3wvho"]
+
+[node name="PropMat" type="Node2D" unique_id=150245113]
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1506171899]
+modulate = Color(0.66492164, 0.66492164, 0.6649216, 1)
+z_index = -1
+position = Vector2(5.999999, 7.9999995)
+scale = Vector2(0.6400005, 0.6400005)
+texture = ExtResource("1_3wvho")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1608989082]
+z_index = -1
+scale = Vector2(0.6400005, 0.6400005)
+texture = ExtResource("1_3wvho")

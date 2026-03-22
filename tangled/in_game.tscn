@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://dkrfbdx8kyg8j" path="res://in_game.gdshader" id="5_pj0gh"]
 [ext_resource type="Texture2D" uid="uid://cgal5r0s7ytr6" path="res://textures/wood.jpg" id="6_nvoy2"]
 [ext_resource type="Script" uid="uid://c6ipk1nn7gsqp" path="res://texture_rect.gd" id="7_nvoy2"]
+[ext_resource type="PackedScene" uid="uid://ddpnnpjrgtdfe" path="res://props/prop_mat/prop_mat.tscn" id="8_bjxrw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nvoy2"]
 shader = ExtResource("5_pj0gh")
@@ -23,7 +24,7 @@ y_sort_enabled = true
 script = ExtResource("1_80nbo")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1117285767]
-z_index = -1
+z_index = -2
 texture_repeat = 2
 material = SubResource("ShaderMaterial_nvoy2")
 offset_right = 1920.0
@@ -84,6 +85,10 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="Radar" parent="Player" unique_id=284120149 instance=ExtResource("3_fc0e3")]
 unique_name_in_owner = true
+
+[node name="PropMat" parent="." unique_id=150245113 instance=ExtResource("8_bjxrw")]
+position = Vector2(957.99994, 640)
+scale = Vector2(2.2, 2.2)
 
 [connection signal="add_score" from="." to="." method="_on_add_score"]
 [connection signal="timeout" from="TimerObject" to="." method="_on_timer_object_timeout"]

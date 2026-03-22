@@ -16,6 +16,7 @@ var PROPS_LIST = [
 	"res://props/prop_pearl/prop_pearl.tscn", 1.0,
 	"res://props/prop_luma_wii/prop_luma_wii.tscn", 1.0,
 	"res://props/prop_thimble/prop_thimble.tscn", 1.0,
+	"res://props/prop_mat/prop_mat.tscn", 1.0,
 ]
 
 var OBJECTS_LIST = [
