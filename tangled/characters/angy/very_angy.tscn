@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://cevpoqrjrcd56"]
+[gd_scene format=3 uid="uid://0ui5px17wowg"]
 
 [ext_resource type="Script" uid="uid://kjkjm5rmd706" path="res://characters/angy/angy.gd" id="1_056ao"]
 [ext_resource type="Texture2D" uid="uid://nupejuljo4du" path="res://characters/angy/Very_angy.png" id="2_056ao"]
+[ext_resource type="PackedScene" uid="uid://baqfh7dbhb765" path="res://objects/object_shadow/object_shadow.tscn" id="2_bp7ky"]
 [ext_resource type="Texture2D" uid="uid://cgjdm1rfvwulu" path="res://characters/angy/Very_angy_hit.png" id="3_b4avm"]
 [ext_resource type="Texture2D" uid="uid://ccmsd8tpjsf0v" path="res://characters/angy/Very_angy_death.png" id="3_it8w7"]
 
@@ -55,6 +56,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ObjectShadow:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(14, 110)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ObjectShadow:skew")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.569051]
+}
 
 [sub_resource type="Animation" id="Animation_grla5"]
 resource_name = "death"
@@ -93,6 +118,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 1.5690509975429023]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ObjectShadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.8333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(14, 110), Vector2(14, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ObjectShadow:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.75, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.569051]
 }
 
 [sub_resource type="Animation" id="Animation_glqm8"]
@@ -136,6 +185,11 @@ _data = {
 
 [node name="VeryAngy" type="Node2D" unique_id=1584495043]
 script = ExtResource("1_056ao")
+
+[node name="ObjectShadow" parent="." unique_id=569395071 instance=ExtResource("2_bp7ky")]
+position = Vector2(14, 110)
+scale = Vector2(1.7433397, 0.4099992)
+skew = 1.569051
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=29994951]
 unique_name_in_owner = true
