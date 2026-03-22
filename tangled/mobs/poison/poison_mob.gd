@@ -2,13 +2,15 @@ extends CharacterBody2D
 
 const BODY_TYPE = 0
 
-var HEALTH = 50
-var DAMAGE = 5
-const SPEED = 200.0
-const SCORE = 15
+
+
+var HEALTH = Balance.VALUES["mobs"]["poison_mob"]["HEALTH"]
+var DAMAGE = Balance.VALUES["mobs"]["poison_mob"]["DAMAGE"]
+var SPEED = Balance.VALUES["mobs"]["poison_mob"]["SPEED"]
+var SCORE = Balance.VALUES["mobs"]["poison_mob"]["SCORE"]
 
 var EFFECT_ID = 1 # Player.EFFECTS.POISON
-var EFFECT_DURATION = 10.0
+var EFFECT_DURATION = Balance.VALUES["mobs"]["poison_mob"]["EFFECT_DURATION"]
 
 var busy = false
 

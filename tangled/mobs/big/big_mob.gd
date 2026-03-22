@@ -2,10 +2,12 @@ extends CharacterBody2D
 
 const BODY_TYPE = 0
 
-var HEALTH = 100
-var DAMAGE = 10
-const SPEED = 100.0
-const SCORE = 20
+
+
+var HEALTH = Balance.VALUES["mobs"]["big_mob"]["HEALTH"]
+var DAMAGE = Balance.VALUES["mobs"]["big_mob"]["DAMAGE"]
+var SPEED = Balance.VALUES["mobs"]["big_mob"]["SPEED"]
+var SCORE = Balance.VALUES["mobs"]["big_mob"]["SCORE"]
 
 var busy = false
 

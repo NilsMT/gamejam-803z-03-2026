@@ -2,7 +2,13 @@ extends Node2D
 
 @onready var scissors_sound = $scissors_sound
 
-var DAMAGE = 12.5
+
+
+var DAMAGE = Balance.VALUES["weapons"]["scissors"]["DAMAGE"]
+var ATTACK_SPEED = Balance.VALUES["weapons"]["scissors"]["ATTACK_SPEED"]
+
+func _ready():
+	%AnimationPlayer.speed_scale = ATTACK_SPEED
 
 func use():
 	if %AnimationPlayer.current_animation != "attack" or not %AnimationPlayer.is_playing():

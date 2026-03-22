@@ -2,14 +2,21 @@ extends Node2D
 
 @onready var needle_sound = $needle_sound
 
-var mag_capacity = 0
-const MAX_MAG_CAPACITY = 3
 const NEEDLE_MODEL = preload("res://objects/object_needle/object_needle.tscn")
 const NEEDLE_PROJECTILE = preload("res://weapons/projectiles/needle_projectile.tscn")
 
+
+
+
+
+var RELOAD_TIME = Balance.VALUES["weapons"]["needle"]["RELOAD_TIME"]
+var MAX_MAG_CAPACITY = Balance.VALUES["weapons"]["needle"]["MAX_MAG_CAPACITY"]
+
+var mag_capacity = 0
 var needles = []  # Array to hold visual needles
 
 func _ready():
+	%ReloadTimer.wait_time = RELOAD_TIME
 	# Fill the magazine with visual needles
 	for i in range(MAX_MAG_CAPACITY):
 		var needle = NEEDLE_MODEL.instantiate()

@@ -20,7 +20,6 @@ rotation = 1.5865602
 [node name="Timer" type="Timer" parent="." unique_id=586007182]
 unique_name_in_owner = true
 wait_time = 0.3
-autostart = true
 
 [node name="button_sound" type="AudioStreamPlayer2D" parent="." unique_id=313588988]
 stream = ExtResource("3_k42bd")

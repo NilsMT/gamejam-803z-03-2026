@@ -1,12 +1,16 @@
 extends Area2D
 
-const DAMAGE = 25.0
-const MAX_PENETRATION = 5
-const SPEED = 500.0
+
+
+var DAMAGE = Balance.VALUES["weapons"]["needle"]["projectile"]["DAMAGE"]
+var MAX_PENETRATION = Balance.VALUES["weapons"]["needle"]["projectile"]["MAX_PENETRATION"]
+var SPEED = Balance.VALUES["weapons"]["needle"]["projectile"]["SPEED"]
+var LIFETIME = Balance.VALUES["weapons"]["needle"]["projectile"]["LIFETIME"]
 
 var penetration_left = MAX_PENETRATION
 
 func _ready():
+	%Timer.wait_time = LIFETIME
 	%Timer.start()
 
 func fire():

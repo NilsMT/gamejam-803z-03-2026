@@ -3,9 +3,15 @@ extends Node2D
 @onready var ruler_woosh = $ruler_woosh
 @onready var ruler_spin = $ruler_spin
 
-var DAMAGE = 5
+
 const FOLLOW_MOUSE = false
-var SPIN_SPEED = 500.0
+
+
+
+var SPIN_SPEED = Balance.VALUES["weapons"]["ruler"]["SPIN_SPEED"]
+var RATIO_MODE = Balance.VALUES["weapons"]["ruler"]["RATIO_MODE"]
+var DAMAGE = Balance.VALUES["weapons"]["ruler"]["DAMAGE"]
+
 var SPIN_CHECK = 0.0
 
 var isExtended = false
@@ -26,13 +32,13 @@ func use():
 	if isExtended:
 		isExtended = false
 		%AnimationPlayer.play("reduce")
-		DAMAGE /= 2
-		SPIN_SPEED *= 2
+		DAMAGE /= RATIO_MODE
+		SPIN_SPEED *= RATIO_MODE
 	else:
 		isExtended = true
 		%AnimationPlayer.play("extend")
-		DAMAGE *= 2
-		SPIN_SPEED /= 2
+		DAMAGE *= RATIO_MODE
+		SPIN_SPEED /= RATIO_MODE
 	if SPIN_CHECK == SPIN_SPEED + 360.0:
 		ruler_spin.play()
 		SPIN_CHECK = SPIN_SPEED

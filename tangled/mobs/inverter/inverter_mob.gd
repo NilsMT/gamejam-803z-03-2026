@@ -2,13 +2,15 @@ extends CharacterBody2D
 
 const BODY_TYPE = 0
 
-var HEALTH = 50
-var DAMAGE = 0
-const SPEED = 150.0
-const SCORE = 15
+
+
+var HEALTH = Balance.VALUES["mobs"]["inverter_mob"]["HEALTH"]
+var DAMAGE = Balance.VALUES["mobs"]["inverter_mob"]["DAMAGE"]
+var SPEED = Balance.VALUES["mobs"]["inverter_mob"]["SPEED"]
+var SCORE = Balance.VALUES["mobs"]["inverter_mob"]["SCORE"]
 
 var EFFECT_ID = 0 # Player.EFFECTS.INVERT_CONTROLS
-var EFFECT_DURATION = 10.0
+var EFFECT_DURATION = Balance.VALUES["mobs"]["inverter_mob"]["EFFECT_DURATION"]
 
 var busy = false
 
