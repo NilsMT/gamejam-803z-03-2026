@@ -11,10 +11,11 @@ var elapsed_seconds = 0
 
 signal add_score(score)
 signal game_ended
+signal music_mute(muted)
 
 var gameover = false
 var gamePhase = -1
-var phaseTime = [0.0,150.0,300.0,600.0]
+var phaseTime = [0.0,60.0,150.0,300.0]
 var phaseList = [
 	[
 		"res://mobs/basic/basic_mob.tscn", 50.0,
@@ -108,6 +109,7 @@ func _ready():
 	TIME_FOR_GROWTH = Balance.VALUES["game"]["TIME_FOR_GROWTH"] 
 	MIN_SPAWN_DISTANCE = Balance.VALUES["game"]["MIN_SPAWN_DISTANCE"]
 	%GameTime.start()
+	%music_ingame.play()
 
 func _process(delta):
 	nearest_object = find_nearest_object()
@@ -168,12 +170,18 @@ func spawn_object():
 
 
 func _on_timer_object_timeout() -> void:
+	if gameover == true:
+		return
 	spawn_object()
 
 func _on_timer_mob_timeout() -> void:
+	if gameover == true:
+		return
 	spawn_mob()
 
 func _on_timer_prop_timeout() -> void:
+	if gameover == true:
+		return
 	spawn_prop()
 
 
@@ -183,14 +191,15 @@ func _on_add_score(score: Variant) -> void:
 
 
 func _on_game_time_timeout() -> void:
+	if gameover == true:
+		return
 	elapsed_seconds += 0.1
+	%UiIngame.set_time_text(elapsed_seconds)
 	
-	if gameover == false:
-		%UiIngame.set_time_text(elapsed_seconds)
-		
-		if elapsed_seconds <= phaseTime[gamePhase]:
-			gamePhase += 1
-			MOBS_LIST = phaseList[gamePhase]
+	if gamePhase < phaseTime.size() - 1 && elapsed_seconds >= phaseTime[gamePhase + 1]:
+		gamePhase += 1
+		MOBS_LIST = phaseList[gamePhase]
+		print("change phase")
 
 func _on_ui_game_over_game_ended() -> void:
 	get_tree().call_group("mobs", "queue_free")
@@ -244,11 +253,20 @@ func _on_konami_code():
 		new_mob.HEALTH *= 1 + elapsed_seconds/TIME_FOR_GROWTH
 		add_child(new_mob)
 		spawned_mobs.append(new_mob)
+		
+		new_mob.HEALTH = Balance.VALUES["mobs"]["matt_mob_secret"]["HEALTH"]
+		new_mob.DAMAGE = Balance.VALUES["mobs"]["matt_mob_secret"]["DAMAGE"]
+		new_mob.SPEED = Balance.VALUES["mobs"]["matt_mob_secret"]["SPEED"]
+		new_mob.SCORE = Balance.VALUES["mobs"]["matt_mob_secret"]["SCORE"]
+		
 		new_mob.add_to_group("mobs")
-
 
 func _on_player_animation_death_done() -> void:
 	%UiGameOver.visible = true
 	gameover = true
 	%UiGameOver.play_animation()
+	%music_gameover.play()
+
+func _on_player_animation_death_started() -> void:
 	%Ground.game_ended.emit()
+	%music_ingame.stop()

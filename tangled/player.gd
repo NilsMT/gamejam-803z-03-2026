@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 signal health_depleted
 signal animation_death_done
+signal animation_death_started
 
 var MAX_HEALTH = 0
 var MAX_EFFECT_DURATION = 0
@@ -115,12 +116,12 @@ func _physics_process(delta: float) -> void:
 
 	if health <= 0.0:
 		health_depleted.emit()
+		animation_death_started.emit()
 		is_game_ended = true
 		weapon.queue_free()
 		%crocky_death.play()
 		%crocky_death_sad.play()
 		%Crocky.play_death()
-
 
 
 

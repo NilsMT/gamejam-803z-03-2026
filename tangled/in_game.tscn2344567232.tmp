@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://cm5exck25lkl1"]
+
+[ext_resource type="Script" uid="uid://b5fc5oojm74yd" path="res://in_game.gd" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://dd3rw48ne5l2" path="res://player.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://dlaqa2kkclusi" path="res://radar/radar.tscn" id="3_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://bvr1dlrnahj7e" path="res://ui/game_over/ui_game_over.tscn" id="4_fc0e3"]
+[ext_resource type="Shader" uid="uid://dkrfbdx8kyg8j" path="res://in_game.gdshader" id="5_pj0gh"]
+[ext_resource type="PackedScene" uid="uid://beunfla7rqa74" path="res://ui/ingame/ui_ingame.tscn" id="6_n3cn4"]
+[ext_resource type="Texture2D" uid="uid://cbd1wsxpc2keq" path="res://textures/wood.jpg" id="6_nvoy2"]
+[ext_resource type="Script" uid="uid://c6ipk1nn7gsqp" path="res://texture_rect.gd" id="7_nvoy2"]
+[ext_resource type="PackedScene" uid="uid://ddpnnpjrgtdfe" path="res://props/prop_mat/prop_mat.tscn" id="8_bjxrw"]
+[ext_resource type="AudioStream" uid="uid://cgee6y7x36qxi" path="res://sounds/music/gameover.mp3" id="10_6cqls"]
+[ext_resource type="AudioStream" uid="uid://q3btg1bf4u7o" path="res://sounds/music/ingame.mp3" id="11_ywj4u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nvoy2"]
+shader = ExtResource("5_pj0gh")
+shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="Curve2D" id="Curve2D_feb5d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 960, -540, 0, 0, 0, 0, 960, 540, 0, 0, 0, 0, -960, 540, 0, 0, 0, 0, -960, -540, 0, 0, 0, 0, 960, -540)
+}
+point_count = 5
+
+[node name="InGame" type="Node2D" unique_id=1419428098]
+y_sort_enabled = true
+script = ExtResource("1_80nbo")
+
+[node name="Ground" type="TextureRect" parent="." unique_id=1117285767]
+unique_name_in_owner = true
+z_index = -2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_nvoy2")
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(2.2, 2.2)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("6_nvoy2")
+stretch_mode = 1
+script = ExtResource("7_nvoy2")
+
+[node name="UiGameOver" parent="." unique_id=653810407 instance=ExtResource("4_fc0e3")]
+unique_name_in_owner = true
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+
+[node name="UiIngame" parent="." unique_id=895109810 instance=ExtResource("6_n3cn4")]
+unique_name_in_owner = true
+
+[node name="TimerObject" type="Timer" parent="." unique_id=1339317992]
+wait_time = 15.0
+autostart = true
+
+[node name="TimerMob" type="Timer" parent="." unique_id=2043572244]
+autostart = true
+
+[node name="TimerProp" type="Timer" parent="." unique_id=679867077]
+wait_time = 10.0
+autostart = true
+
+[node name="GameTime" type="Timer" parent="." unique_id=1944973101]
+unique_name_in_owner = true
+wait_time = 0.1
+
+[node name="Player" parent="." unique_id=560301391 instance=ExtResource("2_e2o6t")]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(954, 527)
+
+[node name="Path2D" type="Path2D" parent="Player" unique_id=1891581326]
+z_index = -1
+scale = Vector2(4, 4)
+curve = SubResource("Curve2D_feb5d")
+
+[node name="MarkerObject" type="PathFollow2D" parent="Player/Path2D" unique_id=741714058]
+unique_name_in_owner = true
+position = Vector2(960, -540)
+rotation = 1.5707964
+
+[node name="MarkerProp" type="PathFollow2D" parent="Player/Path2D" unique_id=400313096]
+unique_name_in_owner = true
+position = Vector2(960, -540)
+rotation = 1.5707964
+
+[node name="MarkerMob" type="PathFollow2D" parent="Player/Path2D" unique_id=1351054468]
+unique_name_in_owner = true
+position = Vector2(960, -540)
+rotation = 1.5707964
+
+[node name="PlayerCamera" type="Camera2D" parent="Player" unique_id=1134105365]
+unique_name_in_owner = true
+position = Vector2(0, 112)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Radar" parent="Player" unique_id=284120149 instance=ExtResource("3_fc0e3")]
+unique_name_in_owner = true
+
+[node name="PropMat" parent="." unique_id=150245113 instance=ExtResource("8_bjxrw")]
+position = Vector2(957.99994, 640)
+scale = Vector2(2.2, 2.2)
+
+[node name="music_gameover" type="AudioStreamPlayer" parent="." unique_id=1952323347]
+unique_name_in_owner = true
+stream = ExtResource("10_6cqls")
+
+[node name="music_ingame" type="AudioStreamPlayer" parent="." unique_id=281553566]
+unique_name_in_owner = true
+stream = ExtResource("11_ywj4u")
+
+[connection signal="add_score" from="." to="." method="_on_add_score"]
+[connection signal="game_ended" from="Ground" to="Ground" method="_on_game_ended"]
+[connection signal="game_ended" from="UiGameOver" to="." method="_on_ui_game_over_game_ended"]
+[connection signal="timeout" from="TimerObject" to="." method="_on_timer_object_timeout"]
+[connection signal="timeout" from="TimerMob" to="." method="_on_timer_mob_timeout"]
+[connection signal="timeout" from="TimerProp" to="." method="_on_timer_prop_timeout"]
+[connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
+[connection signal="animation_death_done" from="Player" to="." method="_on_player_animation_death_done"]

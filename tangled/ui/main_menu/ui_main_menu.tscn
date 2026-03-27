@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dp7t1lk7c76oy" path="res://ui/main_menu/ui_main_menu.gd" id="1_32j0l"]
 [ext_resource type="Texture2D" uid="uid://6ihdepqun0xh" path="res://ui/main_menu/Button.png" id="2_koveq"]
-[ext_resource type="Texture2D" uid="uid://cgal5r0s7ytr6" path="res://textures/wood.jpg" id="2_xeo8i"]
+[ext_resource type="Texture2D" uid="uid://cbd1wsxpc2keq" path="res://textures/wood.jpg" id="2_xeo8i"]
 [ext_resource type="Texture2D" uid="uid://bu8qwnshhe5ha" path="res://ui/main_menu/Button_clicked.png" id="3_h50s7"]
 [ext_resource type="Texture2D" uid="uid://bspdkp1tufo7e" path="res://textures/ui/menu_background.png" id="3_p16qy"]
 [ext_resource type="Texture2D" uid="uid://den50sq80va7n" path="res://ui/main_menu/Button_hover.png" id="4_32j0l"]
 [ext_resource type="Texture2D" uid="uid://b5a4hp6c8d60h" path="res://textures/logo.png" id="7_ngjk0"]
 [ext_resource type="PackedScene" uid="uid://vf23up0ywxky" path="res://characters/angy/angy.tscn" id="8_i7ndj"]
 [ext_resource type="PackedScene" uid="uid://bpcox517byfn8" path="res://characters/mii_goku/matt.tscn" id="8_p16qy"]
-[ext_resource type="PackedScene" uid="uid://x3sf3onrfkab" path="res://objects/object_scissors/object_scissors.tscn" id="10_ngjk0"]
 [ext_resource type="Texture2D" uid="uid://jxtjoqcfo0b" path="res://ui/main_menu/icon.png" id="11_i7ndj"]
+[ext_resource type="Texture2D" uid="uid://cyderm8kpiiy2" path="res://ui/main_menu/music_unmute.png" id="11_ibij3"]
 
 [node name="UiGameMenu" type="CanvasLayer" unique_id=768309926]
 script = ExtResource("1_32j0l")
@@ -98,34 +98,54 @@ scale = Vector2(0.20519987, 0.20519987)
 script = null
 
 [node name="Angy" parent="." unique_id=659300807 instance=ExtResource("8_i7ndj")]
-unique_name_in_owner = true
 modulate = Color(0.67974406, 0.0035019934, 0.97104925, 1)
 position = Vector2(219, 895)
 script = null
 
 [node name="Angy3" parent="." unique_id=1385946587 instance=ExtResource("8_i7ndj")]
-unique_name_in_owner = true
 modulate = Color(0.9999998, 0.20177674, 0.2386508, 1)
 position = Vector2(92, 688)
 scale = Vector2(0.5, 0.5)
 script = null
 
 [node name="Angy4" parent="." unique_id=1008443726 instance=ExtResource("8_i7ndj")]
-unique_name_in_owner = true
 modulate = Color(2.0214916e-06, 0.89618814, 0.30955827, 1)
 position = Vector2(241, 552)
 scale = Vector2(0.5, 0.5)
 script = null
 
-[node name="ObjectScissorsShadow" parent="." unique_id=1097997817 instance=ExtResource("10_ngjk0")]
+[node name="MuteShadow" type="TextureButton" parent="." unique_id=194908641]
 modulate = Color(0, 0, 0, 0.27450982)
-position = Vector2(1957.0001, 287.00006)
-rotation = 2.0113406
-scale = Vector2(2.24, 2.24)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 607.0
+offset_top = -1015.0
+offset_right = 1597.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.2700006, 0.2700006)
+disabled = true
+texture_normal = ExtResource("11_ibij3")
 
-[node name="ObjectScissors" parent="." unique_id=158071699 instance=ExtResource("10_ngjk0")]
-position = Vector2(1954.0001, 271)
-rotation = 2.0113406
-scale = Vector2(2.2400002, 2.2400002)
+[node name="Mute" type="TextureButton" parent="." unique_id=153696736]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 605.0
+offset_top = -1026.0
+offset_right = 1595.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.2700006, 0.2700006)
+texture_normal = ExtResource("11_ibij3")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Mute" to="." method="_on_mute_pressed"]

@@ -1,15 +1,15 @@
 extends Node2D
-class_name BalanceValues
+var STATE = "off"
 
-@export var VALUES: Dictionary = {
+var VALUES: Dictionary = {
 	"game": {
 		"TIME_FOR_GROWTH": 90,  # Slower scaling for better pacing
 		"MIN_SPAWN_DISTANCE": 2000.0,
 	},
 	"player": {
-		"MAX_HEALTH": 120.0,  # Slightly more survivability
-		"MAX_EFFECT_DURATION": 20.0,  # Shorter max debuff duration
-		"SPEED": 650.0,  # Faster movement
+		"MAX_HEALTH": 120.0,
+		"MAX_EFFECT_DURATION": 20.0,
+		"SPEED": 650.0,
 	},
 	"mobs": {
 		"basic_mob": {
@@ -37,11 +37,17 @@ class_name BalanceValues
 			"SCORE": 20,
 			"EFFECT_DURATION": 8.0,
 		},
-		"matt_mob": {
+		"matt_mob_secret": {
 			"HEALTH": 1.0,  # Still almost one-shot
 			"DAMAGE": 800,  # Slightly less one-shot potential
 			"SPEED": 1800.0,  # Still very fast
 			"SCORE": 1000,  # Extreme reward
+		},
+		"matt_mob": {
+			"HEALTH": 0.1,
+			"DAMAGE": 10, 
+			"SPEED": 500.0,
+			"SCORE": 250,
 		},
 		"poison_mob": {
 			"HEALTH": 40,
@@ -56,19 +62,19 @@ class_name BalanceValues
 			"MAX_MAG_CAPACITY": 5,
 			"RELOAD_TIME": 1.2,
 			"projectile": {
-				"DAMAGE": 20.0,
-				"MAX_PENETRATION": 3,
-				"SPEED": 600.0,
-				"LIFETIME": 4.0,
+				"DAMAGE": 40.0,
+				"MAX_PENETRATION": 5,
+				"SPEED": 1600.0,
+				"LIFETIME": 10.0,
 			}
 		},
 		"button": {
 			"FIRE_RATE": 0.25,
 			"projectile": {
-				"DAMAGE": 3.0,
+				"DAMAGE": 5.0,
 				"MAX_PENETRATION": 1,
 				"SPEED": 800.0,
-				"LIFETIME": 1.5,
+				"LIFETIME": 2.5,
 			}
 		},
 		"ruler": {
@@ -77,8 +83,8 @@ class_name BalanceValues
 			"RATIO_MODE": 2
 		},
 		"scissors": {
-			"DAMAGE": 15.0,
-			"ATTACK_SPEED": 1.5
+			"DAMAGE": 30.0,
+			"ATTACK_SPEED": 0.5
 		}
 	}
 }

@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cbd1wsxpc2keq" path="res://textures/wood.jpg" id="6_nvoy2"]
 [ext_resource type="Script" uid="uid://c6ipk1nn7gsqp" path="res://texture_rect.gd" id="7_nvoy2"]
 [ext_resource type="PackedScene" uid="uid://ddpnnpjrgtdfe" path="res://props/prop_mat/prop_mat.tscn" id="8_bjxrw"]
+[ext_resource type="AudioStream" uid="uid://cgee6y7x36qxi" path="res://sounds/music/gameover.mp3" id="10_6cqls"]
+[ext_resource type="Script" uid="uid://beln0hhrfbmb" path="res://music_gameover.gd" id="11_n3cn4"]
+[ext_resource type="AudioStream" uid="uid://q3btg1bf4u7o" path="res://sounds/music/ingame.mp3" id="11_ywj4u"]
+[ext_resource type="Script" uid="uid://cd74wuc3dhgvr" path="res://music_ingame.gd" id="13_5jqcy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nvoy2"]
 shader = ExtResource("5_pj0gh")
@@ -97,7 +101,23 @@ unique_name_in_owner = true
 position = Vector2(957.99994, 640)
 scale = Vector2(2.2, 2.2)
 
+[node name="music_gameover" type="AudioStreamPlayer" parent="." unique_id=1952323347]
+unique_name_in_owner = true
+stream = ExtResource("10_6cqls")
+volume_db = -10.0
+script = ExtResource("11_n3cn4")
+
+[node name="music_ingame" type="AudioStreamPlayer" parent="." unique_id=281553566]
+unique_name_in_owner = true
+stream = ExtResource("11_ywj4u")
+volume_db = -10.0
+parameters/looping = true
+script = ExtResource("13_5jqcy")
+
 [connection signal="add_score" from="." to="." method="_on_add_score"]
+[connection signal="music_mute" from="." to="." method="_on_music_mute"]
+[connection signal="music_mute" from="." to="music_gameover" method="_on_in_game_music_mute"]
+[connection signal="music_mute" from="." to="music_ingame" method="_on_in_game_music_mute"]
 [connection signal="game_ended" from="Ground" to="Ground" method="_on_game_ended"]
 [connection signal="game_ended" from="UiGameOver" to="." method="_on_ui_game_over_game_ended"]
 [connection signal="timeout" from="TimerObject" to="." method="_on_timer_object_timeout"]
@@ -105,3 +125,4 @@ scale = Vector2(2.2, 2.2)
 [connection signal="timeout" from="TimerProp" to="." method="_on_timer_prop_timeout"]
 [connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
 [connection signal="animation_death_done" from="Player" to="." method="_on_player_animation_death_done"]
+[connection signal="animation_death_started" from="Player" to="." method="_on_player_animation_death_started"]

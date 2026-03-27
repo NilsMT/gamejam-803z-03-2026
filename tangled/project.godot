@@ -78,6 +78,7 @@ config/name="Tangled"
 config/description="Made for the gamejam 2026 organized by 803z with the theme \"Tangled\""
 run/main_scene="uid://debicfk7qde6n"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/image="uid://cagq3dyyk7l37"
 config/icon="uid://b5a4hp6c8d60h"
 
 [audio]
@@ -141,3 +142,4 @@ attack={
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

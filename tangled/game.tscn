@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dfi1hoo1u5lal" path="res://ui/main_menu/ui_main_menu.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://bsa76rqc0nxev" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bfgs0wdbd5gjt" path="res://balance.gd" id="3_feb5d"]
+[ext_resource type="AudioStream" uid="uid://dfsiot5fsy34b" path="res://sounds/music/menu.mp3" id="4_fc0e3"]
 
 [node name="Game" type="Node2D" unique_id=2113725629]
 script = ExtResource("1_e2o6t")
@@ -13,4 +14,11 @@ unique_name_in_owner = true
 [node name="Balance" type="Node2D" parent="." unique_id=1657750885]
 script = ExtResource("3_feb5d")
 
+[node name="music_menu" type="AudioStreamPlayer" parent="." unique_id=619477293]
+unique_name_in_owner = true
+stream = ExtResource("4_fc0e3")
+volume_db = -10.0
+parameters/looping = true
+
+[connection signal="muted_audio" from="UiGameMenu" to="." method="_on_ui_game_menu_muted_audio"]
 [connection signal="playing" from="UiGameMenu" to="." method="_on_ui_game_menu_playing"]
